@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "mongo-start",
+			"problemMatcher": [],
+			"label": "npm: mongo start",
+			"detail": "node ./bin/www"
+		}
+	]
+}
