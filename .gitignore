@@ -38,6 +38,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+dist/mongo-db/mongoPG
 src/environment/environment.ts
 dist/environment/environment.js
 dist/environment/environment.js
