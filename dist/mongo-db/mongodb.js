@@ -21,11 +21,9 @@ class mongoDBClient extends mongodb_1.MongoClient {
         return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').insertOne(newUser));
     }
     updateUser(newUser) {
-        console.log('2222', newUser._id);
-        let dataWitoutId = Object.assign({}, newUser);
+        let dataWitoutId = { ...newUser };
         delete dataWitoutId._id;
-        console.log('newUser._id', newUser._id);
-        return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').updateOne({ _id: new mongodb_1.ObjectId(newUser._id) }, { $set: Object.assign({}, dataWitoutId) }));
+        return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').updateOne({ _id: new mongodb_1.ObjectId(newUser._id) }, { $set: { ...dataWitoutId } }));
     }
     getUsers() {
         return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').find({}).toArray());

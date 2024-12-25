@@ -33,17 +33,29 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.router = void 0;
-const express = __importStar(require("express"));
-const email_module_1 = require("../mail/email-module");
+exports.jwtSet = jwtSet;
+exports.verifyJWT = verifyJWT;
+const environment_1 = require("../environment/environment");
+const jwt = __importStar(require("jsonwebtoken"));
 const rxjs_1 = require("rxjs");
-exports.router = express.Router();
-const mailService = new email_module_1.EmailHandler();
-exports.router.post('/send', ((req, res, next) => {
-    let mailOption = req.body;
-    (0, rxjs_1.from)(mailService.sendMessage(mailOption)).pipe((0, rxjs_1.catchError)(e => {
-        console.log('sendMessage error', e);
-        res.status(400).send({ errorResponse: { message: e.message, name: e.name } });
-        return rxjs_1.EMPTY;
-    })).subscribe(data => res.send(data));
-}));
+const shared_models_1 = require("../types/shared-models");
+function jwtSet(jwtInfo) {
+    return (0, rxjs_1.of)(jwt.sign(jwtInfo, environment_1.ENVIRONMENT.JWT.JWT_SECRET, environment_1.ENVIRONMENT.JWT.JWT_SETTINGS));
+}
+function verifyJWT(req, res, next) {
+    const jwtToken = req.headers.authorization?.substring('Bearer '.length) || '';
+    console.log(jwtToken);
+    try {
+        const jwtInfo = jwt.verify(jwtToken, environment_1.ENVIRONMENT.JWT.JWT_SECRET);
+        if (jwtInfo.iss === environment_1.ENVIRONMENT.JWT.JWT_SETTINGS.issuer && jwtInfo.exp < Date.now() && shared_models_1.AcRoles.includes(jwtInfo.role)) {
+            next();
+            return;
+        }
+        else {
+            res.sendStatus(401);
+        }
+    }
+    catch (error) {
+        res.sendStatus(401);
+    }
+}

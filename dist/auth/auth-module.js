@@ -10,6 +10,6 @@ const rxjs_1 = require("rxjs");
 function hashUserPassword(password) {
     return (0, rxjs_1.from)(bcrypt_1.default.genSalt()).pipe((0, rxjs_1.switchMap)(salt => bcrypt_1.default.hash(password, salt)));
 }
-function verifyUserPassword(password, hashedPassword) {
-    return (0, rxjs_1.from)(bcrypt_1.default.compare(password, hashedPassword));
+function verifyUserPassword(passwordFromUser, userData) {
+    return (0, rxjs_1.from)(bcrypt_1.default.compare(passwordFromUser, userData.password)).pipe((0, rxjs_1.map)(confirmed => { return { passwordConfirmed: confirmed, userData: userData }; }));
 }

@@ -25,10 +25,8 @@ export class mongoDBClient extends MongoClient {
     return from(this.dbInst.collection<IUser>('auth-users-data').insertOne (newUser));
   }
   updateUser (newUser:IUser):Observable<UpdateResult<IUser>> {
-    console.log('2222',newUser._id);
     let dataWitoutId = {...newUser};
     delete dataWitoutId._id
-    console.log('newUser._id',newUser._id);
     return from(this.dbInst.collection<IUser>('auth-users-data').updateOne ({_id:new  ObjectId(newUser._id)},{$set:{...dataWitoutId}}));
   }
   getUsers ():Observable<IUser[]> {

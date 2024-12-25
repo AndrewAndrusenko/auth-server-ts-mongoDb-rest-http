@@ -1,9 +1,11 @@
 import * as express from "express";
-import {switchMap,from, catchError, EMPTY, of, throwError, tap } from 'rxjs';
+import {switchMap,from, catchError, EMPTY, of, throwError, tap, map } from 'rxjs';
 import {hashUserPassword,verifyUserPassword } from "../auth/auth-module";
 import {mongoDBClient}  from '../mongo-db/mongodb';
 import {EmailHandler} from '../mail/email-module'
+import {jwtSet} from '../auth/jwt-module'
 import { IUser } from "../types/shared-models";
+import { ObjectId } from "mongodb";
 
 export const router = express.Router();
 const mongoClient = new mongoDBClient();
@@ -61,14 +63,15 @@ router.post('/login', async function(req, res, next) {
       emailErr.name='email';
       return emailErr;
       })) ,
-    switchMap((userDB)=>verifyUserPassword (userFromUI.password,userDB.password)),
-    switchMap((passwordOk)=>passwordOk? of(passwordOk) : throwError(()=>new Error('Incorrect password')) ),
+    switchMap((userDB)=>verifyUserPassword (userFromUI.password,userDB)),
+    switchMap((userData)=>userData.passwordConfirmed? of(userData.userData) : throwError(()=>new Error('Incorrect password')) ),
+    switchMap((userData)=>jwtSet({_id:userData._id as ObjectId , userId:userData.userId, role:userData.role})),
     catchError(e=>{
       console.log('e',e);
       res.send({errorResponse:  {message: (e as Error).message,name:(e as Error).name,stack:(e as Error)?.stack}});
       return EMPTY;
     })
-  ).subscribe(data=>res.send(data))
+  ).subscribe(data=>res.send({jwt:data}))
 });
 
 /*Confirm user email*/
