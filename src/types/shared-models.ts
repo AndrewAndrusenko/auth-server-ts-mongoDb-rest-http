@@ -1,3 +1,4 @@
+import { SerializeOptions } from "cookie"
 import { JwtPayload } from "jsonwebtoken"
 import { ObjectId } from "mongodb"
 export const AcRoles:string[] = ['user']
@@ -16,3 +17,15 @@ export interface IJWTInfo {
   role:TAcRole
 }
 export interface IJWTPayload extends JwtPayload,IJWTInfo {}
+export interface IJWTInfoToken {
+  jwt:string,
+  refreshToken:string
+  jwtInfo:IJWTInfo
+}
+export const serializeOptions:SerializeOptions = {
+  httpOnly:true,
+  secure:true,
+  sameSite:'strict',
+  maxAge:60*60*24*30,
+  path:'/'
+}

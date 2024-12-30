@@ -2,6 +2,15 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"type": "shell",
+			"command": "start npm run start && start npm run server && start npm run ngrok",
+			"problemMatcher": [],
+			"label": "aam start",
+			"options": {
+        "cwd":  "c:/JS/JSP/AAM/"
+			},
+		},
+		{
 			"type": "npm",
 			"script": "mongo-start",
 			"problemMatcher": [],

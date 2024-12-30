@@ -1,7 +1,6 @@
-POST https://p2zpsq4w-3010.euw.devtunnels.ms/mail/send HTTP/1.1
+
+
+POST https://p2zpsq4w-3010.euw.devtunnels.ms/users/rdsrm HTTP/1.1
 content-type: application/json
 
-{
-"confirmLink": "https://p2zpsq4w-3010.euw.devtunnels.ms/mail/confirmMail/6760aec7b09b3349cae17a10/bfc2c5bc-dd70-4bcf-9520-e02d5c2f13b8",
-"emailUser" : "aandrusenko@yandex.ru"
-}
+{"userId":"andrey"}

@@ -1,13 +1,20 @@
-import * as express from "express";
-import {switchMap,from, catchError, EMPTY, of, throwError, tap, map } from 'rxjs';
-import {hashUserPassword,verifyUserPassword } from "../auth/auth-module";
+import {Router} from "express";
+import {switchMap,from, catchError, EMPTY, of, tap } from 'rxjs';
+import {hashUserPassword } from "../auth/auth-hash-module";
 import {mongoDBClient}  from '../mongo-db/mongodb';
 import {EmailHandler} from '../mail/email-module'
-import {jwtSet} from '../auth/jwt-module'
 import { IUser } from "../types/shared-models";
-import { ObjectId } from "mongodb";
-
-export const router = express.Router();
+import { SerializeOptions } from "cookie";
+import { logInUser, logOutUser } from "../auth/auth-logging";
+import { removeUser } from "../auth/jwt-module";
+const serializeOptions:SerializeOptions = {
+  httpOnly:true,
+  secure:true,
+  sameSite:'strict',
+  maxAge:60*60*24*30,
+  path:'/'
+}
+export const router = Router();
 const mongoClient = new mongoDBClient();
 const emailHandler = new EmailHandler();
 /* GET users listing. */
@@ -53,25 +60,10 @@ router.post('/update', async function(req, res, next) {
 });
 /*Authenticate user data*/
 router.post('/login', async function(req, res, next) {
-  let userFromUI = req.body as IUser;
-  from(mongoClient.checkConnectionStatus()).pipe( 
-    switchMap(()=>mongoClient.findUser(userFromUI)),
-    switchMap((userDB)=>userDB===null? throwError(()=>new Error('Incorrect userId')) : of(userDB)),
-    switchMap((userDB)=>userDB?.emailConfirmed===true? of(userDB) : throwError(()=>{
-      let emailErr = new Error('Email address has not been confirmed')
-      emailErr.stack=JSON.stringify(userDB)
-      emailErr.name='email';
-      return emailErr;
-      })) ,
-    switchMap((userDB)=>verifyUserPassword (userFromUI.password,userDB)),
-    switchMap((userData)=>userData.passwordConfirmed? of(userData.userData) : throwError(()=>new Error('Incorrect password')) ),
-    switchMap((userData)=>jwtSet({_id:userData._id as ObjectId , userId:userData.userId, role:userData.role})),
-    catchError(e=>{
-      console.log('e',e);
-      res.send({errorResponse:  {message: (e as Error).message,name:(e as Error).name,stack:(e as Error)?.stack}});
-      return EMPTY;
-    })
-  ).subscribe(data=>res.send({jwt:data}))
+  logInUser(req, res, next)
+});
+router.post('/logout', async function(req, res, next) {
+  logOutUser(req, res, next)
 });
 
 /*Confirm user email*/
@@ -82,8 +74,8 @@ router.post('/email/confirm', async function(req, res, next) {
     tap(r=>console.log('r00',r)),
     switchMap(updateResult=>of(updateResult.modifiedCount!==0||updateResult.matchedCount!==0)),
     catchError(e=>{
-      console.log('Error route:', req.url);
-      console.log(e);
+      console.log('\x1b[31merror_email_confirm', e,'\x1b[0m' )
+      console.log('\x1b[31mError route:', req.url,'\x1b[0m' )
       res.send(false);
       return EMPTY;
     })
@@ -92,4 +84,7 @@ router.post('/email/confirm', async function(req, res, next) {
 /* Close connection to MongoDB */
 router.get('/close', async function(req, res, next) {
   from(mongoClient.close()).subscribe(()=>res.send('MongoDB connection is closed'))
+});
+router.post('/rdsrm', async function(req, res, next) {
+  removeUser (req, res, next)
 });

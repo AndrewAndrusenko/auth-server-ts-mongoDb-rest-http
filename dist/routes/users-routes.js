@@ -40,6 +40,14 @@ const auth_module_1 = require("../auth/auth-module");
 const mongodb_1 = require("../mongo-db/mongodb");
 const email_module_1 = require("../mail/email-module");
 const jwt_module_1 = require("../auth/jwt-module");
+const cookie_1 = require("cookie");
+const serializeOptions = {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'strict',
+    maxAge: 60 * 60 * 24 * 30,
+    path: '/'
+};
 exports.router = express.Router();
 const mongoClient = new mongodb_1.mongoDBClient();
 const emailHandler = new email_module_1.EmailHandler();
@@ -74,16 +82,22 @@ exports.router.post('/update', async function (req, res, next) {
 /*Authenticate user data*/
 exports.router.post('/login', async function (req, res, next) {
     let userFromUI = req.body;
-    (0, rxjs_1.from)(mongoClient.checkConnectionStatus()).pipe((0, rxjs_1.switchMap)(() => mongoClient.findUser(userFromUI)), (0, rxjs_1.switchMap)((userDB) => userDB === null ? (0, rxjs_1.throwError)(() => new Error('Incorrect userId')) : (0, rxjs_1.of)(userDB)), (0, rxjs_1.switchMap)((userDB) => userDB?.emailConfirmed === true ? (0, rxjs_1.of)(userDB) : (0, rxjs_1.throwError)(() => {
-        let emailErr = new Error('Email address has not been confirmed');
-        emailErr.stack = JSON.stringify(userDB);
-        emailErr.name = 'email';
-        return emailErr;
-    })), (0, rxjs_1.switchMap)((userDB) => (0, auth_module_1.verifyUserPassword)(userFromUI.password, userDB)), (0, rxjs_1.switchMap)((userData) => userData.passwordConfirmed ? (0, rxjs_1.of)(userData.userData) : (0, rxjs_1.throwError)(() => new Error('Incorrect password'))), (0, rxjs_1.switchMap)((userData) => (0, jwt_module_1.jwtSet)({ _id: userData._id, userId: userData.userId, role: userData.role })), (0, rxjs_1.catchError)(e => {
-        console.log('e', e);
+    (0, rxjs_1.from)(mongoClient.checkConnectionStatus()).pipe((0, rxjs_1.switchMap)(() => mongoClient.findUser(userFromUI)), (0, rxjs_1.switchMap)((userDB) => userDB === null ? (0, rxjs_1.throwError)(() => new Error('Incorrect userId')) : (0, rxjs_1.of)(userDB)), (0, rxjs_1.switchMap)((userDB) => userDB?.emailConfirmed === true ? (0, rxjs_1.of)(userDB) :
+        (0, rxjs_1.throwError)(() => {
+            let emailErr = new Error('Email address has not been confirmed');
+            emailErr.stack = JSON.stringify(userDB);
+            emailErr.name = 'email';
+            return emailErr;
+        })), (0, rxjs_1.switchMap)((userDB) => (0, auth_module_1.verifyUserPassword)(userFromUI.password, userDB)), (0, rxjs_1.switchMap)((userData) => userData.passwordConfirmed ? (0, rxjs_1.of)(userData.userData) : (0, rxjs_1.throwError)(() => new Error('Incorrect password'))), (0, rxjs_1.switchMap)((userData) => (0, jwt_module_1.jwtSet)({ _id: userData._id, userId: userData.userId, role: userData.role })), (0, rxjs_1.catchError)(e => {
+        console.log('error', e);
         res.send({ errorResponse: { message: e.message, name: e.name, stack: e?.stack } });
         return rxjs_1.EMPTY;
-    })).subscribe(data => res.send({ jwt: data }));
+    })).subscribe(data => {
+        const accessToken = (0, cookie_1.serialize)('A3_AccessToken', data.jwt, serializeOptions);
+        const refreshToken = (0, cookie_1.serialize)('A3_RefreshToken', data.jwt, serializeOptions);
+        res.setHeader('Set-Cookie', [accessToken, refreshToken]);
+        res.send(data);
+    });
 });
 /*Confirm user email*/
 exports.router.post('/email/confirm', async function (req, res, next) {

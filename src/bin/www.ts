@@ -1,12 +1,11 @@
 import { HttpError } from 'http-errors';
 import {ENVIRONMENT} from '../environment/environment';
-
-var app = require('../app');
-var debug = require('debug')('server-mongodb-rest-http:server');
-var http = require('http');
+import {app} from '../app';
+import Debug from 'debug'
+import * as http from 'http';
 process.env.PORT = ENVIRONMENT.REST_PORT.toString()
 
-
+var debug = Debug('server-mongodb-rest-http:server')
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 var server = http.createServer(app);
@@ -47,6 +46,7 @@ function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+    : 'port ' + addr?.port;
+    debug('Listening on ' + bind);
+    console.log('Listening on ' + bind);
 }

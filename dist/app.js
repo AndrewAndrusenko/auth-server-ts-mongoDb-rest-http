@@ -44,9 +44,10 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const indexRouter = __importStar(require("./routes/index"));
-const usersRouter = __importStar(require("./routes//users-routes"));
+const usersRouter = __importStar(require("./routes/auth-routes"));
 const mailRouter = __importStar(require("./routes/mail-routes"));
 const rtq_routtes_1 = require("./routes/rtq-routtes");
+const environment_1 = require("./environment/environment");
 exports.app = (0, express_1.default)();
 // view engine setup
 exports.app.set('views', path_1.default.join(__dirname, 'views'));
@@ -55,7 +56,7 @@ exports.app.use((0, morgan_1.default)('dev'));
 exports.app.use(express_1.default.json());
 exports.app.use(express_1.default.urlencoded({ extended: false }));
 exports.app.use((0, cookie_parser_1.default)());
-exports.app.use((0, cors_1.default)());
+exports.app.use((0, cors_1.default)(({ credentials: true, origin: environment_1.ENVIRONMENT.CORS.ORIGINS })));
 exports.app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
 exports.app.use('/', indexRouter.router);
 exports.app.use('/users', usersRouter.router);
@@ -74,4 +75,3 @@ exports.app.use(function (err, req, res) {
     res.status(err.status || 500);
     res.render('error');
 });
-module.exports = exports.app;
