@@ -13,7 +13,7 @@ const cookie_parser_1 = require("cookie-parser");
 const cookie_1 = require("cookie");
 const redis_module_1 = require("./redis-module");
 exports.redisStore = new redis_module_1.redisClientAuth();
-exports.redisStore.init().subscribe(res => console.log('redis store has been connected?', res));
+exports.redisStore.init().subscribe();
 function jwtSet(jwtInfo) {
     return (0, rxjs_1.forkJoin)({
         jwt: (0, rxjs_1.of)((0, jsonwebtoken_1.sign)(jwtInfo, environment_1.ENVIRONMENT.JWT.JWT_SECRET, environment_1.ENVIRONMENT.JWT.JWT_SETTINGS)),
@@ -56,7 +56,7 @@ function refreshTokenFunc(refreshToken, res) {
         }
         else {
             console.log('\x1b[31merror refreshToken has not been found\x1b[0m');
-            res.status(401).send({ error: 'RefreshToken has not been found' });
+            res.status(401).send({ message: 'RefreshToken has not been found' });
             return rxjs_1.EMPTY;
         }
     }))), (0, rxjs_1.tap)(jwtInfo => console.log('User:', jwtInfo.userId, '| New token is being issued')), (0, rxjs_1.switchMap)(jwtInfo => jwtSet({ _id: jwtInfo._id, userId: jwtInfo.userId, role: jwtInfo.role })), (0, rxjs_1.switchMap)(jwtInfoToken => exports.redisStore.saveRefresh(jwtInfoToken)), (0, rxjs_1.tap)(jwtInfoToken => res.setHeader('Set-Cookie', [
@@ -76,5 +76,11 @@ function removeUser(req, res, next) {
     })).subscribe(data => res.send(data));
 }
 function saveRefreshToStore(jwtInfoToken) {
-    return exports.redisStore.saveRefresh(jwtInfoToken);
+    if (exports.redisStore.isOpen) {
+        return exports.redisStore.saveRefresh(jwtInfoToken);
+    }
+    else {
+        console.log('\x1b[31merror', 'Redis server is unavailable', '\x1b[0m');
+        return (0, rxjs_1.of)(jwtInfoToken);
+    }
 }

@@ -1,25 +1,44 @@
-import {Db, InsertOneResult, MongoClient, ObjectId, UpdateResult} from 'mongodb';
-import { catchError, from, map, Observable, tap } from 'rxjs';
+import { Db, InsertOneResult, MongoClient, ObjectId, UpdateResult} from 'mongodb';
+import { catchError, EMPTY, from, map, Observable, of, switchMap, tap, throwError } from 'rxjs';
 import { ENVIRONMENT } from '../environment/environment';
 import { IUser } from '../types/shared-models';
 
 
 export class mongoDBClient extends MongoClient {
-  dbInst = new Db (this,ENVIRONMENT.MONGO_DB_CONFIG.mongdDBName)
-  constructor() {super(ENVIRONMENT.MONGO_DB_CONFIG.mongoUrl)}
-  checkConnectionStatus():Observable<{ok:number}> {
-      return from(this.dbInst.admin().ping()).pipe(
-        catchError(():Observable<{ok:number}> =>{
-          return from(this.connect()).pipe(
-            tap(()=>console.log('new connection')),
-            map(()=>{return {ok:1}})
-          )
-        }),
-        map(()=>{return {ok:1}})
-      );
+  private dbInst = new Db (this,ENVIRONMENT.MONGO_DB_CONFIG.mongdDBName)
+  private  _isOpened:boolean = false;
+  get isOpened():boolean {
+    return this._isOpened
+  }
+  constructor() 
+  {
+    super(ENVIRONMENT.MONGO_DB_CONFIG.mongoUrl);
+    this.on('open',()=>{
+      console.log('db server is connected')
+      this._isOpened = true
+    })
+    this.on('close',()=>{
+      this._isOpened = false
+      console.log('db server is disconnected')
+    })
+  }
+  isDBConnected():Observable<boolean> {
+    return of(this._isOpened).pipe(
+      switchMap(isConnected=>isConnected?  of(isConnected) : from(this.connect()).pipe(
+        tap(()=>console.log('db server is connected')),
+        map(()=>{return true}),
+        catchError(err=>{
+          console.log('\x1b[31merror mongo', err?.message,'\x1b[0m' )
+          return throwError(()=> new Error(err))
+        })
+      ))
+    )
   }
   findUser (user:IUser):Observable<IUser|null> {
-    return from(this.dbInst.collection<IUser>('auth-users-data').findOne({userId:user.userId}))
+    return this.isDBConnected().pipe(
+      switchMap(isConnected=>isConnected? this.dbInst.collection<IUser>('auth-users-data').findOne({userId:user.userId}):EMPTY),
+      catchError(err=>{return throwError(()=> new Error(err))})
+    )
   }
   addUser (newUser:IUser):Observable<InsertOneResult<IUser>> {
     return from(this.dbInst.collection<IUser>('auth-users-data').insertOne (newUser));

@@ -8,10 +8,14 @@ import { mongoDBClient } from "../mongo-db/mongodb";
 import { NextFunction, Request, Response } from "express"
 
 const mongoClient = new mongoDBClient();
-
+initTemp()
+function initTemp() {
+  console.log('mongoClient.isOpened',mongoClient.isOpened )
+}
 export function logInUser (req:Request, res:Response, next:NextFunction) {
+  console.log('mongoClient.isOpened',mongoClient.isOpened )
   let userFromUI = req.body as IUser;
-  from(mongoClient.checkConnectionStatus()).pipe( 
+  from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.findUser(userFromUI)),
     switchMap(user=>user===null? throwError(()=>new Error('Incorrect userId')) : of(user)),
     switchMap(user=>user?.emailConfirmed===true? of(user) : 

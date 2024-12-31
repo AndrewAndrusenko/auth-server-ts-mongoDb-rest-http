@@ -19,26 +19,26 @@ const mongoClient = new mongoDBClient();
 const emailHandler = new EmailHandler();
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
-  from(mongoClient.checkConnectionStatus()).pipe( 
+  from(mongoClient.isDBConnected()).pipe( 
       switchMap(()=>mongoClient.getUsers())
     ).subscribe(data=>res.send(data))
 });
 /* GET check if userId is unique. */
 router.get('/checkId', async function(req, res, next) {
-  from(mongoClient.checkConnectionStatus()).pipe( 
+  from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.checkUserIdUnique((req.query as {userId:string}).userId))
   ).subscribe(data=>res.send(data))
 });
 /* GET check if email is unique. */
 router.get('/checkEmail', async function(req, res, next) {
-  from(mongoClient.checkConnectionStatus()).pipe( 
+  from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.checkEmailUnique((req.query as {email:string}).email))
   ).subscribe(data=>res.send(data))
 });
 /* Insert new user data. */
 router.post('/', async function(req, res, next) {
   let newUser = req.body as IUser;
-  from(mongoClient.checkConnectionStatus()).pipe( 
+  from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>hashUserPassword(newUser.password)),
     switchMap((hashPassword)=>mongoClient.addUser({...newUser,password:hashPassword})),
     catchError(e=>{
@@ -50,7 +50,7 @@ router.post('/', async function(req, res, next) {
 /* Update user data. */
 router.post('/update', async function(req, res, next) {
   let newUser = req.body as IUser;
-  from(mongoClient.checkConnectionStatus()).pipe( 
+  from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.updateUser(newUser)),
     catchError(e=>{
       res.send(e);
@@ -68,10 +68,8 @@ router.post('/logout', async function(req, res, next) {
 
 /*Confirm user email*/
 router.post('/email/confirm', async function(req, res, next) {
-  console.log('Confirm user emai',req.body);
-  from(mongoClient.checkConnectionStatus()).pipe( 
+  from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.confirmEmail(req.body)),
-    tap(r=>console.log('r00',r)),
     switchMap(updateResult=>of(updateResult.modifiedCount!==0||updateResult.matchedCount!==0)),
     catchError(e=>{
       console.log('\x1b[31merror_email_confirm', e,'\x1b[0m' )

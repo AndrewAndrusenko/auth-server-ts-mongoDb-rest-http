@@ -8,7 +8,7 @@ import { VerifyErrors } from "jsonwebtoken"
 import { serialize } from "cookie"
 import { redisClientAuth } from "./redis-module"
 export const redisStore = new redisClientAuth()
-redisStore.init().subscribe(res=>console.log('redis store has been connected?',res))
+redisStore.init().subscribe()
 
 export function jwtSet (jwtInfo: IJWTInfo ):Observable<IJWTInfoToken> {
   return forkJoin ({
@@ -51,12 +51,13 @@ function refreshTokenFunc (refreshToken:string,res:Response):Observable<{respons
   const boundJwtVerify = bindNodeCallback (verify)
   return boundJwtVerify(refreshToken,ENVIRONMENT.JWT.JWT_REFRESH_SECRET).pipe( 
     switchMap(jwtInfo=>redisStore.getRefreshTocken((jwtInfo as IJWTInfo).userId)
-      .pipe(switchMap(jwtInfoToken=>{
+      .pipe(
+        switchMap(jwtInfoToken=>{
           if (jwtInfoToken?.refreshToken === refreshToken) {
             return of(jwtInfo)
           } else{
             console.log('\x1b[31merror refreshToken has not been found\x1b[0m' )
-            res.status(401).send({error:'RefreshToken has not been found'})
+            res.status(401).send({message:'RefreshToken has not been found'})
             return EMPTY
           }
         })
@@ -85,8 +86,13 @@ export function removeUser (req:Request, res:Response, next:NextFunction) {
       return of({userId:userId.userId,deleted:0})
     })
   ).subscribe(data=>res.send(data))
-}
+} 
 
 export function saveRefreshToStore (jwtInfoToken:IJWTInfoToken ):Observable<IJWTInfoToken> {
-  return redisStore.saveRefresh(jwtInfoToken)
+  if (redisStore.isOpen) {
+    return redisStore.saveRefresh(jwtInfoToken) 
+  } else {
+    console.log('\x1b[31merror', 'Redis server is unavailable','\x1b[0m' )
+    return of(jwtInfoToken)
+  }
 }

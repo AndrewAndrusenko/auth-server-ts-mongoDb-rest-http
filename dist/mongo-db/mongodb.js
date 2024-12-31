@@ -5,17 +5,30 @@ const mongodb_1 = require("mongodb");
 const rxjs_1 = require("rxjs");
 const environment_1 = require("../environment/environment");
 class mongoDBClient extends mongodb_1.MongoClient {
+    get isOpened() {
+        return this._isOpened;
+    }
     constructor() {
         super(environment_1.ENVIRONMENT.MONGO_DB_CONFIG.mongoUrl);
         this.dbInst = new mongodb_1.Db(this, environment_1.ENVIRONMENT.MONGO_DB_CONFIG.mongdDBName);
+        this._isOpened = false;
+        this.on('open', () => {
+            console.log('db server is connected');
+            this._isOpened = true;
+        });
+        this.on('close', () => {
+            this._isOpened = false;
+            console.log('db server is disconnected');
+        });
     }
-    checkConnectionStatus() {
-        return (0, rxjs_1.from)(this.dbInst.admin().ping()).pipe((0, rxjs_1.catchError)(() => {
-            return (0, rxjs_1.from)(this.connect()).pipe((0, rxjs_1.tap)(() => console.log('new connection')), (0, rxjs_1.map)(() => { return { ok: 1 }; }));
-        }), (0, rxjs_1.map)(() => { return { ok: 1 }; }));
+    isDBConnected() {
+        return (0, rxjs_1.of)(this._isOpened).pipe((0, rxjs_1.switchMap)(isConnected => isConnected ? (0, rxjs_1.of)(isConnected) : (0, rxjs_1.from)(this.connect()).pipe((0, rxjs_1.tap)(() => console.log('db server is connected')), (0, rxjs_1.map)(() => { return true; }), (0, rxjs_1.catchError)(err => {
+            console.log('\x1b[31merror mongo', err?.message, '\x1b[0m');
+            return (0, rxjs_1.throwError)(() => new Error(err));
+        }))));
     }
     findUser(user) {
-        return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').findOne({ userId: user.userId }));
+        return this.isDBConnected().pipe((0, rxjs_1.switchMap)(isConnected => isConnected ? this.dbInst.collection('auth-users-data').findOne({ userId: user.userId }) : rxjs_1.EMPTY), (0, rxjs_1.catchError)(err => { return (0, rxjs_1.throwError)(() => new Error(err)); }));
     }
     addUser(newUser) {
         return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').insertOne(newUser));

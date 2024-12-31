@@ -20,7 +20,7 @@ export interface IJWTPayload extends JwtPayload,IJWTInfo {}
 export interface IJWTInfoToken {
   jwt:string,
   refreshToken:string
-  jwtInfo:IJWTInfo
+  jwtInfo:IJWTInfo|null
 }
 export const serializeOptions:SerializeOptions = {
   httpOnly:true,
