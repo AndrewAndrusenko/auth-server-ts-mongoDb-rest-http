@@ -25,7 +25,6 @@ export class EmailHandler {
     });
   }
   sendMessage (mailData:IConfirmEmailParams):Observable<SentMessageInfo> {
-    console.log(mailData);
     let mailOptions:MailOptions = {
       from:ENVIRONMENT.MAILING.emailAdress,
       to:mailData.emailUser,

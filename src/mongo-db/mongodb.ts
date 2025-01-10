@@ -1,4 +1,4 @@
-import { Db, InsertOneResult, MongoClient, ObjectId, UpdateResult} from 'mongodb';
+import { Db, InsertOneResult, MongoClient, ObjectId, UpdateResult, WithId} from 'mongodb';
 import { catchError, EMPTY, from, map, Observable, of, switchMap, tap, throwError } from 'rxjs';
 import { ENVIRONMENT } from '../environment/environment';
 import { IUser } from '../types/shared-models';
@@ -31,14 +31,12 @@ export class mongoDBClient extends MongoClient {
           console.log('\x1b[31merror mongo', err?.message,'\x1b[0m' )
           return throwError(()=> new Error(err))
         })
-      ))
-    )
+      )))
   }
   findUser (user:IUser):Observable<IUser|null> {
     return this.isDBConnected().pipe(
       switchMap(isConnected=>isConnected? this.dbInst.collection<IUser>('auth-users-data').findOne({userId:user.userId}):EMPTY),
-      catchError(err=>{return throwError(()=> new Error(err))})
-    )
+      catchError(err=>{return throwError(()=> new Error(err))}))
   }
   addUser (newUser:IUser):Observable<InsertOneResult<IUser>> {
     return from(this.dbInst.collection<IUser>('auth-users-data').insertOne (newUser));
@@ -47,6 +45,12 @@ export class mongoDBClient extends MongoClient {
     let dataWitoutId = {...newUser};
     delete dataWitoutId._id
     return from(this.dbInst.collection<IUser>('auth-users-data').updateOne ({_id:new  ObjectId(newUser._id)},{$set:{...dataWitoutId}}));
+  }
+  resetPassword (id:string,token:string, password:string):Observable<WithId<IUser> | null> {
+    return from(this.dbInst.collection<IUser>('auth-users-data').findOneAndUpdate ({_id:new ObjectId(id),passwordToken:token},{$set:{password:password}}));
+  }
+  setResetPasswordToken (email:string,passwordToken:string):Observable<WithId<IUser> | null> {
+    return from(this.dbInst.collection<IUser>('auth-users-data').findOneAndUpdate ({email:email},{$set:{passwordToken:passwordToken}},{returnDocument:'after'}));
   }
   getUsers ():Observable<IUser[]> {
     return from(this.dbInst.collection<IUser>('auth-users-data').find({}).toArray());

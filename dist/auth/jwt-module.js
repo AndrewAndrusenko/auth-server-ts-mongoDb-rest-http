@@ -12,6 +12,7 @@ const shared_models_1 = require("../types/shared-models");
 const cookie_parser_1 = require("cookie-parser");
 const cookie_1 = require("cookie");
 const redis_module_1 = require("./redis-module");
+const access_roles_model_1 = require("../routes/access-roles-model");
 exports.redisStore = new redis_module_1.redisClientAuth();
 exports.redisStore.init().subscribe();
 function jwtSet(jwtInfo) {
@@ -22,13 +23,15 @@ function jwtSet(jwtInfo) {
     });
 }
 function verifyAccess(req, res, next) {
-    verifyJWT(String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_AccessToken']), String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_RefreshToken']), res, next);
+    console.log('host', req.get('host'));
+    console.log('req.originalUrl', req.originalUrl);
+    verifyJWT(String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_AccessToken']), String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_RefreshToken']), res, next, req.originalUrl);
 }
-function verifyJWT(accessToken, refreshToken, res, next) {
+function verifyJWT(accessToken, refreshToken, res, next, url) {
     const boundJwtVerify = (0, rxjs_1.bindNodeCallback)(jsonwebtoken_1.verify);
     let jwtVerify$ = boundJwtVerify(accessToken, environment_1.ENVIRONMENT.JWT.JWT_SECRET);
     jwtVerify$.pipe((0, rxjs_1.tap)(decoded => {
-        if (!shared_models_1.AcRoles.includes(decoded.role)) {
+        if (!access_roles_model_1.ACCESS_ROUTES_ROLES.find(el => el.route === url)?.roles.includes(decoded.role)) {
             res.sendStatus(403);
             next('Access is forbidden');
             return;
@@ -38,7 +41,7 @@ function verifyJWT(accessToken, refreshToken, res, next) {
         if (err?.name === 'TokenExpiredError') {
             refreshTokenFunc(refreshToken, res).subscribe(res_jwtInfoToken => {
                 res_jwtInfoToken = res_jwtInfoToken;
-                verifyJWT(res_jwtInfoToken.jwtInfoToken.jwt, res_jwtInfoToken.jwtInfoToken.refreshToken, res_jwtInfoToken.response, next);
+                verifyJWT(res_jwtInfoToken.jwtInfoToken.jwt, res_jwtInfoToken.jwtInfoToken.refreshToken, res_jwtInfoToken.response, next, url);
             });
         }
         else {
@@ -61,7 +64,8 @@ function refreshTokenFunc(refreshToken, res) {
         }
     }))), (0, rxjs_1.tap)(jwtInfo => console.log('User:', jwtInfo.userId, '| New token is being issued')), (0, rxjs_1.switchMap)(jwtInfo => jwtSet({ _id: jwtInfo._id, userId: jwtInfo.userId, role: jwtInfo.role })), (0, rxjs_1.switchMap)(jwtInfoToken => exports.redisStore.saveRefresh(jwtInfoToken)), (0, rxjs_1.tap)(jwtInfoToken => res.setHeader('Set-Cookie', [
         (0, cookie_1.serialize)('A3_AccessToken', jwtInfoToken.jwt, shared_models_1.serializeOptions),
-        (0, cookie_1.serialize)('A3_RefreshToken', jwtInfoToken.refreshToken, shared_models_1.serializeOptions)
+        (0, cookie_1.serialize)('A3_RefreshToken', jwtInfoToken.refreshToken, shared_models_1.serializeOptions),
+        (0, cookie_1.serialize)('A3_AccessToken_Shared', jwtInfoToken.jwt, shared_models_1.serializeOptionsShared)
     ])), (0, rxjs_1.switchMap)(jwtInfoToken => (0, rxjs_1.of)({ response: res, jwtInfoToken: jwtInfoToken })), (0, rxjs_1.catchError)(err => {
         console.log('\x1b[31merror_refreshToken', err?.message, '\x1b[0m');
         res.sendStatus(401);

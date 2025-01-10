@@ -19,7 +19,6 @@ class EmailHandler {
         });
     }
     sendMessage(mailData) {
-        console.log(mailData);
         let mailOptions = {
             from: environment_1.ENVIRONMENT.MAILING.emailAdress,
             to: mailData.emailUser,

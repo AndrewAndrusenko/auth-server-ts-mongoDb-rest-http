@@ -1,12 +1,13 @@
 import { ENVIRONMENT } from "../environment/environment"
 import { sign, verify} from 'jsonwebtoken'
 import { bindNodeCallback, catchError, EMPTY, forkJoin, from, Observable, of,switchMap, tap } from "rxjs"
-import { AcRoles, IJWTInfo, IJWTPayload, IJWTInfoToken, serializeOptions } from "../types/shared-models"
+import { IJWTInfo, IJWTPayload, IJWTInfoToken, serializeOptions, serializeOptionsShared } from "../types/shared-models"
 import { NextFunction, Request, Response } from "express"
 import { JSONCookies} from 'cookie-parser'
 import { VerifyErrors } from "jsonwebtoken"
 import { serialize } from "cookie"
 import { redisClientAuth } from "./redis-module"
+import { ACCESS_ROUTES_ROLES } from "../routes/access-roles-model"
 export const redisStore = new redisClientAuth()
 redisStore.init().subscribe()
 
@@ -19,14 +20,16 @@ export function jwtSet (jwtInfo: IJWTInfo ):Observable<IJWTInfoToken> {
 }
 
 export function verifyAccess (req:Request, res:Response, next:NextFunction ) {
-  verifyJWT(String(JSONCookies(req.cookies)['A3_AccessToken']),String(JSONCookies(req.cookies)['A3_RefreshToken']),res,next)
+  console.log('host',req.get('host')  )
+  console.log('req.originalUrl', req.originalUrl )
+  verifyJWT(String(JSONCookies(req.cookies)['A3_AccessToken']),String(JSONCookies(req.cookies)['A3_RefreshToken']),res,next,req.originalUrl)
 }
-function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:NextFunction ) {
+function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:NextFunction,url:string ) {
   const boundJwtVerify = bindNodeCallback (verify)
   let jwtVerify$ = boundJwtVerify(accessToken,ENVIRONMENT.JWT.JWT_SECRET)
   jwtVerify$.pipe(
     tap(decoded=>{
-      if (!AcRoles.includes((decoded as IJWTPayload).role)) {
+      if (!ACCESS_ROUTES_ROLES.find(el=>el.route===url)?.roles.includes((decoded as IJWTPayload).role)) {
         res.sendStatus(403);
         next('Access is forbidden')
         return;
@@ -37,7 +40,7 @@ function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:N
       if (err?.name === 'TokenExpiredError') {
         refreshTokenFunc(refreshToken,res).subscribe(res_jwtInfoToken=>{
           res_jwtInfoToken =  res_jwtInfoToken as { response: Response, jwtInfoToken: IJWTInfoToken}
-          verifyJWT(res_jwtInfoToken.jwtInfoToken.jwt,res_jwtInfoToken.jwtInfoToken.refreshToken,res_jwtInfoToken.response,next)
+          verifyJWT(res_jwtInfoToken.jwtInfoToken.jwt,res_jwtInfoToken.jwtInfoToken.refreshToken,res_jwtInfoToken.response,next,url)
         })
       } else {
         res.sendStatus(401)
@@ -67,7 +70,8 @@ function refreshTokenFunc (refreshToken:string,res:Response):Observable<{respons
     switchMap(jwtInfoToken=>redisStore.saveRefresh(jwtInfoToken)),
     tap(jwtInfoToken=>res.setHeader('Set-Cookie',[
       serialize('A3_AccessToken', jwtInfoToken.jwt,serializeOptions),
-      serialize('A3_RefreshToken', jwtInfoToken.refreshToken,serializeOptions)
+      serialize('A3_RefreshToken', jwtInfoToken.refreshToken,serializeOptions),
+      serialize('A3_AccessToken_Shared', jwtInfoToken.jwt,serializeOptionsShared)
     ])),
     switchMap(jwtInfoToken=>of({response:res, jwtInfoToken:jwtInfoToken})),
     catchError(err=>{

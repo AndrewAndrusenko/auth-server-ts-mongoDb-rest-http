@@ -1,8 +1,8 @@
 import { SerializeOptions } from "cookie"
 import { JwtPayload } from "jsonwebtoken"
 import { ObjectId } from "mongodb"
-export const AcRoles:string[] = ['user']
-export type TAcRole = (typeof AcRoles)[number]
+export const ACESS_ROLES = ['user','admin'] as const
+export type TAcRole = typeof ACESS_ROLES[number]
 export interface IUser {
   _id?:ObjectId,
   userId:string,
@@ -28,4 +28,12 @@ export const serializeOptions:SerializeOptions = {
   sameSite:'strict',
   maxAge:60*60*24*30,
   path:'/'
+}
+export const serializeOptionsShared:SerializeOptions = {
+  // httpOnly:true,
+  secure:true,
+  sameSite:'strict',
+  maxAge:60*60*24*30,
+  path:'/',
+  domain:'euw.devtunnels.ms'
 }

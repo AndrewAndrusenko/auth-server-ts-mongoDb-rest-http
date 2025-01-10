@@ -7,6 +7,7 @@ import { IUser } from "../types/shared-models";
 import { SerializeOptions } from "cookie";
 import { logInUser, logOutUser } from "../auth/auth-logging";
 import { removeUser } from "../auth/jwt-module";
+import { ObjectId } from "mongodb";
 const serializeOptions:SerializeOptions = {
   httpOnly:true,
   secure:true,
@@ -17,24 +18,28 @@ const serializeOptions:SerializeOptions = {
 export const router = Router();
 const mongoClient = new mongoDBClient();
 const emailHandler = new EmailHandler();
+
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
   from(mongoClient.isDBConnected()).pipe( 
       switchMap(()=>mongoClient.getUsers())
     ).subscribe(data=>res.send(data))
 });
+
 /* GET check if userId is unique. */
 router.get('/checkId', async function(req, res, next) {
   from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.checkUserIdUnique((req.query as {userId:string}).userId))
   ).subscribe(data=>res.send(data))
 });
+
 /* GET check if email is unique. */
 router.get('/checkEmail', async function(req, res, next) {
   from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.checkEmailUnique((req.query as {email:string}).email))
   ).subscribe(data=>res.send(data))
 });
+
 /* Insert new user data. */
 router.post('/', async function(req, res, next) {
   let newUser = req.body as IUser;
@@ -47,6 +52,7 @@ router.post('/', async function(req, res, next) {
     })
   ).subscribe(data=>res.send(data))
 });
+
 /* Update user data. */
 router.post('/update', async function(req, res, next) {
   let newUser = req.body as IUser;
@@ -58,10 +64,36 @@ router.post('/update', async function(req, res, next) {
     })
   ).subscribe(data=>res.send(data))
 });
+
+router.post('/set_password_token', async function(req, res, next) {
+  let data = req.body as {email:string,passwordToken:string};
+  from(mongoClient.isDBConnected()).pipe( 
+  switchMap(()=>mongoClient.setResetPasswordToken(data.email,data.passwordToken)),
+    catchError(e=>{
+      res.send(e);
+      return EMPTY
+    })
+  ).subscribe(data=>res.send(data))
+});
+
+router.post('/set_new_password', async function(req, res, next) {
+  let data = req.body as {id:string, token:string, password:string};
+  from(mongoClient.isDBConnected())
+  .pipe( 
+    switchMap(()=>hashUserPassword(data.password)),
+    switchMap(hashedPassword=>mongoClient.resetPassword(data.id,data.token, hashedPassword)),
+    catchError(e=>{
+      res.send(e);
+      return EMPTY
+    })
+  ).subscribe(data=>res.send(data))
+});
+
 /*Authenticate user data*/
 router.post('/login', async function(req, res, next) {
   logInUser(req, res, next)
 });
+
 router.post('/logout', async function(req, res, next) {
   logOutUser(req, res, next)
 });

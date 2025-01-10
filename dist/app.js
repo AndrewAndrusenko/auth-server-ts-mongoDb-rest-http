@@ -47,6 +47,7 @@ const indexRouter = __importStar(require("./routes/index"));
 const usersRouter = __importStar(require("./routes/auth-routes"));
 const mailRouter = __importStar(require("./routes/mail-routes"));
 const rtq_routtes_1 = require("./routes/rtq-routtes");
+const admin_routtes_1 = require("./routes/admin-routtes");
 const environment_1 = require("./environment/environment");
 exports.app = (0, express_1.default)();
 // view engine setup
@@ -62,6 +63,7 @@ exports.app.use('/', indexRouter.router);
 exports.app.use('/users', usersRouter.router);
 exports.app.use('/mail', mailRouter.router);
 exports.app.use('/quote', rtq_routtes_1.router);
+exports.app.use('/admin', admin_routtes_1.router);
 // catch 404 and forward to error handler
 exports.app.use(function (req, res, next) {
     next((0, http_errors_1.default)(404));

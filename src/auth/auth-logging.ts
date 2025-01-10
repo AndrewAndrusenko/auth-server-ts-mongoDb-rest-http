@@ -3,7 +3,7 @@ import { catchError, EMPTY, from, of, switchMap, throwError } from "rxjs";
 import { verifyUserPassword } from "./auth-hash-module";
 import { jwtSet, saveRefreshToStore } from "./jwt-module";
 import { serialize } from "cookie";
-import { IUser, serializeOptions } from "../types/shared-models";
+import { IUser, serializeOptions, serializeOptionsShared } from "../types/shared-models";
 import { mongoDBClient } from "../mongo-db/mongodb";
 import { NextFunction, Request, Response } from "express"
 
@@ -37,13 +37,15 @@ export function logInUser (req:Request, res:Response, next:NextFunction) {
     })
   ).subscribe(jwtInfoToken=>{
     const accessToken = serialize('A3_AccessToken', jwtInfoToken.jwt,serializeOptions);
+    const accessTokenConsumer = serialize('A3_AccessToken_Shared', jwtInfoToken.jwt,serializeOptionsShared);
     const refreshToken = serialize('A3_RefreshToken', jwtInfoToken.refreshToken,serializeOptions);
-    res.setHeader('Set-Cookie',[accessToken,refreshToken]);
+    res.setHeader('Set-Cookie',[accessToken,refreshToken,accessTokenConsumer]);
     res.send(jwtInfoToken)
   })
 }
 export function logOutUser (req:Request, res:Response, next:NextFunction) {
   res.clearCookie('A3_AccessToken', { httpOnly: true });
   res.clearCookie('A3_RefreshToken', { httpOnly: true });
+  res.clearCookie ('A3_AccessToken_Shared', {domain:serializeOptionsShared.domain});
   res.send({userId:(req.body as IUser).userId,logout:true})
 }

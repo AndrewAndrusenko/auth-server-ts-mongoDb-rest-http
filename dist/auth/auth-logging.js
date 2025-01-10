@@ -28,13 +28,15 @@ function logInUser(req, res, next) {
         return rxjs_1.EMPTY;
     })).subscribe(jwtInfoToken => {
         const accessToken = (0, cookie_1.serialize)('A3_AccessToken', jwtInfoToken.jwt, shared_models_1.serializeOptions);
+        const accessTokenConsumer = (0, cookie_1.serialize)('A3_AccessToken_Shared', jwtInfoToken.jwt, shared_models_1.serializeOptionsShared);
         const refreshToken = (0, cookie_1.serialize)('A3_RefreshToken', jwtInfoToken.refreshToken, shared_models_1.serializeOptions);
-        res.setHeader('Set-Cookie', [accessToken, refreshToken]);
+        res.setHeader('Set-Cookie', [accessToken, refreshToken, accessTokenConsumer]);
         res.send(jwtInfoToken);
     });
 }
 function logOutUser(req, res, next) {
     res.clearCookie('A3_AccessToken', { httpOnly: true });
     res.clearCookie('A3_RefreshToken', { httpOnly: true });
+    res.clearCookie('A3_AccessToken_Shared', { domain: shared_models_1.serializeOptionsShared.domain });
     res.send({ userId: req.body.userId, logout: true });
 }

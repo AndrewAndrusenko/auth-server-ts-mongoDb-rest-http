@@ -38,6 +38,12 @@ class mongoDBClient extends mongodb_1.MongoClient {
         delete dataWitoutId._id;
         return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').updateOne({ _id: new mongodb_1.ObjectId(newUser._id) }, { $set: { ...dataWitoutId } }));
     }
+    resetPassword(id, token, password) {
+        return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').findOneAndUpdate({ _id: new mongodb_1.ObjectId(id), passwordToken: token }, { $set: { password: password } }));
+    }
+    setResetPasswordToken(email, passwordToken) {
+        return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').findOneAndUpdate({ email: email }, { $set: { passwordToken: passwordToken } }, { returnDocument: 'after' }));
+    }
     getUsers() {
         return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').find({}).toArray());
     }

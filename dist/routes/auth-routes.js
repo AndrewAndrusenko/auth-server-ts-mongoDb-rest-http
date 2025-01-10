@@ -46,6 +46,21 @@ exports.router.post('/update', async function (req, res, next) {
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 });
+exports.router.post('/set_password_token', async function (req, res, next) {
+    let data = req.body;
+    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.setResetPasswordToken(data.email, data.passwordToken)), (0, rxjs_1.catchError)(e => {
+        res.send(e);
+        return rxjs_1.EMPTY;
+    })).subscribe(data => res.send(data));
+});
+exports.router.post('/set_new_password', async function (req, res, next) {
+    let data = req.body;
+    (0, rxjs_1.from)(mongoClient.isDBConnected())
+        .pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(data.password)), (0, rxjs_1.switchMap)(hashedPassword => mongoClient.resetPassword(data.id, data.token, hashedPassword)), (0, rxjs_1.catchError)(e => {
+        res.send(e);
+        return rxjs_1.EMPTY;
+    })).subscribe(data => res.send(data));
+});
 /*Authenticate user data*/
 exports.router.post('/login', async function (req, res, next) {
     (0, auth_logging_1.logInUser)(req, res, next);
