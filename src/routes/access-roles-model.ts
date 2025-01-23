@@ -7,4 +7,6 @@ export interface IAccessRole {
 export const ACCESS_ROUTES_ROLES:IAccessRole[] = [
   { route:'/quote',  roles:['user','admin'] },
   { route:'/admin',  roles:['admin'] },
+  { route:'/admin/getAllTokens',  roles:['admin'] },
+  { route:'/admin/delToken',  roles:['admin'] },
 ]

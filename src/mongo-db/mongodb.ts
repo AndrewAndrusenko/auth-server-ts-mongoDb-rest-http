@@ -52,9 +52,6 @@ export class mongoDBClient extends MongoClient {
   setResetPasswordToken (email:string,passwordToken:string):Observable<WithId<IUser> | null> {
     return from(this.dbInst.collection<IUser>('auth-users-data').findOneAndUpdate ({email:email},{$set:{passwordToken:passwordToken}},{returnDocument:'after'}));
   }
-  getUsers ():Observable<IUser[]> {
-    return from(this.dbInst.collection<IUser>('auth-users-data').find({}).toArray());
-  }
   checkUserIdUnique (newUserID:string):Observable<boolean> {
     return from(this.dbInst.collection<IUser>('auth-users-data').find({userId:newUserID}).toArray())
     .pipe(map(res=>{return res.length>0}));

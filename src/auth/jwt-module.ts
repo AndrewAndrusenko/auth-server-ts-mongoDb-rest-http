@@ -1,27 +1,53 @@
 import { ENVIRONMENT } from "../environment/environment"
 import { sign, verify} from 'jsonwebtoken'
-import { bindNodeCallback, catchError, EMPTY, forkJoin, from, Observable, of,switchMap, tap } from "rxjs"
-import { IJWTInfo, IJWTPayload, IJWTInfoToken, serializeOptions, serializeOptionsShared } from "../types/shared-models"
+import { bindNodeCallback, catchError, EMPTY, forkJoin, from, Observable, of,switchMap, tap, throwError } from "rxjs"
+import { IJWTInfo, IJWTPayload, IJWTInfoToken, serializeOptions, serializeOptionsShared, IRefreshDelete } from "../types/shared-models"
 import { NextFunction, Request, Response } from "express"
 import { JSONCookies} from 'cookie-parser'
 import { VerifyErrors } from "jsonwebtoken"
 import { serialize } from "cookie"
 import { redisClientAuth } from "./redis-module"
 import { ACCESS_ROUTES_ROLES } from "../routes/access-roles-model"
+import * as path from "path"
+import { CustomLogger, loggerPino } from "../shared/logger-module"
+import { rejects } from "assert"
 export const redisStore = new redisClientAuth()
-redisStore.init().subscribe()
+redisStore.init().pipe(
+  catchError(err=>{
+    localLogger.error({fn:'redisStore.init()',msg:err.code})
+    return EMPTY;
+  })
+).subscribe()
 
+const  localLogger:CustomLogger = loggerPino.child({ml:path.basename(__filename)})
+
+function issueAccessJWT (jwtInfo: IJWTInfo):Observable<string> {
+  return from (
+      new Promise<string> ((resolve,reject)=>{
+        try {resolve(sign(jwtInfo, ENVIRONMENT.JWT.JWT_SECRET,ENVIRONMENT.JWT.JWT_SETTINGS))} 
+        catch (error) {reject((error))}
+      }));
+}
+function issueRefreshJWT (jwtInfo: IJWTInfo):Observable<string> {
+  return from (
+      new Promise<string> ((resolve,reject)=>{
+        try {resolve(sign(jwtInfo, ENVIRONMENT.JWT.JWT_REFRESH_SECRET,ENVIRONMENT.JWT.JWT_SETTINGS_SECRET))} 
+        catch (error) {reject((error))}
+      }));
+}
 export function jwtSet (jwtInfo: IJWTInfo ):Observable<IJWTInfoToken> {
   return forkJoin ({
-    jwt:of(sign(jwtInfo, ENVIRONMENT.JWT.JWT_SECRET,ENVIRONMENT.JWT.JWT_SETTINGS,)),
-    refreshToken:of(sign(jwtInfo, ENVIRONMENT.JWT.JWT_REFRESH_SECRET,ENVIRONMENT.JWT.JWT_SETTINGS_SECRET)),
+    jwt: issueAccessJWT(jwtInfo),
+    refreshToken:issueRefreshJWT(jwtInfo),
     jwtInfo:of(jwtInfo)
-  })
+  }).pipe(
+    catchError(err=>{
+      localLogger.error({fn:'jwtSet',user:jwtInfo.userId,msg:err.message})
+      return of(  {jwt:'', refreshToken:'',  jwtInfo:jwtInfo  });
+  }));
 }
 
 export function verifyAccess (req:Request, res:Response, next:NextFunction ) {
-  console.log('host',req.get('host')  )
-  console.log('req.originalUrl', req.originalUrl )
   verifyJWT(String(JSONCookies(req.cookies)['A3_AccessToken']),String(JSONCookies(req.cookies)['A3_RefreshToken']),res,next,req.originalUrl)
 }
 function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:NextFunction,url:string ) {
@@ -30,20 +56,27 @@ function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:N
   jwtVerify$.pipe(
     tap(decoded=>{
       if (!ACCESS_ROUTES_ROLES.find(el=>el.route===url)?.roles.includes((decoded as IJWTPayload).role)) {
-        res.sendStatus(403);
-        next('Access is forbidden')
-        return;
+        localLogger.info({fn:'verifyJWT',user:(decoded as IJWTPayload).userId,route:url,msg:'Access is forbidden'})
+        res.status(403).send({ml:'JWT',msg:'Access is forbidden'});
+        let e = {...(new Error()), name : 'AccessForbiden'}
+        throw e
       } 
     }),
     catchError(err=>{
-      console.log('\x1b[31merror', err?.message,'\x1b[0m' )
-      if (err?.name === 'TokenExpiredError') {
-        refreshTokenFunc(refreshToken,res).subscribe(res_jwtInfoToken=>{
-          res_jwtInfoToken =  res_jwtInfoToken as { response: Response, jwtInfoToken: IJWTInfoToken}
-          verifyJWT(res_jwtInfoToken.jwtInfoToken.jwt,res_jwtInfoToken.jwtInfoToken.refreshToken,res_jwtInfoToken.response,next,url)
-        })
-      } else {
-        res.sendStatus(401)
+      switch (err?.name) {
+        case 'TokenExpiredError':
+          localLogger.info({fn:'verifyJWT', msg:err.message,jwt:accessToken.split('.')[2]})
+          refreshTokenFunc(refreshToken,res).subscribe(res_jwtInfoToken=>{
+            res_jwtInfoToken =  res_jwtInfoToken as { response: Response, jwtInfoToken: IJWTInfoToken}
+            verifyJWT(res_jwtInfoToken.jwtInfoToken.jwt,res_jwtInfoToken.jwtInfoToken.refreshToken,res_jwtInfoToken.response,next,url)
+          })
+        break;
+        case 'AccessForbiden':
+        break;
+        default:
+          localLogger.error({fn:'verifyJWT',jwt:accessToken,msg:`${err?.name} : ${err.message}`})
+          res.headersSent? null: res.status(401).send(`${err?.name} : ${err.message}`)
+        break;
       }
       return EMPTY;
     })
@@ -53,19 +86,19 @@ function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:N
 function refreshTokenFunc (refreshToken:string,res:Response):Observable<{response:Response,jwtInfoToken:IJWTInfoToken}|VerifyErrors> {
   const boundJwtVerify = bindNodeCallback (verify)
   return boundJwtVerify(refreshToken,ENVIRONMENT.JWT.JWT_REFRESH_SECRET).pipe( 
-    switchMap(jwtInfo=>redisStore.getRefreshTocken((jwtInfo as IJWTInfo).userId)
+    switchMap(jwtInfo=>redisStore.getRefreshToken((jwtInfo as IJWTInfo).userId)
       .pipe(
         switchMap(jwtInfoToken=>{
           if (jwtInfoToken?.refreshToken === refreshToken) {
             return of(jwtInfo)
           } else{
-            console.log('\x1b[31merror refreshToken has not been found\x1b[0m' )
-            res.status(401).send({message:'RefreshToken has not been found'})
+            localLogger.error({fn:'refreshTokenFunc', user:(jwtInfo as IJWTInfo).userId, msg:'refreshToken has not been found',})
+            res.status(401).send('JsonWebTokenError : RefreshToken has not been found')
             return EMPTY
-          }
-        })
+          }}),
+        catchError(e=>{return throwError(()=>e)})
       )),
-    tap(jwtInfo=>console.log('User:',(jwtInfo as IJWTInfo).userId,'| New token is being issued')),   
+    tap(jwtInfo=>localLogger.debug('User:',(jwtInfo as IJWTInfo).userId,'| New token is being issued')),   
     switchMap(jwtInfo=> jwtSet({_id:(jwtInfo as IJWTInfo)._id, userId:(jwtInfo as IJWTInfo).userId, role:(jwtInfo as IJWTInfo).role})),
     switchMap(jwtInfoToken=>redisStore.saveRefresh(jwtInfoToken)),
     tap(jwtInfoToken=>res.setHeader('Set-Cookie',[
@@ -75,28 +108,33 @@ function refreshTokenFunc (refreshToken:string,res:Response):Observable<{respons
     ])),
     switchMap(jwtInfoToken=>of({response:res, jwtInfoToken:jwtInfoToken})),
     catchError(err=>{
-      console.log('\x1b[31merror_refreshToken', err?.message,'\x1b[0m' )
-      res.sendStatus(401)
+      res.status(401).send(`${err?.name} : ${err.message}`)
       return EMPTY;
     })
   )
 }
-
-export function removeUser (req:Request, res:Response, next:NextFunction) {
-  let userId = req.body as {userId:string};
-  from(redisStore.removeRefreshTocken(userId.userId)).pipe(
-    catchError(e=>{
-      console.log('\x1b[31merror_removeRefreshTocken', e,'\x1b[0m' )
-      return of({userId:userId.userId,deleted:0})
-    })
-  ).subscribe(data=>res.send(data))
-} 
-
 export function saveRefreshToStore (jwtInfoToken:IJWTInfoToken ):Observable<IJWTInfoToken> {
-  if (redisStore.isOpen) {
-    return redisStore.saveRefresh(jwtInfoToken) 
-  } else {
-    console.log('\x1b[31merror', 'Redis server is unavailable','\x1b[0m' )
-    return of(jwtInfoToken)
-  }
+    return redisStore.saveRefresh(jwtInfoToken).pipe (
+      catchError(err=>{
+        localLogger.error({fn:'saveRefreshToStore',user:jwtInfoToken.jwtInfo?.userId, msg:err.message})
+        return of(jwtInfoToken);
+      })
+    )
+}
+export function getAllRefreshToStore (req:Request, res:Response):Observable<{userId:string, data:string}[]>{
+  console.log('getAllRefreshToStore jwt', )
+  return redisStore.gelAllRefreshTokens().pipe(
+    catchError(err=>{
+      localLogger.error({fn:'gelAllRefreshTokens', msg:err.message})
+      return throwError(()=>err) 
+    })
+  )
+}
+export function deleteRefreshToken (req:Request, res:Response):Observable<IRefreshDelete>{
+  return redisStore.removeRefreshToken(req.body.userId)
+  .pipe(catchError(err=>{
+    localLogger.error({fn:'deleteRefreshToken',user:req.body.userId, msg:err.message})
+    err.module = 'JWT'
+    return throwError(()=>err) 
+  }))
 }

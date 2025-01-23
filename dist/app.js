@@ -36,13 +36,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.app = void 0;
+exports.logger = exports.app = void 0;
 const http_errors_1 = __importDefault(require("http-errors"));
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
+const pino_1 = require("pino");
 const indexRouter = __importStar(require("./routes/index"));
 const usersRouter = __importStar(require("./routes/auth-routes"));
 const mailRouter = __importStar(require("./routes/mail-routes"));
@@ -50,6 +51,9 @@ const rtq_routtes_1 = require("./routes/rtq-routtes");
 const admin_routtes_1 = require("./routes/admin-routtes");
 const environment_1 = require("./environment/environment");
 exports.app = (0, express_1.default)();
+exports.logger = (0, pino_1.pino)(environment_1.ENVIRONMENT.LOGGING.OPTIONS);
+const transport = pino_1.pino.transport(environment_1.ENVIRONMENT.LOGGING.TRANSPORT);
+exports.logger = (0, pino_1.pino)(transport);
 // view engine setup
 exports.app.set('views', path_1.default.join(__dirname, 'views'));
 exports.app.set('view engine', 'pug');

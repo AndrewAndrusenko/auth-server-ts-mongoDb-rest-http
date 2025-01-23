@@ -43,7 +43,7 @@ exports.router.post('/send', ((req, res, next) => {
     let mailOption = req.body;
     (0, rxjs_1.from)(mailService.sendMessage(mailOption)).pipe((0, rxjs_1.catchError)(e => {
         console.log('sendMessage error', e);
-        res.status(400).send({ errorResponse: { message: e.message, name: e.name } });
+        res.status(500).send({ msg: e.message, name: e.name, ml: 'MailService' });
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 }));

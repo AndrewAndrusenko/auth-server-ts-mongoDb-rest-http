@@ -1,0 +1,5 @@
+{"level":50,"time":1737319119214,"pid":21412,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737319119215,"pid":21412,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737319120067,"pid":21412,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737319120067,"pid":21412,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737319120067,"pid":21412,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}

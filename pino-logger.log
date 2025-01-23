@@ -1,0 +1,842 @@
+{"level":50,"time":1737320445669,"pid":17188,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320445669,"pid":17188,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320446506,"pid":17188,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320446506,"pid":17188,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320446506,"pid":17188,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737320499808,"pid":2752,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320499809,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320500580,"pid":2752,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320500580,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320500580,"pid":2752,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737320518971,"pid":2752,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320518971,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320519312,"pid":2752,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320519312,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320519312,"pid":2752,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737320565087,"pid":2752,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320565087,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320565848,"pid":2752,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320565848,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320565848,"pid":2752,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737320584846,"pid":2752,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320584846,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737320585426,"pid":2752,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320585426,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737320585426,"pid":2752,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737348339866,"pid":2752,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737348339866,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737348340791,"pid":2752,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737348340791,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737348340791,"pid":2752,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737356390570,"pid":2752,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737356390570,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737356391410,"pid":2752,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737356391410,"pid":2752,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737356391410,"pid":2752,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737364781209,"pid":7816,"hostname":"SlowFlow","module":"jwt-module.js","msg":"'error:jwt-module:verifyJWT: ' jwt expired"}
+{"level":50,"time":1737364781209,"pid":7816,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt expired"}
+{"level":50,"time":1737364781210,"pid":7816,"hostname":"SlowFlow","msg":"'error:jwt-module:refreshTokenFunc: ' jwt expired"}
+{"level":50,"time":1737365076455,"pid":17908,"hostname":"SlowFlow","module":"jwt-module.js","msg":"jwt malformed"}
+{"level":50,"time":1737365076456,"pid":17908,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737365078025,"pid":17908,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737365078025,"pid":17908,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737365078025,"pid":17908,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737365123533,"pid":13892,"hostname":"SlowFlow","module":"jwt-module.js","func":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737365123534,"pid":13892,"hostname":"SlowFlow","msg":"'error:jwt-module:verifyJWT: ' jwt malformed"}
+{"level":50,"time":1737365124383,"pid":13892,"hostname":"SlowFlow","msg":"'error:redis-module:removeRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737365124383,"pid":13892,"hostname":"SlowFlow","msg":"'error:jwt-module:deleteRefreshToken: ' Redis server is unavailable"}
+{"level":50,"time":1737365124384,"pid":13892,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737367997856,"pid":26696,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737367999050,"pid":26696,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737367999050,"pid":26696,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737367999050,"pid":26696,"hostname":"SlowFlow","module":"redis-module.js","fn":" errCust removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737370163362,"pid":11000,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737370164579,"pid":11000,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737370164579,"pid":11000,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737371392656,"pid":23444,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737371393939,"pid":23444,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737371393940,"pid":23444,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737371523302,"pid":19668,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737371524629,"pid":19668,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737371524629,"pid":19668,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737371598784,"pid":28564,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737371600051,"pid":28564,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737371600051,"pid":28564,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737371600051,"pid":28564,"hostname":"SlowFlow","module":"redis-module.js","fn":"errorLog removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737372347938,"pid":20168,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737372349257,"pid":20168,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737372349257,"pid":20168,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737372438719,"pid":26656,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737372439657,"pid":26656,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Cannot read properties of undefined (reading 'errorLog')"}
+{"level":50,"time":1737372439657,"pid":26656,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Cannot read properties of undefined (reading 'errorLog')"}
+{"level":50,"time":1737372533492,"pid":25452,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737372534393,"pid":25452,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Cannot read properties of undefined (reading 'errorLog')"}
+{"level":50,"time":1737372534393,"pid":25452,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Cannot read properties of undefined (reading 'errorLog')"}
+{"level":50,"time":1737372583748,"pid":4024,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737372584459,"pid":4024,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737372584459,"pid":4024,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737372854834,"pid":20316,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737372855682,"pid":20316,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737372855682,"pid":20316,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737372877475,"pid":9340,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737372878251,"pid":9340,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737372878251,"pid":9340,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737373417648,"pid":7404,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737373418474,"pid":7404,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"ch.error is not a function"}
+{"level":50,"time":1737373418474,"pid":7404,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' ch.error is not a function"}
+{"level":50,"time":1737373435417,"pid":7404,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737373436161,"pid":7404,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"ch.error is not a function"}
+{"level":50,"time":1737373436161,"pid":7404,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' ch.error is not a function"}
+{"level":50,"time":1737373447120,"pid":7404,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737373447493,"pid":7404,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"ch.error is not a function"}
+{"level":50,"time":1737373447493,"pid":7404,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' ch.error is not a function"}
+{"level":50,"time":1737373592532,"pid":15660,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737373593843,"pid":15660,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737373593843,"pid":15660,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Redis server is unavailable"}
+{"level":50,"time":1737373963833,"pid":14808,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737373965022,"pid":14808,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737373965022,"pid":14808,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737373986715,"pid":14808,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737373987457,"pid":14808,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737373987457,"pid":14808,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737374016085,"pid":14808,"hostname":"SlowFlow","module":"jwt-module.js","fn":"verifyJWT","msg":"jwt malformed"}
+{"level":50,"time":1737374016548,"pid":14808,"hostname":"SlowFlow","module":"jwt-module.js","fn":"deleteRefreshToken","msg":"Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737374016548,"pid":14808,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":1737374075027,"pid":27008,"hostname":"SlowFlow","msg":"'error:auth-routes:logout: ' Cannot read properties of undefined (reading 'error')"}
+{"level":50,"time":"20.01.2025, 23:19:44","pid":19200,"host":"SlowFlow","module":"redis-module.js","fn":"errorLog removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":"20.01.2025, 23:30:41","pid":284,"host":"SlowFlow","module":"redis-module.js","fn":"errorLog removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":"20.01.2025, 23:30:41","pid":284,"host":"SlowFlow","module":"redis-module.js","msg":"fds"}
+{"level":50,"time":"20.01.2025, 23:43:59","pid":6532,"host":"SlowFlow","module":"redis-module.js","fn":"errorLog removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":"20.01.2025, 23:43:59","pid":6532,"host":"SlowFlow","module":"redis-module.js","msg":"fds"}
+{"level":50,"time":"20.01.2025, 23:55:41","pid":4272,"host":"SlowFlow","fn":"errorLog removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:01:26","pid":18632,"host":"SlowFlow","module":"redis-module.js","fn":"errorLog removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:03:41","pid":17800,"host":"SlowFlow","module":"redis-module.js","fn":"errorLog removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:11:36","pid":17212,"host":"SlowFlow","module":"redis-module.js","fn":"removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:24:03","pid":17212,"host":"SlowFlow","module":"redis-module.js","fn":"removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737408264991,"pid":17212,"hostname":"SlowFlow","msg":"'error:jwt-module:saveRefreshToStore: Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:25:48","pid":2404,"host":"SlowFlow","module":"redis-module.js","fn":"removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737408353517,"pid":2404,"hostname":"SlowFlow","msg":"'error:jwt-module:saveRefreshToStore: Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:28:49","pid":7848,"host":"SlowFlow","module":"redis-module.js","fn":"removeRefreshToken","msg":"Redis server is unavailable"}
+{"level":50,"time":1737408534363,"pid":7848,"hostname":"SlowFlow","module":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:28:54","pid":7848,"host":"SlowFlow","module":"redis-module.js","fn":"saveRefresh","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:31:03","pid":15860,"host":"SlowFlow","module":"redis-module.js","module":"jwt-module.js","fn":"saveRefresh","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:31:03","pid":15860,"host":"SlowFlow","module":"redis-module.js","module":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:33:31","pid":17944,"host":"SlowFlow","module":"redis-module.js","fn":"saveRefresh","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:33:31","pid":17944,"host":"SlowFlow","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:33:55","pid":17580,"host":"SlowFlow","module":"redis-module.js","fn":"saveRefresh","msg":"Redis server is unavailable"}
+{"level":50,"time":"21.01.2025, 00:33:55","pid":17580,"host":"SlowFlow","module":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737445273100,"pid":17600,"host":"SlowFlow","module":"redis-module.js","fn":"saveRefresh","msg":"Redis server is unavailable"}
+{"level":50,"time":1737445273101,"pid":17600,"host":"SlowFlow","module":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737445383006,"pid":19128,"host":"SlowFlow","module":"redis-module.js","fn":"saveRefresh","msg":"Redis server is unavailable"}
+{"level":50,"time":1737445383006,"pid":19128,"host":"SlowFlow","module":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737445430542,"pid":19508,"host":"SlowFlow","module":"redis-module.js","timelocal":"21.01.2025, 10:43:44","fn":"saveRefresh","msg":"Redis server is unavailable"}
+{"level":50,"time":1737445430543,"pid":19508,"host":"SlowFlow","module":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446174285,"pid":19564,"host":"SlowFlow","ml":"redis-module.js","tl":"21.01.2025, 10:56:10","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446174285,"pid":19564,"host":"SlowFlow","module":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446282891,"pid":10592,"host":"SlowFlow","ml":"redis-module.js","tl":"21.01.2025, 10:57:58","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446282892,"pid":10592,"host":"SlowFlow","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446726134,"pid":8380,"host":"SlowFlow","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446726135,"pid":8380,"host":"SlowFlow","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446755696,"pid":8380,"host":"SlowFlow","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446759071,"pid":8380,"host":"SlowFlow","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446759071,"pid":8380,"host":"SlowFlow","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446803307,"pid":1932,"host":"SlowFlow","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446803307,"pid":1932,"host":"SlowFlow","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446831584,"pid":1932,"host":"SlowFlow","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446834982,"pid":1932,"host":"SlowFlow","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446834982,"pid":1932,"host":"SlowFlow","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446850760,"pid":10484,"host":"SlowFlow","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737446850760,"pid":10484,"host":"SlowFlow","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737447119514,"pid":20652,"host":"SlowFlow","tl":"21.01.2025, 11:11:56","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737447119515,"pid":20652,"host":"SlowFlow","tl":"21.01.2025, 11:11:56","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737447157981,"pid":9180,"host":"SlowFlow","tl":"21.01.2025, 11:12:31","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737447157982,"pid":9180,"host":"SlowFlow","tl":"21.01.2025, 11:12:31","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":50,"time":1737447813265,"pid":1344,"host":"SlowFlow","tl":"21.01.2025, 11:23:16","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737447813265,"pid":1344,"host":"SlowFlow","tl":"21.01.2025, 11:23:16","ml":"jwt-module","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":30,"time":1737448071378,"pid":5700,"host":"SlowFlow","tl":"21.01.2025, 11:27:51","ml":"redis-module.js","msg":""}
+{"level":30,"time":1737448074016,"pid":5700,"host":"SlowFlow","tl":"21.01.2025, 11:27:51","ml":"redis-module.js","msg":""}
+{"level":50,"time":1737448074016,"pid":5700,"host":"SlowFlow","tl":"21.01.2025, 11:27:51","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737448074016,"pid":5700,"host":"SlowFlow","tl":"21.01.2025, 11:27:51","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":30,"time":1737448134201,"pid":5480,"host":"SlowFlow","tl":"21.01.2025, 11:28:54","ml":"redis-module.js","err":{"type":"AggregateError","message":"","stack":"AggregateError [ECONNREFUSED]: \n    at internalConnectMultiple (node:net:1118:18)\n    at afterConnectMultiple (node:net:1685:7)","aggregateErrors":[{"type":"Error","message":"connect ECONNREFUSED ::1:6379","stack":"Error: connect ECONNREFUSED ::1:6379\n    at createConnectionError (node:net:1648:14)\n    at afterConnectMultiple (node:net:1678:16)","errno":-4078,"code":"ECONNREFUSED","syscall":"connect","address":"::1","port":6379},{"type":"Error","message":"connect ECONNREFUSED 127.0.0.1:6379","stack":"Error: connect ECONNREFUSED 127.0.0.1:6379\n    at createConnectionError (node:net:1648:14)\n    at afterConnectMultiple (node:net:1678:16)","errno":-4078,"code":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":6379}],"code":"ECONNREFUSED"},"msg":""}
+{"level":30,"time":1737448298344,"pid":20716,"host":"SlowFlow","tl":"21.01.2025, 11:31:38","ml":"redis-module.js","err":{"type":"AggregateError","message":"","stack":"AggregateError [ECONNREFUSED]: \n    at internalConnectMultiple (node:net:1118:18)\n    at afterConnectMultiple (node:net:1685:7)","aggregateErrors":[{"type":"Error","message":"connect ECONNREFUSED ::1:6379","stack":"Error: connect ECONNREFUSED ::1:6379\n    at createConnectionError (node:net:1648:14)\n    at afterConnectMultiple (node:net:1678:16)","errno":-4078,"code":"ECONNREFUSED","syscall":"connect","address":"::1","port":6379},{"type":"Error","message":"connect ECONNREFUSED 127.0.0.1:6379","stack":"Error: connect ECONNREFUSED 127.0.0.1:6379\n    at createConnectionError (node:net:1648:14)\n    at afterConnectMultiple (node:net:1678:16)","errno":-4078,"code":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":6379}],"code":"ECONNREFUSED"},"msg":""}
+{"level":30,"time":1737448391469,"pid":18516,"host":"SlowFlow","tl":"21.01.2025, 11:33:11","ml":"redis-module.js"}
+{"level":30,"time":1737448392971,"pid":18516,"host":"SlowFlow","tl":"21.01.2025, 11:33:11","ml":"redis-module.js"}
+{"level":50,"time":1737448392972,"pid":18516,"host":"SlowFlow","tl":"21.01.2025, 11:33:11","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737448392973,"pid":18516,"host":"SlowFlow","tl":"21.01.2025, 11:33:11","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":30,"time":1737448412356,"pid":18516,"host":"SlowFlow","tl":"21.01.2025, 11:33:11","ml":"redis-module.js"}
+{"level":50,"time":1737448412356,"pid":18516,"host":"SlowFlow","tl":"21.01.2025, 11:33:11","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737448412357,"pid":18516,"host":"SlowFlow","tl":"21.01.2025, 11:33:11","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":30,"time":1737448455781,"pid":21144,"host":"SlowFlow","tl":"21.01.2025, 11:34:15","ml":"redis-module.js","msg":"ECONNREFUSED"}
+{"level":30,"time":1737448489510,"pid":18428,"host":"SlowFlow","tl":"21.01.2025, 11:34:49","ml":"redis-module.js","msg":"AggregateError [ECONNREFUSED]: \n    at internalConnectMultiple (node:net:1118:18)\n    at afterConnectMultiple (node:net:1685:7)"}
+{"level":30,"time":1737448490270,"pid":18428,"host":"SlowFlow","tl":"21.01.2025, 11:34:49","ml":"redis-module.js","msg":"AggregateError [ECONNREFUSED]: \n    at internalConnectMultiple (node:net:1118:18)\n    at afterConnectMultiple (node:net:1685:7)"}
+{"level":50,"time":1737448490273,"pid":18428,"host":"SlowFlow","tl":"21.01.2025, 11:34:49","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"Redis server is unavailable"}
+{"level":50,"time":1737448490273,"pid":18428,"host":"SlowFlow","tl":"21.01.2025, 11:34:49","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"Redis server is unavailable"}
+{"level":30,"time":1737448499839,"pid":21256,"host":"SlowFlow","tl":"21.01.2025, 11:34:59","ml":"redis-module.js","msg":"AggregateError [ECONNREFUSED]: \n    at internalConnectMultiple (node:net:1118:18)\n    at afterConnectMultiple (node:net:1685:7)"}
+{"level":50,"time":1737448597481,"pid":696,"host":"SlowFlow","tl":"21.01.2025, 11:36:37","ml":"redis-module.js","msg":"ECONNREFUSED"}
+{"level":50,"time":1737448772905,"pid":15224,"host":"SlowFlow","tl":"21.01.2025, 11:39:32","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737448806777,"pid":20184,"host":"SlowFlow","tl":"21.01.2025, 11:40:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737448861010,"pid":11012,"host":"SlowFlow","tl":"21.01.2025, 11:41:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737448863301,"pid":10968,"host":"SlowFlow","tl":"21.01.2025, 11:41:03","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737448865340,"pid":1912,"host":"SlowFlow","tl":"21.01.2025, 11:41:05","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737448869188,"pid":13848,"host":"SlowFlow","tl":"21.01.2025, 11:41:09","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737448870920,"pid":1652,"host":"SlowFlow","tl":"21.01.2025, 11:41:10","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737448917412,"pid":14252,"host":"SlowFlow","tl":"21.01.2025, 11:41:57","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449026028,"pid":2852,"host":"SlowFlow","tl":"21.01.2025, 11:43:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449056595,"pid":4400,"host":"SlowFlow","tl":"21.01.2025, 11:44:16","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449056596,"pid":4400,"host":"SlowFlow","tl":"21.01.2025, 11:44:16","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737449085353,"pid":4400,"host":"SlowFlow","tl":"21.01.2025, 11:44:16","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449085354,"pid":4400,"host":"SlowFlow","tl":"21.01.2025, 11:44:16","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"AggregateError"}
+{"level":50,"time":1737449085355,"pid":4400,"host":"SlowFlow","tl":"21.01.2025, 11:44:16","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"AggregateError"}
+{"level":50,"time":1737449168995,"pid":20208,"host":"SlowFlow","tl":"21.01.2025, 11:46:08","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449168996,"pid":20208,"host":"SlowFlow","tl":"21.01.2025, 11:46:08","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737449172230,"pid":18904,"host":"SlowFlow","tl":"21.01.2025, 11:46:12","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449172231,"pid":18904,"host":"SlowFlow","tl":"21.01.2025, 11:46:12","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737449191709,"pid":7892,"host":"SlowFlow","tl":"21.01.2025, 11:46:31","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449191710,"pid":7892,"host":"SlowFlow","tl":"21.01.2025, 11:46:31","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737449195177,"pid":7892,"host":"SlowFlow","tl":"21.01.2025, 11:46:31","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449195177,"pid":7892,"host":"SlowFlow","tl":"21.01.2025, 11:46:31","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449195177,"pid":7892,"host":"SlowFlow","tl":"21.01.2025, 11:46:31","ml":"jwt-module.js","fn":"saveRefreshToStore","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449286288,"pid":20132,"host":"SlowFlow","tl":"21.01.2025, 11:48:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449286292,"pid":20132,"host":"SlowFlow","tl":"21.01.2025, 11:48:06","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737449316756,"pid":13624,"host":"SlowFlow","tl":"21.01.2025, 11:48:36","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449316758,"pid":13624,"host":"SlowFlow","tl":"21.01.2025, 11:48:36","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737449319843,"pid":13624,"host":"SlowFlow","tl":"21.01.2025, 11:48:36","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449319844,"pid":13624,"host":"SlowFlow","tl":"21.01.2025, 11:48:36","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449319845,"pid":13624,"host":"SlowFlow","tl":"21.01.2025, 11:48:36","ml":"jwt-module.js","fn":"saveRefreshToStore","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449403662,"pid":20728,"host":"SlowFlow","tl":"21.01.2025, 11:50:03","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737449403663,"pid":20728,"host":"SlowFlow","tl":"21.01.2025, 11:50:03","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737452412373,"pid":20220,"host":"SlowFlow","tl":"21.01.2025, 12:40:12","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452412376,"pid":20220,"host":"SlowFlow","tl":"21.01.2025, 12:40:12","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737452631094,"pid":18560,"host":"SlowFlow","tl":"21.01.2025, 12:43:50","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452632917,"pid":5660,"host":"SlowFlow","tl":"21.01.2025, 12:43:52","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452640392,"pid":5660,"host":"SlowFlow","tl":"21.01.2025, 12:43:52","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":30,"time":1737452640393,"pid":5660,"host":"SlowFlow","tl":"21.01.2025, 12:43:52","ml":"redis-module.js","msg":"User:"}
+{"level":50,"time":1737452684273,"pid":5660,"host":"SlowFlow","tl":"21.01.2025, 12:43:52","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452684726,"pid":5660,"host":"SlowFlow","tl":"21.01.2025, 12:43:52","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452684727,"pid":5660,"host":"SlowFlow","tl":"21.01.2025, 12:43:52","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"You provided 'undefined' where a stream was expected. You can provide an Observable, Promise, ReadableStream, Array, AsyncIterable, or Iterable."}
+{"level":50,"time":1737452726737,"pid":10140,"host":"SlowFlow","tl":"21.01.2025, 12:45:26","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452735434,"pid":10140,"host":"SlowFlow","tl":"21.01.2025, 12:45:26","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452735435,"pid":10140,"host":"SlowFlow","tl":"21.01.2025, 12:45:26","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"You provided 'undefined' where a stream was expected. You can provide an Observable, Promise, ReadableStream, Array, AsyncIterable, or Iterable."}
+{"level":50,"time":1737452821206,"pid":17584,"host":"SlowFlow","tl":"21.01.2025, 12:47:01","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452831539,"pid":17584,"host":"SlowFlow","tl":"21.01.2025, 12:47:01","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737452831539,"pid":17584,"host":"SlowFlow","tl":"21.01.2025, 12:47:01","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"You provided 'undefined' where a stream was expected. You can provide an Observable, Promise, ReadableStream, Array, AsyncIterable, or Iterable."}
+{"level":50,"time":1737453005155,"pid":14940,"host":"SlowFlow","tl":"21.01.2025, 12:50:05","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453011196,"pid":14940,"host":"SlowFlow","tl":"21.01.2025, 12:50:05","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453011197,"pid":14940,"host":"SlowFlow","tl":"21.01.2025, 12:50:05","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":""}
+{"level":50,"time":1737453082880,"pid":14956,"host":"SlowFlow","tl":"21.01.2025, 12:51:22","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453114423,"pid":20636,"host":"SlowFlow","tl":"21.01.2025, 12:51:54","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453122698,"pid":20636,"host":"SlowFlow","tl":"21.01.2025, 12:51:54","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453122699,"pid":20636,"host":"SlowFlow","tl":"21.01.2025, 12:51:54","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"Redis is unavailable"}
+{"level":50,"time":1737453153018,"pid":15716,"host":"SlowFlow","tl":"21.01.2025, 12:52:32","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453262480,"pid":9076,"host":"SlowFlow","tl":"21.01.2025, 12:54:22","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453366271,"pid":7396,"host":"SlowFlow","tl":"21.01.2025, 12:56:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453366273,"pid":7396,"host":"SlowFlow","tl":"21.01.2025, 12:56:06","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737453623641,"pid":15948,"host":"SlowFlow","tl":"21.01.2025, 13:00:23","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453623643,"pid":15948,"host":"SlowFlow","tl":"21.01.2025, 13:00:23","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737453632725,"pid":17564,"host":"SlowFlow","tl":"21.01.2025, 13:00:32","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453632726,"pid":17564,"host":"SlowFlow","tl":"21.01.2025, 13:00:32","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737453677931,"pid":13648,"host":"SlowFlow","tl":"21.01.2025, 13:01:17","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453677932,"pid":13648,"host":"SlowFlow","tl":"21.01.2025, 13:01:17","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737453833690,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453833691,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737453846844,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453846844,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453865366,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453865366,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453871694,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453871694,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453872183,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453872183,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453882634,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453882635,"pid":14376,"host":"SlowFlow","tl":"21.01.2025, 13:03:53","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453980329,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453980330,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737453982171,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453982172,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453988634,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453988634,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453989618,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737453989619,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454062460,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454062460,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454062990,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454062990,"pid":13460,"host":"SlowFlow","tl":"21.01.2025, 13:06:20","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454099269,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454099271,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737454102704,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454102705,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454103246,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454103247,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454252456,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454252456,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454256951,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454256951,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454258310,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454258310,"pid":20788,"host":"SlowFlow","tl":"21.01.2025, 13:08:19","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454294176,"pid":784,"host":"SlowFlow","tl":"21.01.2025, 13:11:34","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454294179,"pid":784,"host":"SlowFlow","tl":"21.01.2025, 13:11:34","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737454368630,"pid":1812,"host":"SlowFlow","tl":"21.01.2025, 13:12:48","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454368632,"pid":1812,"host":"SlowFlow","tl":"21.01.2025, 13:12:48","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737454373844,"pid":1812,"host":"SlowFlow","tl":"21.01.2025, 13:12:48","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454373844,"pid":1812,"host":"SlowFlow","tl":"21.01.2025, 13:12:48","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454378818,"pid":1812,"host":"SlowFlow","tl":"21.01.2025, 13:12:48","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454378818,"pid":1812,"host":"SlowFlow","tl":"21.01.2025, 13:12:48","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454380231,"pid":1812,"host":"SlowFlow","tl":"21.01.2025, 13:12:48","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454380231,"pid":1812,"host":"SlowFlow","tl":"21.01.2025, 13:12:48","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454560317,"pid":11168,"host":"SlowFlow","tl":"21.01.2025, 13:16:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454560320,"pid":11168,"host":"SlowFlow","tl":"21.01.2025, 13:16:00","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737454567109,"pid":11168,"host":"SlowFlow","tl":"21.01.2025, 13:16:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454567109,"pid":11168,"host":"SlowFlow","tl":"21.01.2025, 13:16:00","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454570034,"pid":11168,"host":"SlowFlow","tl":"21.01.2025, 13:16:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454570035,"pid":11168,"host":"SlowFlow","tl":"21.01.2025, 13:16:00","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454571239,"pid":11168,"host":"SlowFlow","tl":"21.01.2025, 13:16:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454571239,"pid":11168,"host":"SlowFlow","tl":"21.01.2025, 13:16:00","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454665268,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454665269,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737454670529,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454670529,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454673841,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454673841,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454684710,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454684710,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"getRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454685543,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454685544,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454700558,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454700558,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454707299,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454707300,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454710200,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454710201,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454710201,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454718909,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454718910,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454719808,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454719808,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454725438,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454725438,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454726555,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454726555,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454726555,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454728875,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454728875,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454728875,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454731754,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454731754,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737454731754,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455074505,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455074505,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455087615,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455087615,"pid":13320,"host":"SlowFlow","tl":"21.01.2025, 13:17:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455749084,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455749085,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737455807277,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455807278,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455875215,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455875215,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455883457,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455883457,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455886865,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455886866,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737455886866,"pid":2148,"host":"SlowFlow","tl":"21.01.2025, 13:35:49","ml":"jwt-module.js","fn":"gelAllRefreshTokens"}
+{"level":50,"time":1737456000368,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456000369,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456006912,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456006912,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456010181,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456010181,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456031788,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456031788,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456036718,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456036718,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456037802,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456037802,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456037802,"pid":7356,"host":"SlowFlow","tl":"21.01.2025, 13:40:00","ml":"jwt-module.js","fn":"gelAllRefreshTokens"}
+{"level":50,"time":1737456091771,"pid":13452,"host":"SlowFlow","tl":"21.01.2025, 13:41:31","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456091772,"pid":13452,"host":"SlowFlow","tl":"21.01.2025, 13:41:31","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456138859,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456138860,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456143397,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456143397,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456145545,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456145545,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456146715,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456146715,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456146715,"pid":2684,"host":"SlowFlow","tl":"21.01.2025, 13:42:18","ml":"jwt-module.js","fn":"gelAllRefreshTokens"}
+{"level":50,"time":1737456294309,"pid":14104,"host":"SlowFlow","tl":"21.01.2025, 13:44:54","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456294311,"pid":14104,"host":"SlowFlow","tl":"21.01.2025, 13:44:54","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456294709,"pid":14104,"host":"SlowFlow","tl":"21.01.2025, 13:44:54","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456294709,"pid":14104,"host":"SlowFlow","tl":"21.01.2025, 13:44:54","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456295935,"pid":1572,"host":"SlowFlow","tl":"21.01.2025, 13:44:55","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456295936,"pid":1572,"host":"SlowFlow","tl":"21.01.2025, 13:44:55","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456304465,"pid":1572,"host":"SlowFlow","tl":"21.01.2025, 13:44:55","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456304466,"pid":1572,"host":"SlowFlow","tl":"21.01.2025, 13:44:55","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456305241,"pid":1572,"host":"SlowFlow","tl":"21.01.2025, 13:44:55","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456305242,"pid":1572,"host":"SlowFlow","tl":"21.01.2025, 13:44:55","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456305242,"pid":1572,"host":"SlowFlow","tl":"21.01.2025, 13:44:55","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"[object Object]"}
+{"level":50,"time":1737456438836,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456438837,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456442393,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456442394,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456444501,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456444501,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456445262,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456445262,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456445262,"pid":10484,"host":"SlowFlow","tl":"21.01.2025, 13:47:18","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456466698,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456466699,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456473365,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456473365,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456475680,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456475680,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456477625,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456477625,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456502800,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456502800,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456505974,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456505974,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456507412,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456507412,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456507412,"pid":10592,"host":"SlowFlow","tl":"21.01.2025, 13:47:46","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456680405,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456680407,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456684977,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456684977,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456689964,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456689964,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456690739,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456690740,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456690740,"pid":21356,"host":"SlowFlow","tl":"21.01.2025, 13:51:20","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456752265,"pid":1520,"host":"SlowFlow","tl":"21.01.2025, 13:52:32","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456752266,"pid":1520,"host":"SlowFlow","tl":"21.01.2025, 13:52:32","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456765843,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456765844,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456769357,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456769357,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456772348,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456772349,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456774251,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456774251,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456774251,"pid":6000,"host":"SlowFlow","tl":"21.01.2025, 13:52:45","ml":"jwt-module.js","fn":"gelAllRefreshTokens"}
+{"level":50,"time":1737456824066,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456824067,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737456824417,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456824417,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456843460,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456843461,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456845576,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456845576,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737456845577,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457146779,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457146779,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457147713,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457147714,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457149621,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457149621,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457152468,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457152468,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457153262,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457153262,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457153262,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457462694,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457462694,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457463590,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457463590,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457465984,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457465985,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457467935,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457467935,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457467935,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457500142,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457500143,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457500977,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457500977,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457504410,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457504410,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457505797,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457505797,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457505797,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457518328,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457518328,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457518807,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457518807,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457524788,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457524788,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457535349,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457535350,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457535830,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457535830,"pid":16016,"host":"SlowFlow","tl":"21.01.2025, 13:53:43","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457562202,"pid":7844,"host":"SlowFlow","tl":"21.01.2025, 14:06:02","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457562203,"pid":7844,"host":"SlowFlow","tl":"21.01.2025, 14:06:02","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737457575426,"pid":7884,"host":"SlowFlow","tl":"21.01.2025, 14:06:15","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457575427,"pid":7884,"host":"SlowFlow","tl":"21.01.2025, 14:06:15","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737457691722,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457691724,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1737457748677,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","msg":"redis store has been connected?"}
+{"level":30,"time":1737457761484,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","msg":"User:"}
+{"level":30,"time":1737457774798,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"jwt-module.js","msg":"User:"}
+{"level":30,"time":1737457774802,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","msg":"User:"}
+{"level":30,"time":1737457785776,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"jwt-module.js","msg":"User:"}
+{"level":30,"time":1737457785779,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","msg":"User:"}
+{"level":30,"time":1737457832715,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737457836351,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457836351,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457836932,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457836933,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457846224,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457846224,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457850475,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457850475,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457863631,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457863631,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457866234,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457866234,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737457866234,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":30,"time":1737457886322,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","msg":"redis store has been connected?"}
+{"level":30,"time":1737457893373,"pid":20384,"host":"SlowFlow","tl":"21.01.2025, 14:08:11","ml":"redis-module.js","msg":"User:"}
+{"level":30,"time":1737457934939,"pid":5940,"host":"SlowFlow","tl":"21.01.2025, 14:12:14","ml":"redis-module.js","msg":"redis store has been connected?"}
+{"level":30,"time":1737457942412,"pid":16108,"host":"SlowFlow","tl":"21.01.2025, 14:12:22","ml":"redis-module.js","msg":"redis store has been connected?"}
+{"level":30,"time":1737457975490,"pid":14772,"host":"SlowFlow","tl":"21.01.2025, 14:12:55","ml":"redis-module.js","msg":"redis store has been connected?"}
+{"level":30,"time":1737460172875,"pid":9716,"host":"SlowFlow","tl":"21.01.2025, 14:49:32","ml":"redis-module.js","msg":"redis store has been connected?"}
+{"level":30,"time":1737460174712,"pid":20776,"host":"SlowFlow","tl":"21.01.2025, 14:49:34","ml":"redis-module.js","msg":"redis store has been connected?"}
+{"level":30,"time":1737460281666,"pid":21140,"host":"SlowFlow","tl":"21.01.2025, 14:51:21","ml":"redis-module.js","msg":"redis store has been connected?"}
+{"level":30,"time":1737460836761,"pid":20568,"host":"SlowFlow","tl":"21.01.2025, 15:00:36","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":30,"time":1737461466377,"pid":21316,"host":"SlowFlow","tl":"21.01.2025, 15:11:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":30,"time":1737461791853,"pid":10940,"host":"SlowFlow","tl":"21.01.2025, 15:16:31","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":30,"time":1737461827114,"pid":18692,"host":"SlowFlow","tl":"21.01.2025, 15:17:07","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":50,"time":1737461831911,"pid":18692,"host":"SlowFlow","tl":"21.01.2025, 15:17:07","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired"}
+{"level":30,"time":1737461878996,"pid":3500,"host":"SlowFlow","tl":"21.01.2025, 15:17:58","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":30,"time":1737461883282,"pid":3500,"host":"SlowFlow","tl":"21.01.2025, 15:17:58","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired"}
+{"level":30,"time":1737462136289,"pid":19136,"host":"SlowFlow","tl":"21.01.2025, 15:22:16","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":30,"time":1737462145320,"pid":19136,"host":"SlowFlow","tl":"21.01.2025, 15:22:16","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","user":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdlYzYwOTBhMWM2MGFhMGZkZGY1YzYiLCJ1c2VySWQiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzQ2MTg4MywiZXhwIjoxNzM3NDYxODkzLCJpc3MiOiIzQS1hcGkifQ.8CCLQF7tqoRM6SLMZhxb7-P5Y_shelOuxu_6d9KZon0"}
+{"level":30,"time":1737462182288,"pid":10460,"host":"SlowFlow","tl":"21.01.2025, 15:23:02","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":30,"time":1737462184853,"pid":10460,"host":"SlowFlow","tl":"21.01.2025, 15:23:02","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","user":"OAN3x1Yof81W_08M6g9S61vhWJL94ffmmkL6cMJ7w94"}
+{"level":30,"time":1737462234931,"pid":10460,"host":"SlowFlow","tl":"21.01.2025, 15:23:02","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","user":"ChOwC2Tu8Hrt7vj7SlnS9V99dxcYq9SJsUm2cDmvmvY"}
+{"level":30,"time":1737462280664,"pid":6872,"host":"SlowFlow","tl":"21.01.2025, 15:24:40","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":30,"time":1737462286682,"pid":2592,"host":"SlowFlow","tl":"21.01.2025, 15:24:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis store has been connected? true"}
+{"level":30,"time":1737462331068,"pid":19664,"host":"SlowFlow","tl":"21.01.2025, 15:25:25","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"ouR0IoRacG_PlDNo5MyUiZrPwTGnJTjwnVDq4uB26b8"}
+{"level":30,"time":1737462441466,"pid":19664,"host":"SlowFlow","tl":"21.01.2025, 15:25:25","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"jGhFpkxWlgQXgLKDbf063XphkpjVu_o4xD8cqeLHwNY"}
+{"level":30,"time":1737462453010,"pid":19664,"host":"SlowFlow","tl":"21.01.2025, 15:25:25","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"R2gVNgrk63NaqoQVCQvZAh0oGgzRayxbjFLeSLP9L50"}
+{"level":30,"time":1737462547772,"pid":19664,"host":"SlowFlow","tl":"21.01.2025, 15:25:25","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"3folUcMhyn9BUB3af-_abtPre9Ajv4B2ML9wtXHc2wI"}
+{"level":30,"time":1737462569358,"pid":19664,"host":"SlowFlow","tl":"21.01.2025, 15:25:25","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"6CHJhDIyah4lh4qH64HPjuub1l2gWqaf8OHuofUBs0A"}
+{"level":30,"time":1737462754048,"pid":13844,"host":"SlowFlow","tl":"21.01.2025, 15:31:59","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"8L5egGQZZTf2gCxcIW0m9GePyhPpAVaLlzdIdU3lWOs"}
+{"level":50,"time":1737462754051,"pid":13844,"host":"SlowFlow","tl":"21.01.2025, 15:31:59","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"refreshToken has not been found"}
+{"level":30,"time":1737462879547,"pid":15528,"host":"SlowFlow","tl":"21.01.2025, 15:34:14","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"i3_0Ys3Al1N36e7xAw3KFnXgA97q3-eHTi6ayqNm4iE"}
+{"level":50,"time":1737462879552,"pid":15528,"host":"SlowFlow","tl":"21.01.2025, 15:34:14","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"refreshToken has not been found","user":"mike"}
+{"level":30,"time":1737462959945,"pid":1680,"host":"SlowFlow","tl":"21.01.2025, 15:35:34","ml":"jwt-module.js","fn":"verifyJWT","msg":"Access is forbidden","user":"andrey","route":"/admin/getAllTokens"}
+{"level":30,"time":1737463025065,"pid":16876,"host":"SlowFlow","tl":"21.01.2025, 15:36:59","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"6PQaxughAe-Z2zyjv3vVeWor9DS4mfA1GJvyzmaTJyA"}
+{"level":30,"time":1737463025087,"pid":16876,"host":"SlowFlow","tl":"21.01.2025, 15:36:59","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463174782,"pid":20556,"host":"SlowFlow","tl":"21.01.2025, 15:39:23","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"te3ZPoT_QXWtItyYyAhcdT4NGWPz0dRvjW-t8EQinSc"}
+{"level":30,"time":1737463174796,"pid":20556,"host":"SlowFlow","tl":"21.01.2025, 15:39:23","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463189480,"pid":20120,"host":"SlowFlow","tl":"21.01.2025, 15:39:46","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"SbbadUZG7Dscm1sboh6kmzA6E2-3kTbNl4QH4bF5-i8"}
+{"level":30,"time":1737463189489,"pid":20120,"host":"SlowFlow","tl":"21.01.2025, 15:39:46","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463434771,"pid":20912,"host":"SlowFlow","tl":"21.01.2025, 15:42:50","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"BxNvZ-vn8pzapCfjjDJN4ObaOLn2rOWcAE3rH4SAjiM"}
+{"level":30,"time":1737463434790,"pid":20912,"host":"SlowFlow","tl":"21.01.2025, 15:42:50","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463466039,"pid":20612,"host":"SlowFlow","tl":"21.01.2025, 15:44:21","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"Sv2VkgR3H1974qWIfr9EdCR80vr-F5PZMdBnabvYaWc"}
+{"level":30,"time":1737463469975,"pid":20612,"host":"SlowFlow","tl":"21.01.2025, 15:44:21","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463510530,"pid":20612,"host":"SlowFlow","tl":"21.01.2025, 15:44:21","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"F_DgaNEhWosEgNsDcGv4crorYdtDn37_42HUaoMZJdU"}
+{"level":30,"time":1737463526609,"pid":20612,"host":"SlowFlow","tl":"21.01.2025, 15:44:21","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"CIFjDZ1EbjjdjO_UrBqCRvjvbVySI5qAT4K7jDVGY3Q"}
+{"level":30,"time":1737463526616,"pid":20612,"host":"SlowFlow","tl":"21.01.2025, 15:44:21","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463553889,"pid":8544,"host":"SlowFlow","tl":"21.01.2025, 15:45:50","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"8XP4DibZ7eSu4RQIMbXAZZLBNpe1dsi68aZE6xLrkPs"}
+{"level":30,"time":1737463553897,"pid":8544,"host":"SlowFlow","tl":"21.01.2025, 15:45:50","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463589551,"pid":10684,"host":"SlowFlow","tl":"21.01.2025, 15:46:26","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"z2ttv2muLUI9TdA3rIwzxhwRajSCQDRQw0X1NrbfzXI"}
+{"level":30,"time":1737463592435,"pid":10684,"host":"SlowFlow","tl":"21.01.2025, 15:46:26","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463658404,"pid":19716,"host":"SlowFlow","tl":"21.01.2025, 15:46:57","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"r9c1ni36RsswKGlAh43pdsRJRWl7xqFVugkMG0BEvVk"}
+{"level":30,"time":1737463658413,"pid":19716,"host":"SlowFlow","tl":"21.01.2025, 15:46:57","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463691286,"pid":19268,"host":"SlowFlow","tl":"21.01.2025, 15:48:08","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"P0Idngk3RlZ-ATE3IRLf6nelqgxC2Z5N9ARaMhA_1bg"}
+{"level":30,"time":1737463691294,"pid":19268,"host":"SlowFlow","tl":"21.01.2025, 15:48:08","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463703085,"pid":20312,"host":"SlowFlow","tl":"21.01.2025, 15:48:20","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"vG6YFA6F2iI4OwM8ydOqsbtTdUl_XT4bOiroUYVGNyg"}
+{"level":30,"time":1737463703095,"pid":20312,"host":"SlowFlow","tl":"21.01.2025, 15:48:20","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463852952,"pid":2344,"host":"SlowFlow","tl":"21.01.2025, 15:50:52","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"lRXJDXZnsO6k9VMJpJiKSdzb7VJP_Awzgy-hcJo7wlE"}
+{"level":30,"time":1737463852959,"pid":2344,"host":"SlowFlow","tl":"21.01.2025, 15:50:52","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737463895499,"pid":18756,"host":"SlowFlow","tl":"21.01.2025, 15:51:31","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"u0K-q4xkxkR0reWbERboUaHg5FFy73UkQU1ijtJRZ_A"}
+{"level":30,"time":1737463895507,"pid":18756,"host":"SlowFlow","tl":"21.01.2025, 15:51:31","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737464018050,"pid":21396,"host":"SlowFlow","tl":"21.01.2025, 15:53:37","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"itrZDK6kE_B9CE5uWvIS451Ec8vUfA_AB6PC4QEwr6A"}
+{"level":30,"time":1737464018061,"pid":21396,"host":"SlowFlow","tl":"21.01.2025, 15:53:37","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737464068304,"pid":11256,"host":"SlowFlow","tl":"21.01.2025, 15:54:24","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"gkf0ZZP7mIE4VQCCw0H2T58FF6QaCn-zkDN4T3MtMWw"}
+{"level":30,"time":1737464068313,"pid":11256,"host":"SlowFlow","tl":"21.01.2025, 15:54:24","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737464117912,"pid":18912,"host":"SlowFlow","tl":"21.01.2025, 15:55:16","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"13heWBGhNQoVixHjEHsFGWFQAAjOTGuEiP95542GiDQ"}
+{"level":30,"time":1737464117921,"pid":18912,"host":"SlowFlow","tl":"21.01.2025, 15:55:16","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737464167308,"pid":5544,"host":"SlowFlow","tl":"21.01.2025, 15:56:06","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"iffCf5MmMjbOgRJZ47k0go5PO2vFay1dkHdDCYIdXfw"}
+{"level":30,"time":1737464167316,"pid":5544,"host":"SlowFlow","tl":"21.01.2025, 15:56:06","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737464266134,"pid":15960,"host":"SlowFlow","tl":"21.01.2025, 15:57:44","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"hoeiTVbozUCqrtM8gmFrS6p-Qsk2vAq8cP1vHUmiJzQ"}
+{"level":30,"time":1737464266141,"pid":15960,"host":"SlowFlow","tl":"21.01.2025, 15:57:44","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737464318603,"pid":7908,"host":"SlowFlow","tl":"21.01.2025, 15:58:37","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"FZQ4IAb9fVIYUFWptwv7ptki49IOJjOAhhSezva_Qec"}
+{"level":30,"time":1737464318614,"pid":7908,"host":"SlowFlow","tl":"21.01.2025, 15:58:37","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737464336204,"pid":9460,"host":"SlowFlow","tl":"21.01.2025, 15:58:55","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"3gsHDqTOIKQzhIjVe_lTw0a3BriXHolx2TUdbSxd1Zk"}
+{"level":30,"time":1737464336219,"pid":9460,"host":"SlowFlow","tl":"21.01.2025, 15:58:55","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466222063,"pid":15328,"host":"SlowFlow","tl":"21.01.2025, 15:59:14","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"1NOduW-Zs1fzg5ptrOMnSbMcp_RNeabCn1xoRHtRBZs"}
+{"level":30,"time":1737466222071,"pid":15328,"host":"SlowFlow","tl":"21.01.2025, 15:59:14","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466259322,"pid":19636,"host":"SlowFlow","tl":"21.01.2025, 16:30:56","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"Sg4AuH44g_hft3BhzzVOnPA4dPCpAmcHmeFv_zQ84CM"}
+{"level":30,"time":1737466259333,"pid":19636,"host":"SlowFlow","tl":"21.01.2025, 16:30:56","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466345400,"pid":17632,"host":"SlowFlow","tl":"21.01.2025, 16:32:21","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"SgTrZzUPxyv_ukBWQIQj5xOAQkvxxRTwKWy8yxX9J8s"}
+{"level":30,"time":1737466345408,"pid":17632,"host":"SlowFlow","tl":"21.01.2025, 16:32:21","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466399060,"pid":12468,"host":"SlowFlow","tl":"21.01.2025, 16:33:03","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"HbSiEF_JgXtHnljmsfwsJuzvVDLu44F7usNUI9JPEWs"}
+{"level":30,"time":1737466399068,"pid":12468,"host":"SlowFlow","tl":"21.01.2025, 16:33:03","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466418129,"pid":20532,"host":"SlowFlow","tl":"21.01.2025, 16:33:36","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"ZQ98iKYSROyZ7BAEJVCT6USm837WauSnhZP4wHXtJFs"}
+{"level":30,"time":1737466418138,"pid":20532,"host":"SlowFlow","tl":"21.01.2025, 16:33:36","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466430390,"pid":19508,"host":"SlowFlow","tl":"21.01.2025, 16:33:49","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"erYGBQWAgSl1IamrC2tzAwfWyGuY4aFVu1xwqanZe-Y"}
+{"level":30,"time":1737466430402,"pid":19508,"host":"SlowFlow","tl":"21.01.2025, 16:33:49","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466847145,"pid":9504,"host":"SlowFlow","tl":"21.01.2025, 16:40:39","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"JCTCp5xFwXsd27ZMT37p_tg8WagGvEHOZeuO9hg6gl8"}
+{"level":30,"time":1737466847156,"pid":9504,"host":"SlowFlow","tl":"21.01.2025, 16:40:39","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466970330,"pid":4848,"host":"SlowFlow","tl":"21.01.2025, 16:42:46","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"MaiPG352IyCXJ0kpfKuh7mobdJVWQ7YB6NCZQIs5iGM"}
+{"level":30,"time":1737466970337,"pid":4848,"host":"SlowFlow","tl":"21.01.2025, 16:42:46","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737466992701,"pid":4848,"host":"SlowFlow","tl":"21.01.2025, 16:42:46","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"OOxI8nGJu1TQdiEnn31wKZegmaNaLA618n1vXuotlwQ"}
+{"level":30,"time":1737466992712,"pid":4848,"host":"SlowFlow","tl":"21.01.2025, 16:42:46","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737468731746,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737468746135,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468746136,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468757348,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468757348,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"saveRefresh","user":"andrey","msg":"ECONNREFUSED"}
+{"level":30,"time":1737468768035,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"n0nUxRr3mSp5Q82gJM9t87hpCpzRDhr-w0-Vxkk5v_0"}
+{"level":50,"time":1737468768040,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468768040,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"getRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468768041,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"andrey","msg":"refreshToken has not been found"}
+{"level":50,"time":1737468768932,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468768932,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468834108,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468834109,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468839860,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468839860,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468839860,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":30,"time":1737468857656,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"edbi-kXFx4bgz8TYjeC2ER2j0dculTlzmc-aNa-eUOE"}
+{"level":50,"time":1737468857666,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1737468875495,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":30,"time":1737468880636,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"_KwQlOi9UnKPHu4cpwnqntUpiVXP0t3E4QOkDjVnwh4"}
+{"level":50,"time":1737468880642,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468880643,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468880643,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737468882517,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468882517,"pid":20148,"host":"SlowFlow","tl":"21.01.2025, 17:11:45","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468927685,"pid":13060,"host":"SlowFlow","tl":"21.01.2025, 17:15:27","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468927686,"pid":13060,"host":"SlowFlow","tl":"21.01.2025, 17:15:27","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1737468951981,"pid":13060,"host":"SlowFlow","tl":"21.01.2025, 17:15:27","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737468956285,"pid":13060,"host":"SlowFlow","tl":"21.01.2025, 17:15:27","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737468956285,"pid":13060,"host":"SlowFlow","tl":"21.01.2025, 17:15:27","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469051089,"pid":6856,"host":"SlowFlow","tl":"21.01.2025, 17:17:31","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469051090,"pid":6856,"host":"SlowFlow","tl":"21.01.2025, 17:17:31","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737469055427,"pid":2236,"host":"SlowFlow","tl":"21.01.2025, 17:17:35","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469055428,"pid":2236,"host":"SlowFlow","tl":"21.01.2025, 17:17:35","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737469186617,"pid":9344,"host":"SlowFlow","tl":"21.01.2025, 17:19:46","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469186620,"pid":9344,"host":"SlowFlow","tl":"21.01.2025, 17:19:46","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737469326391,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469326392,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1737469330151,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"bjFHx6ts5e8A5XIV5be1KK08rbB6lxHvSDlrAT0DQRc"}
+{"level":50,"time":1737469330154,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469330154,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469330154,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737469331463,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469331463,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469340871,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469340872,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":30,"time":1737469353436,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737469358575,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469358575,"pid":15368,"host":"SlowFlow","tl":"21.01.2025, 17:22:06","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469634182,"pid":20164,"host":"SlowFlow","tl":"21.01.2025, 17:27:14","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469634183,"pid":20164,"host":"SlowFlow","tl":"21.01.2025, 17:27:14","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1737469647655,"pid":20164,"host":"SlowFlow","tl":"21.01.2025, 17:27:14","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"BdT1a6imWKAjKr5y_-vA525pQLHN389UgseppaqJ6-4"}
+{"level":50,"time":1737469647668,"pid":20164,"host":"SlowFlow","tl":"21.01.2025, 17:27:14","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1737469659430,"pid":20164,"host":"SlowFlow","tl":"21.01.2025, 17:27:14","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737469664352,"pid":20164,"host":"SlowFlow","tl":"21.01.2025, 17:27:14","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469664352,"pid":20164,"host":"SlowFlow","tl":"21.01.2025, 17:27:14","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469798653,"pid":21464,"host":"SlowFlow","tl":"21.01.2025, 17:29:58","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469798654,"pid":21464,"host":"SlowFlow","tl":"21.01.2025, 17:29:58","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1737469820931,"pid":21464,"host":"SlowFlow","tl":"21.01.2025, 17:29:58","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737469826104,"pid":21464,"host":"SlowFlow","tl":"21.01.2025, 17:29:58","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469826104,"pid":21464,"host":"SlowFlow","tl":"21.01.2025, 17:29:58","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469869991,"pid":18740,"host":"SlowFlow","tl":"21.01.2025, 17:31:09","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737469870000,"pid":18740,"host":"SlowFlow","tl":"21.01.2025, 17:31:09","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1737470007666,"pid":19652,"host":"SlowFlow","tl":"21.01.2025, 17:32:17","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737470012504,"pid":19652,"host":"SlowFlow","tl":"21.01.2025, 17:32:17","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470012506,"pid":19652,"host":"SlowFlow","tl":"21.01.2025, 17:32:17","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470042260,"pid":17804,"host":"SlowFlow","tl":"21.01.2025, 17:34:02","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470042266,"pid":17804,"host":"SlowFlow","tl":"21.01.2025, 17:34:02","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737470052765,"pid":17804,"host":"SlowFlow","tl":"21.01.2025, 17:34:02","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470052765,"pid":17804,"host":"SlowFlow","tl":"21.01.2025, 17:34:02","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470064265,"pid":10348,"host":"SlowFlow","tl":"21.01.2025, 17:34:24","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470064266,"pid":10348,"host":"SlowFlow","tl":"21.01.2025, 17:34:24","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737470068994,"pid":10348,"host":"SlowFlow","tl":"21.01.2025, 17:34:24","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470068994,"pid":10348,"host":"SlowFlow","tl":"21.01.2025, 17:34:24","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470299006,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470299008,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1737470303485,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"vUj-3rIwOXqMeyFc-F90Lm-_rG3XER7Wmf4wmlvHa_U"}
+{"level":50,"time":1737470303489,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470303490,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470303490,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737470304235,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470304235,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470311782,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470311782,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":30,"time":1737470328898,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737470333123,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470333123,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737470333123,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"admin-routtes.js","fn":"/delToken","user":"andrey","msg":"Token has not been deleted"}
+{"level":30,"time":1737471049402,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"1L4edTL60HqqALbL1DT99jkl6dG1SMhb_5nlAWFCbvo"}
+{"level":50,"time":1737471049409,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737471049409,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737471049409,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1737471126947,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"1L4edTL60HqqALbL1DT99jkl6dG1SMhb_5nlAWFCbvo"}
+{"level":50,"time":1737471126954,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737471126954,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737471126954,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737471128288,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737471128289,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":30,"time":1737472240475,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737472245584,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472245584,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472245584,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"admin-routtes.js","fn":"/delToken","user":"admin","msg":"Token has not been deleted"}
+{"level":50,"time":1737472314192,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472314192,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472314193,"pid":21276,"host":"SlowFlow","tl":"21.01.2025, 17:38:18","ml":"admin-routtes.js","fn":"/delToken","user":"admin","msg":"Token has not been deleted"}
+{"level":50,"time":1737472380249,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472380251,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737472387423,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472387423,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472387423,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"admin-routtes.js","fn":"/delToken","user":"admin","msg":"Token has not been deleted"}
+{"level":30,"time":1737472765343,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"vDkH-EEUp5lhBuRK3C6at-4Fx1EBJp_isWidBRLrnCw"}
+{"level":50,"time":1737472765346,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472765346,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"redis-module.js","fn":"getRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472765346,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737472766725,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737472766725,"pid":15792,"host":"SlowFlow","tl":"21.01.2025, 18:13:00","ml":"redis-module.js","fn":"removeRefreshToken","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473064276,"pid":8380,"host":"SlowFlow","tl":"21.01.2025, 18:24:24","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473064277,"pid":8380,"host":"SlowFlow","tl":"21.01.2025, 18:24:24","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737473071521,"pid":8380,"host":"SlowFlow","tl":"21.01.2025, 18:24:24","ml":"jwt-module.js","fn":"verifyJWT","user":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737473159105,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473159106,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737473163869,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737473241835,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473241836,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"redis-module.js","fn":"saveRefresh","user":"admin","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473259505,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473259506,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473259506,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473299771,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473299772,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"redis-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473299772,"pid":19488,"host":"SlowFlow","tl":"21.01.2025, 18:25:58","ml":"jwt-module.js","fn":"gelAllRefreshTokens","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473341567,"pid":18688,"host":"SlowFlow","tl":"21.01.2025, 18:29:01","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473341568,"pid":18688,"host":"SlowFlow","tl":"21.01.2025, 18:29:01","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737473404119,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737473404120,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1737474118132,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"JjQCunU-KTwHtxjjZiez2Nf05Pc9yJh-sIwFJc8Acxo"}
+{"level":50,"time":1737474118137,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737474156049,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737474213211,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":30,"time":1737474392393,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":30,"time":1737474417034,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":50,"time":1737474417035,"pid":21060,"host":"SlowFlow","tl":"21.01.2025, 18:30:04","ml":"jwt-module.js","fn":"verifyJWT","jwt":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZhNmEzZGU2M2U2ODE1OTVmNGU4MmIiLCJ1c2VySWQiOiJhbmRyZXkiLCJyb2xlIjoidXNlciIsImlhdCI6MTczNzQ3NDQxMywiZXhwIjoxNzM3NDc0NzEzLCJpc3MiOiIzQS1hcGkifQ.WRnFCM9CcSdpGrSH_PPvutKW1qNokSiY4Xi5fu4Dp8o","msg":"Error : Access is forbidden"}
+{"level":30,"time":1737475126489,"pid":5916,"host":"SlowFlow","tl":"21.01.2025, 18:58:39","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"WRnFCM9CcSdpGrSH_PPvutKW1qNokSiY4Xi5fu4Dp8o"}
+{"level":30,"time":1737475126496,"pid":5916,"host":"SlowFlow","tl":"21.01.2025, 18:58:39","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":50,"time":1737475126498,"pid":5916,"host":"SlowFlow","tl":"21.01.2025, 18:58:39","ml":"jwt-module.js","fn":"verifyJWT","jwt":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZhNmEzZGU2M2U2ODE1OTVmNGU4MmIiLCJ1c2VySWQiOiJhbmRyZXkiLCJyb2xlIjoidXNlciIsImlhdCI6MTczNzQ3NTEyNiwiZXhwIjoxNzM3NDc1NDI2LCJpc3MiOiIzQS1hcGkifQ.CSx1kq25pod9esfwGw9kbJbIAfcY3jq6mgPx6yDMr-w","msg":"Error : AccessForbiden"}
+{"level":30,"time":1737475169833,"pid":20380,"host":"SlowFlow","tl":"21.01.2025, 18:59:23","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":50,"time":1737475169838,"pid":20380,"host":"SlowFlow","tl":"21.01.2025, 18:59:23","ml":"jwt-module.js","fn":"verifyJWT","jwt":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZhNmEzZGU2M2U2ODE1OTVmNGU4MmIiLCJ1c2VySWQiOiJhbmRyZXkiLCJyb2xlIjoidXNlciIsImlhdCI6MTczNzQ3NTEyNiwiZXhwIjoxNzM3NDc1NDI2LCJpc3MiOiIzQS1hcGkifQ.CSx1kq25pod9esfwGw9kbJbIAfcY3jq6mgPx6yDMr-w","msg":"Error : AccessForbiden"}
+{"level":30,"time":1737475267680,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737475293211,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737475309255,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":30,"time":1737475315865,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737475423255,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737475428336,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"CSx1kq25pod9esfwGw9kbJbIAfcY3jq6mgPx6yDMr-w"}
+{"level":50,"time":1737475428340,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737475428340,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"redis-module.js","fn":"getRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737475428341,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"andrey","msg":"refreshToken has not been found"}
+{"level":50,"time":1737475428895,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737475428896,"pid":10680,"host":"SlowFlow","tl":"21.01.2025, 19:00:57","ml":"redis-module.js","fn":"removeRefreshToken","user":"andrey","msg":"ECONNREFUSED"}
+{"level":50,"time":1737480924840,"pid":20488,"host":"SlowFlow","tl":"21.01.2025, 20:35:24","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737480924841,"pid":20488,"host":"SlowFlow","tl":"21.01.2025, 20:35:24","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737480926574,"pid":11164,"host":"SlowFlow","tl":"21.01.2025, 20:35:26","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737480926576,"pid":11164,"host":"SlowFlow","tl":"21.01.2025, 20:35:26","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737480999666,"pid":19296,"host":"SlowFlow","tl":"21.01.2025, 20:36:39","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737480999667,"pid":19296,"host":"SlowFlow","tl":"21.01.2025, 20:36:39","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737528875413,"pid":17940,"host":"SlowFlow","tl":"22.01.2025, 09:54:35","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737528875414,"pid":17940,"host":"SlowFlow","tl":"22.01.2025, 09:54:35","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737528967626,"pid":2064,"host":"SlowFlow","tl":"22.01.2025, 09:56:07","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737528967627,"pid":2064,"host":"SlowFlow","tl":"22.01.2025, 09:56:07","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737529061120,"pid":2528,"host":"SlowFlow","tl":"22.01.2025, 09:57:41","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737529061121,"pid":2528,"host":"SlowFlow","tl":"22.01.2025, 09:57:41","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737529263153,"pid":21408,"host":"SlowFlow","tl":"22.01.2025, 10:01:03","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737529263154,"pid":21408,"host":"SlowFlow","tl":"22.01.2025, 10:01:03","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737529268263,"pid":13328,"host":"SlowFlow","tl":"22.01.2025, 10:01:08","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737529268264,"pid":13328,"host":"SlowFlow","tl":"22.01.2025, 10:01:08","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737529445305,"pid":13328,"host":"SlowFlow","tl":"22.01.2025, 10:01:08","ml":"C:\\JS\\JSP\\server-mongoDb-rest-http\\dist\\auth","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737529579685,"pid":20668,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737529639640,"pid":19016,"host":"SlowFlow","tl":"22.01.2025, 10:07:12","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737529648087,"pid":19016,"host":"SlowFlow","tl":"22.01.2025, 10:07:12","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737529653226,"pid":19016,"host":"SlowFlow","tl":"22.01.2025, 10:07:12","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530123877,"pid":17904,"host":"SlowFlow","ml":"auth-logging.js","tl":"22.01.2025, 10:15:23","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530133705,"pid":17904,"host":"SlowFlow","ml":"auth-logging.js","tl":"22.01.2025, 10:15:33","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530288091,"pid":17124,"host":"SlowFlow","ml":"auth-logging.js","tl":"22.01.2025, 10:18:08","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530309949,"pid":16576,"host":"SlowFlow","ml":"auth-logging.js","tl":"22.01.2025, 10:18:29","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530425634,"pid":8576,"host":"SlowFlow","ml":"auth-logging.js","tl":"22.01.2025, 10:20:25","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530454882,"pid":19212,"host":"SlowFlow","lt3":"Invalid Date","ml":"auth-logging.js","tl":"22.01.2025, 10:20:54","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530489480,"pid":21216,"host":"SlowFlow","ml":"auth-logging.js","tl":"22.01.2025, 10:21:29","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530510197,"pid":13624,"host":"SlowFlow","lt3":"hkjhkj","ml":"auth-logging.js","tl":"22.01.2025, 10:21:50","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530525815,"pid":16868,"host":"SlowFlow","lt3":"hkjhkj","ml":"auth-logging.js","tl":"22.01.2025, 10:22:05","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530567305,"pid":4808,"host":"SlowFlow","ml":"auth-logging.js","tl":"22.01.2025, 10:22:47","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530752229,"pid":14056,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737530768309,"pid":14056,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"Incorrect password","err_name":"Error"}
+{"level":50,"time":1737530789947,"pid":14056,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andreybb","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737534605750,"pid":1992,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737534698138,"pid":1992,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737534785474,"pid":1992,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535005238,"pid":13800,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535104105,"pid":16632,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535247824,"pid":11208,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535355171,"pid":5524,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535403204,"pid":21132,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535507673,"pid":19744,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535685165,"pid":13780,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535757218,"pid":11944,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737535839476,"pid":16760,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737536363303,"pid":17508,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737536571605,"pid":1148,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737536596710,"pid":15160,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737536632047,"pid":14156,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737536769363,"pid":7504,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737536789752,"pid":14092,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737536887912,"pid":10392,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737536977443,"pid":19052,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737537564611,"pid":17380,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737538031818,"pid":4952,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"s","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737538517055,"pid":15036,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737538797717,"pid":2264,"host":"SlowFlow","ml":"jwt-module.js","fn":"jwtSet","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60"}
+{"level":50,"time":1737538797724,"pid":2264,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60","err_name":"Error"}
+{"level":50,"time":1737538868067,"pid":5432,"host":"SlowFlow","ml":"jwt-module.js","fn":"jwtSet","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60"}
+{"level":50,"time":1737538957187,"pid":4176,"host":"SlowFlow","ml":"jwt-module.js","fn":"jwtSet","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60"}
+{"level":50,"time":1737538958134,"pid":4176,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"","msg":"JsonWebTokenError : jwt must be provided"}
+{"level":50,"time":1737539051604,"pid":8616,"host":"SlowFlow","ml":"jwt-module.js","fn":"jwtSet","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60"}
+{"level":50,"time":1737539051993,"pid":8616,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"","msg":"JsonWebTokenError : jwt must be provided"}
+{"level":50,"time":1737539137704,"pid":19800,"host":"SlowFlow","ml":"jwt-module.js","fn":"jwtSet","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60"}
+{"level":50,"time":1737539138464,"pid":19800,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"","msg":"JsonWebTokenError : jwt must be provided"}
+{"level":50,"time":1737539283155,"pid":9780,"host":"SlowFlow","ml":"jwt-module.js","fn":"jwtSet","user":"andrey","msg":"\"expiresIn\" should be a number of seconds or string representing a timespan eg: \"1d\", \"20h\", 60"}
+{"level":50,"time":1737539283978,"pid":9780,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"","msg":"JsonWebTokenError : jwt must be provided"}
+{"level":30,"time":1737539305786,"pid":3392,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","user":"andrey","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":50,"time":1737539371465,"pid":7468,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737539566315,"pid":7468,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737541827057,"pid":21424,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737553308517,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":30,"time":1737553345297,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"79UHf0j4dyUGoELnkVGJWAxcnsNvmdJPlLhuI45U9j0"}
+{"level":30,"time":1737553557253,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"zIZv1NXGesAxDtCQ1KqjjOPfTdZJiGUq_OxX2NrGnTI"}
+{"level":50,"time":1737553578026,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"Dfff","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737553588516,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"Dfff","msg":"Incorrect userId","err_name":"Error"}
+{"level":30,"time":1737553631744,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"OBSrUoBpcFZ-TmyflP3CKzeejL1W8MDANYQnAXjCXrE"}
+{"level":50,"time":1737553631745,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737553733157,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737553761671,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"Userfsdf","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737553801462,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737553807372,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737553850146,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737554113530,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737554604374,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737554683866,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737554692708,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737555630743,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737555635394,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737557085379,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737557118426,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"asdsad","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737557156309,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"User","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737557199220,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"dasd","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737557286800,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"czxczxc","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737557296793,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"czxczx","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737557318154,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"Tyyyy","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737557329584,"pid":20972,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"Ttty","msg":"Incorrect userId","err_name":"Error"}
+{"level":30,"time":1737557417608,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"M0a8u84ow9sY8E2zY1EljvlGDmmfkh07w0tEq68Fw8o"}
+{"level":50,"time":1737557417611,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1737615521902,"pid":23312,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"4JGqL5cu9NrkV-_E7qbqYzUd16zKOcCHKBDi3qqg8QE"}

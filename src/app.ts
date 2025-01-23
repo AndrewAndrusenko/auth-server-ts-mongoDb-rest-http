@@ -2,8 +2,9 @@ import createError, { HttpError } from 'http-errors'
 import express, { Request, Response } from  'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
-import logger from 'morgan';
+import loggerDev from 'morgan';
 import cors from 'cors'
+import {pino} from "pino";
 
 import * as indexRouter from './routes/index';
 import * as usersRouter from './routes/auth-routes'
@@ -13,12 +14,14 @@ import { router as adminRouter }  from './routes/admin-routtes'
 import { ENVIRONMENT } from './environment/environment';
 
 export const app = express();
-
+export var logger = pino(ENVIRONMENT.LOGGING.OPTIONS)
+const transport = pino.transport(ENVIRONMENT.LOGGING.TRANSPORT)
+logger = pino(transport)
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
+app.use(loggerDev('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

@@ -44,9 +44,6 @@ class mongoDBClient extends mongodb_1.MongoClient {
     setResetPasswordToken(email, passwordToken) {
         return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').findOneAndUpdate({ email: email }, { $set: { passwordToken: passwordToken } }, { returnDocument: 'after' }));
     }
-    getUsers() {
-        return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').find({}).toArray());
-    }
     checkUserIdUnique(newUserID) {
         return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').find({ userId: newUserID }).toArray())
             .pipe((0, rxjs_1.map)(res => { return res.length > 0; }));

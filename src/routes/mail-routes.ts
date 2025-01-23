@@ -9,7 +9,7 @@ router.post('/send', ((req,res,next)=>{
   from(mailService.sendMessage(mailOption)).pipe(
     catchError(e=>{
       console.log('sendMessage error',e);
-      res.status(400).send({errorResponse:  {message: (e as Error).message,name:(e as Error).name}});
+      res.status(500).send({msg: (e as Error).message,name:(e as Error).name, ml:'MailService'});
       return EMPTY
     })
   ).subscribe(data=>res.send(data))

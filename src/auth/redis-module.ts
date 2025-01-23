@@ -1,62 +1,72 @@
 import { createClient, RedisClientType } from "redis";
-import { catchError, EMPTY, from, Observable, of,switchMap,tap } from "rxjs";
-import { IJWTInfo, IJWTInfoToken } from "../types/shared-models";
-interface IRefreshDelete {
-  userId:string
-  deleted:number,
-}
+import { catchError, from, map, Observable, of,switchMap,tap, throwError } from "rxjs";
+import { IJWTInfo, IJWTInfoToken, IRefreshDelete } from "../types/shared-models";
+import { ENVIRONMENT } from "../environment/environment";
+import * as path from "path"
+import {CustomLogger, loggerPino} from "../shared/logger-module"
+
+const localLogger:CustomLogger = loggerPino.child({ml:path.basename(__filename)})
 export class redisClientAuth {
   private client:RedisClientType|null;
   public isOpen:boolean = false;
   constructor() {
-    this.client = null
+    this.client = null;
   }
   init ():Observable<boolean> {
-    return from(createClient().connect()).pipe(
-      tap(newClient => this.client = newClient as RedisClientType),
-      tap(() => this.isOpen = this.client?.isOpen||false),
-      tap(() => this.client?.on('error',(e)=>{
-        this.client?.disconnect()
-        console.log('\x1b[31mredis_server error: ', e.message,'\x1b[0m')
-      })),
-      switchMap(()=>of(true)),
-      tap(res=>console.log('redis store has been connected?',res)),
-      catchError(e=>{
-        return of(false);
-      })
-    )
+    if (this.client?.isOpen) {
+      return of(true)
+    } else {
+      return from(createClient().connect()).pipe(
+        tap(newClient => this.client = newClient as RedisClientType),
+        tap(() => this.isOpen = this.client?.isOpen||false),
+        tap(() => this.client?.on('error',()=>{
+          this.client?.disconnect()
+          localLogger.info({fn:'redisClientAuth.init',msg:'redis client disconneted'})
+        })),
+        switchMap(()=>of(true)),
+        catchError(err=>{
+          localLogger.error({fn:'redisClientAuth.init',msg:err.code})
+          return throwError(()=> new Error(err.code))
+        }))}
   }
   
   saveRefresh (data:IJWTInfoToken):Observable<IJWTInfoToken>  {
-    return of(this.client?.isOpen).pipe(
-      switchMap(isOpened=>isOpened? of(isOpened) : this.init()),
-      tap(isOpened=>isOpened? null: console.log('\x1b[31merror', 'Redis server is unavailable','\x1b[0m' )),
-      switchMap(isOpened=>isOpened? 
-        from(this.client?.set((data.jwtInfo as IJWTInfo).userId,JSON.stringify(data)) as Promise<string|null>)
-        : of( {refreshToken:'', jwt:'', jwtInfo:null }) ),
-      tap(res=>(res as IJWTInfoToken).jwtInfo? console.log('User:',(data.jwtInfo as IJWTInfo).userId,'| Refresh token has been saved?', res):null),
+    return this.init().pipe(
+      switchMap(()=>from(this.client?.hSet(ENVIRONMENT.JWT.JWT_STORE_NAME,(data.jwtInfo as IJWTInfo).userId,JSON.stringify({...data,timeSaved:new Date().toLocaleString()})) as Promise<number|null>)),
+      tap(()=> localLogger.debug ('User:',(data.jwtInfo as IJWTInfo).userId,'| Refresh token has been saved?', true)),
       switchMap(()=>of(data)),
-      catchError (e=>{
-        console.log('\x1b[31merror_saveRefresh', e,'\x1b[0m' )
-        return EMPTY;
+      catchError (err=>{
+        localLogger.error({fn:'saveRefresh',user:data.jwtInfo?.userId, msg:err.message})
+        return of(data);
       })
     )
   }
   
-  getRefreshTocken (userId:string):Observable<IJWTInfoToken> {
-    return of(this.client?.isOpen).pipe(
-      switchMap(isOpened=>isOpened? of(isOpened) : this.init()),
-      tap(isOpened=>isOpened? null: console.log('\x1b[31merror', 'Redis server is unavailable','\x1b[0m' )),
-      switchMap(isOpened=>isOpened? 
-        from(this.client?.get(userId) as Promise<string|null>).pipe(switchMap(res=>of(JSON.parse(res as string)))) 
-        : of( {refreshToken:'', jwt:'', jwtInfo:null }) 
-      )
-    )
-
+  getRefreshToken (userId:string):Observable<IJWTInfoToken> {
+    return this.init().pipe(
+      switchMap(()=> from(this.client?.hGet(ENVIRONMENT.JWT.JWT_STORE_NAME, (userId)) as Promise<string|null>).pipe(map(res=>JSON.parse(res as string)))),
+      catchError(err=>{
+        localLogger.error({fn:'getRefreshToken',user:userId, msg:err.message})
+        return  of({refreshToken:'', jwt:'', jwtInfo:null})}));
   }
-  removeRefreshTocken (userId:string):Observable<IRefreshDelete> {
-    return this.client? 
-      from(this.client.del(userId)).pipe(switchMap(res=>of({userId:userId,deleted:res})))
-      :EMPTY;
+  removeRefreshToken (userId:string):Observable<IRefreshDelete> {
+    return this.init().pipe(
+      switchMap(()=>from(this.client?.HDEL(ENVIRONMENT.JWT.JWT_STORE_NAME, userId) as Promise<number>).pipe(map(res=>{return {userId:userId,deleted:res} }))),
+      catchError(err=>{
+        localLogger.error({fn:'removeRefreshToken',user:userId, msg:err.message});
+        return of({  userId:userId, deleted:0})
+      }));
+  }
+  gelAllRefreshTokens ():Observable<{userId:string, data:string}[]>  {
+    return this.init().pipe(
+      switchMap(()=>from(this.client?.hGetAll(ENVIRONMENT.JWT.JWT_STORE_NAME)as Promise<Record <string,string>>).pipe(
+        map(res=>{
+          return Object.entries(res).map(el=> { return {userId:el[0],data:JSON.parse(el[1])}  })
+        }))),
+      catchError(err=>{
+        localLogger.error({fn:'gelAllRefreshTokens',msg:err.message});
+        err.module='Redis'
+        return throwError(()=>err)
+      }));
   }
 }

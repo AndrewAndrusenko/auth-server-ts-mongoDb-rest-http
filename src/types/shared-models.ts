@@ -21,6 +21,12 @@ export interface IJWTInfoToken {
   jwt:string,
   refreshToken:string
   jwtInfo:IJWTInfo|null
+  timeSaved?:string
+}
+
+export interface IRefreshDelete {
+  userId:string
+  deleted:number,
 }
 export const serializeOptions:SerializeOptions = {
   httpOnly:true,

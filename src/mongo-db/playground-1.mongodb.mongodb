@@ -1,5 +1,5 @@
 use('local');
-db.getCollection('auth-users-data').updateOne ({_id:new  ObjectId('677ec6090a1c60aa0fddf5c6')},{$set:{role: "admin"}})
+db.getCollection('auth-users-data').updateOne ({_id:new  ObjectId('676a6ae9e63e681595f4e82c')},{$set:{role: "admin"}})
 
 /* {
   "_id": {
