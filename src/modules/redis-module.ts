@@ -3,7 +3,7 @@ import { catchError, from, map, Observable, of,switchMap,tap, throwError } from 
 import { IJWTInfo, IJWTInfoToken, IRefreshDelete } from "../types/shared-models";
 import { ENVIRONMENT } from "../environment/environment";
 import * as path from "path"
-import {CustomLogger, loggerPino} from "../shared/logger-module"
+import {CustomLogger, loggerPino} from "./logger-module"
 
 const localLogger:CustomLogger = loggerPino.child({ml:path.basename(__filename)})
 export class redisClientAuth {

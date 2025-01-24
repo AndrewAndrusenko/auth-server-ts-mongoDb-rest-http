@@ -1,7 +1,7 @@
 import { Router} from 'express'
-import { deleteRefreshToken, getAllRefreshToStore, verifyAccess } from '../auth/jwt-module'
+import { deleteRefreshToken, getAllRefreshToStore, verifyAccess } from '../modules/jwt-module'
 import { catchError, EMPTY } from 'rxjs'
-import { CustomLogger, loggerPino } from '../shared/logger-module'
+import { CustomLogger, loggerPino } from '../modules/logger-module'
 import * as path from "path"
 export const router = Router()
 const  localLogger:CustomLogger = loggerPino.child({ml:path.basename(__filename)})

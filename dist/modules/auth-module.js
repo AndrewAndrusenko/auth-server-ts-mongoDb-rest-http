@@ -110,10 +110,9 @@ function setNewPassword(req, res, next) {
     })).subscribe(data => res.send(data));
 }
 function confirmEmailAddress(req, res, next) {
-    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.confirmEmail(req.body)), (0, rxjs_1.switchMap)(updateResult => (0, rxjs_1.of)(updateResult.modifiedCount !== 0 || updateResult.matchedCount !== 0)), (0, rxjs_1.catchError)(e => {
-        console.log('\x1b[31merror_email_confirm', e, '\x1b[0m');
-        console.log('\x1b[31mError route:', req.url, '\x1b[0m');
-        res.send(false);
+    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.confirmEmail(req.body)), (0, rxjs_1.switchMap)(updateResult => (0, rxjs_1.of)(updateResult.modifiedCount !== 0 || updateResult.matchedCount !== 0)), (0, rxjs_1.catchError)(err => {
+        localLogger.error({ fn: 'confirmEmailAddress', user: req.url, msg: err.message });
+        res.status(500).send(err);
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 }

@@ -1,4 +1,5 @@
 
+23/01/25
 Pino logger& Admin
 1. Pino logger has been intergrated (logger-module.ts). 
   - app.ts:Basic logger functions like error, info and child have redefined using typescript by applying strict types to every type of log message

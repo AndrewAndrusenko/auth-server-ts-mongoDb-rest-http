@@ -7,9 +7,9 @@ import { JSONCookies} from 'cookie-parser'
 import { VerifyErrors } from "jsonwebtoken"
 import { serialize } from "cookie"
 import { redisClientAuth } from "./redis-module"
-import { ACCESS_ROUTES_ROLES } from "../routes/access-roles-model"
+import { ACCESS_ROUTES_ROLES } from "../types/access-roles-model"
 import * as path from "path"
-import { CustomLogger, loggerPino } from "../shared/logger-module"
+import { CustomLogger, loggerPino } from "./logger-module"
 import { rejects } from "assert"
 export const redisStore = new redisClientAuth()
 redisStore.init().pipe(

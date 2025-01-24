@@ -1,5 +1,5 @@
 import * as express from "express";
-import { EmailHandler, IConfirmEmailParams} from "../mail/email-module";
+import { EmailHandler, IConfirmEmailParams} from "../modules/email-module";
 import { catchError, EMPTY, first, from } from "rxjs";
 
 export const router = express.Router()

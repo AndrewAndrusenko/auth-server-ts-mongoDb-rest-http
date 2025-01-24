@@ -1,4 +1,4 @@
-import { TAcRole } from "../types/shared-models";
+import { TAcRole } from "./shared-models";
 
 export interface IAccessRole {
   route:string,

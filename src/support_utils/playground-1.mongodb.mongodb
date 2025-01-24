@@ -1,5 +1,6 @@
 use('local');
 db.getCollection('auth-users-data').updateOne ({_id:new  ObjectId('676a6ae9e63e681595f4e82c')},{$set:{role: "admin"}})
+// db.getCollection('auth-users-data').deleteMany ({})
 
 /* {
   "_id": {

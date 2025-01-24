@@ -1,7 +1,7 @@
 import { genSalt,hash,compare } from 'bcrypt'
 import { catchError, from, map, Observable, switchMap, throwError } from 'rxjs'
 import { IUser } from '../types/shared-models'
-import { loggerPino } from '../shared/logger-module'
+import { loggerPino } from './logger-module'
 import * as path from 'path'
 const localLogger = loggerPino.child({ml:path.basename(__filename)});
 export function hashUserPassword (password:string):Observable<string> {

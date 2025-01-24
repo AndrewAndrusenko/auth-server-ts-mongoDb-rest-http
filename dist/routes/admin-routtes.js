@@ -35,9 +35,9 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express_1 = require("express");
-const jwt_module_1 = require("../auth/jwt-module");
+const jwt_module_1 = require("../modules/jwt-module");
 const rxjs_1 = require("rxjs");
-const logger_module_1 = require("../shared/logger-module");
+const logger_module_1 = require("../modules/logger-module");
 const path = __importStar(require("path"));
 exports.router = (0, express_1.Router)();
 const localLogger = logger_module_1.loggerPino.child({ ml: path.basename(__filename) });

@@ -1,7 +1,7 @@
 import NodeMailer, { SentMessageInfo } from 'nodemailer'
 import { MailOptions } from 'nodemailer/lib/sendmail-transport';
 import { from, Observable } from 'rxjs';
-import { emailConfirmationMail } from './mails-drafts';
+import { emailConfirmationMail } from '../types/mails-drafts';
 import { ENVIRONMENT } from '../environment/environment';
 export interface IMailOptions {
   to:string,

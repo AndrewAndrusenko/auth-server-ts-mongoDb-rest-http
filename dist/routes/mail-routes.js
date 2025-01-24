@@ -35,7 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express = __importStar(require("express"));
-const email_module_1 = require("../mail/email-module");
+const email_module_1 = require("../modules/email-module");
 const rxjs_1 = require("rxjs");
 exports.router = express.Router();
 const mailService = new email_module_1.EmailHandler();

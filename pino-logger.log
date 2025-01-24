@@ -840,3 +840,64 @@
 {"level":30,"time":1737557417608,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"M0a8u84ow9sY8E2zY1EljvlGDmmfkh07w0tEq68Fw8o"}
 {"level":50,"time":1737557417611,"pid":20972,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
 {"level":30,"time":1737615521902,"pid":23312,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"4JGqL5cu9NrkV-_E7qbqYzUd16zKOcCHKBDi3qqg8QE"}
+{"level":30,"time":1737624411831,"pid":25480,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"lUFh5WDNLagqgfyz3alObybxW1kTg2tGMJ1XY7K5bu4"}
+{"level":30,"time":1737630418672,"pid":25480,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"7NKpfLLQhlKHTzN3fctqrlm7VLcGkmDtJPJvsyEdBvo"}
+{"level":30,"time":1737630997438,"pid":25480,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"p0PNQvm8xFg9awZwuroz_jgPKnFhkB4ZYPNrqeUiZW8"}
+{"level":50,"time":1737631026073,"pid":25480,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"dfsf","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737631357156,"pid":25480,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737631367964,"pid":25480,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"ыулллу","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737634246386,"pid":22020,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"admin","msg":"Incorrect password","err_name":"Error"}
+{"level":50,"time":1737638475508,"pid":22020,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"admin","msg":"Incorrect password","err_name":"Error"}
+{"level":50,"time":1737656246950,"pid":22020,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"Admin","msg":"Incorrect userId","err_name":"Error"}
+{"level":30,"time":1737656471155,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"KQagLRK4HTnpJ8qoWWxeCDuIDtEKVHr1qLIKNJo4pk0"}
+{"level":30,"time":1737657360677,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"O45Ftj5bK98qSBjyJHSgeu8lGftL746hcJpjJRnhBfA"}
+{"level":30,"time":1737657519379,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"res_E8oIpGSRtREMHiLJh-a9aFLX3DKbLuHWBqeZydc"}
+{"level":30,"time":1737658876418,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"zw4IWQ1Wu7nq3j2JVBYExVZQx1UOcmeYjHk7X1zp1nI"}
+{"level":30,"time":1737662750169,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"d2pHzDlS46E7EoG-napPkJ-nDkctKhKcAfRDvk82hn8"}
+{"level":30,"time":1737662987195,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"sGOJgf868DZk3n-QXUgBl3if9zUdPcRin9tegnSleTo"}
+{"level":30,"time":1737663164493,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"X9ENrv0suJxmQLhJktdzt-aYSc8J5fDnXmXK04hqxv8"}
+{"level":30,"time":1737663325554,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"1wXyc-TDBnu7sxcB8pBKu20CmPOJ7cWXakLaLTR6_RY"}
+{"level":30,"time":1737663548887,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"bCwnS6riwTlLcjjFnW95UhH3QCAigzp6jivCcvh--08"}
+{"level":30,"time":1737663820243,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"jcSxT-mndv4-T1QWdDcw8Gb0lqf4B-dVPrfqoyB0RnY"}
+{"level":30,"time":1737664057170,"pid":22020,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"NSITQ_6e-8O11meHCkXyKEqbJ1EkU0sBpL2y9Qq0Bdk"}
+{"level":30,"time":1737695847629,"pid":22020,"host":"SlowFlow","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"redis client disconneted"}
+{"level":50,"time":1737696319779,"pid":12156,"host":"SlowFlow","ml":"redis-module.js","fn":"redisClientAuth.init","msg":"ECONNREFUSED"}
+{"level":50,"time":1737696319780,"pid":12156,"host":"SlowFlow","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737700668614,"pid":6020,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"adminf","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737700897790,"pid":6020,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"admin","msg":"Incorrect password","err_name":"Error"}
+{"level":30,"time":1737704546441,"pid":9736,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"42d9xHuD-wpKflWGwhcw8hlzFKF1uaZi5ppSTEDB41g"}
+{"level":50,"time":1737704546447,"pid":9736,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737704829369,"pid":9736,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"Admin","msg":"Incorrect userId","err_name":"Error"}
+{"level":30,"time":1737720288041,"pid":4568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"5S1cBO2qbIooBil1nv87FL46B70P78RmXnhHcgdXeJg"}
+{"level":50,"time":1737720288046,"pid":4568,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"mike","msg":"refreshToken has not been found"}
+{"level":50,"time":1737720419586,"pid":4568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737720689987,"pid":4568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737720735059,"pid":4568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737721082605,"pid":4568,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"ffhsdfksd","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737721154589,"pid":4568,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"adming","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737721189819,"pid":4568,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"fgsdfljsdf","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737721208686,"pid":4568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737721223322,"pid":4568,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"gggggg","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737721236651,"pid":4568,"host":"SlowFlow","ml":"auth-logging.js","fn":"logInUser","user":"fgggg","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737721296192,"pid":4568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737732376131,"pid":17900,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737732428812,"pid":17900,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737732608542,"pid":17900,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737733096742,"pid":11764,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737733231644,"pid":11764,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737733321559,"pid":11764,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737733357966,"pid":11764,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737733428382,"pid":11764,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737733703552,"pid":11764,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737733722088,"pid":11764,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737733832712,"pid":11764,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737734092086,"pid":17128,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737734429053,"pid":17128,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737734625756,"pid":17128,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"Admin","msg":"Incorrect userId","err_name":"Error"}
+{"level":50,"time":1737734640583,"pid":17128,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":30,"time":1737734680575,"pid":17128,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","user":"admin","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1737734792517,"pid":17128,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"e7oxQLDy1Bos5YaqJ8hlOuGorKQ3eHvh9nE21vJh-88"}
+{"level":30,"time":1737736123347,"pid":17128,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"xAI5RFH-_zvH3MBoZfMwiN06FNDqlfcDDx2cOZxWfn8"}
+{"level":30,"time":1737736226430,"pid":17128,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"7WAkoksE9J4foXGHw8UIhs-fffGYLQnW3L7vV98AsaA"}
+{"level":50,"time":1737743843734,"pid":17128,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737743871995,"pid":17128,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
