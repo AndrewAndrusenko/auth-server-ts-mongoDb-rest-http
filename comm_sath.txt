@@ -17,4 +17,7 @@ Pino logger& Admin
   -add admin functions to manage refresh tokens: gelAllRefreshTokens - get all tokens for UI and removeRefreshToken - remove token from cache 
 6. admin-routtes.ts - Added admin routes module to handle refresh tokens managment + Logging errors
 7. mail-routes.ts: refactored error handler
-
+27/01/25
+1. email-module.ts Extended feature of sending emails to users. 
+Sending functions accepts draft code parameter in order to select appropriate message draft from mailDrafts const (mails-drafts.ts)
+As of now there are two drafts. One is for email confirmation and the other is for password reset

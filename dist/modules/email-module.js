@@ -22,8 +22,8 @@ class EmailHandler {
         let mailOptions = {
             from: environment_1.ENVIRONMENT.MAILING.emailAdress,
             to: mailData.emailUser,
-            subject: mails_drafts_1.emailConfirmationMail.subject,
-            text: mails_drafts_1.emailConfirmationMail.text + ' - ' + mailData.confirmLink + mails_drafts_1.emailConfirmationMail.text2,
+            subject: mails_drafts_1.mailDrafts[mailData.type].subject,
+            text: mails_drafts_1.mailDrafts[mailData.type].text + mailData.confirmLink + mails_drafts_1.mailDrafts[mailData.type].text2,
             html: ''
         };
         return (0, rxjs_1.from)(this.transport.sendMail(mailOptions));

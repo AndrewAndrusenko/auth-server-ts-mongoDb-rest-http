@@ -1,7 +1,7 @@
 import NodeMailer, { SentMessageInfo } from 'nodemailer'
 import { MailOptions } from 'nodemailer/lib/sendmail-transport';
 import { from, Observable } from 'rxjs';
-import { emailConfirmationMail } from '../types/mails-drafts';
+import {  mailDrafts, TMailTypes } from '../types/mails-drafts';
 import { ENVIRONMENT } from '../environment/environment';
 export interface IMailOptions {
   to:string,
@@ -12,6 +12,7 @@ export interface IMailOptions {
 export interface IConfirmEmailParams {
   emailUser:string,
   confirmLink:string,
+  type:TMailTypes
 }
 export class EmailHandler {
  private transport
@@ -28,8 +29,8 @@ export class EmailHandler {
     let mailOptions:MailOptions = {
       from:ENVIRONMENT.MAILING.emailAdress,
       to:mailData.emailUser,
-      subject:emailConfirmationMail.subject,
-      text:emailConfirmationMail.text+' - '+mailData.confirmLink+emailConfirmationMail.text2,
+      subject:mailDrafts[mailData.type].subject,
+      text:mailDrafts[mailData.type].text+mailData.confirmLink+mailDrafts[mailData.type].text2,
       html:''
     }
     return from(this.transport.sendMail(mailOptions))

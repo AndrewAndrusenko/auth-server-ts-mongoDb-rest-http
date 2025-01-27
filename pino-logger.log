@@ -901,3 +901,13 @@
 {"level":30,"time":1737736226430,"pid":17128,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"7WAkoksE9J4foXGHw8UIhs-fffGYLQnW3L7vV98AsaA"}
 {"level":50,"time":1737743843734,"pid":17128,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
 {"level":50,"time":1737743871995,"pid":17128,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737792308569,"pid":10676,"host":"SlowFlow","ml":"redis-module.js","fn":"redisClientAuth.init"}
+{"level":50,"time":1737792308571,"pid":10676,"host":"SlowFlow","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":50,"time":1737920806581,"pid":20708,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Incorrect password","err_name":"Error"}
+{"level":30,"time":1737921035115,"pid":20708,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"6GzoCtwau1y7BlEFBb_8gdM5QsBprl6f0mIQM5Iu_ek"}
+{"level":50,"time":1737921144525,"pid":20708,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin ","msg":"Incorrect userId","err_name":"Error"}
+{"level":30,"time":1737921216752,"pid":20708,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"dfMmgFKoB6Hh7AAguN_jCjyln52rSM_rX3uUt0WACLQ"}
+{"level":50,"time":1737921216758,"pid":20708,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":50,"time":1737982952904,"pid":22416,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1737983005493,"pid":22416,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1737983035649,"pid":22416,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
