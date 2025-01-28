@@ -82,10 +82,13 @@ function logOutUser(req, res, next) {
 }
 function signUpNewUser(req, res, next) {
     let newUser = req.body;
-    return (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(newUser.password)), (0, rxjs_1.switchMap)((hashPassword) => mongoClient.addUser({ ...newUser, password: hashPassword })), (0, rxjs_1.catchError)(err => {
+    return (0, rxjs_1.from)(mongoClient.isDBConnected())
+        .pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(newUser.password)), (0, rxjs_1.switchMap)((hashPassword) => mongoClient.addUser({ ...newUser, password: hashPassword })), (0, rxjs_1.catchError)(err => {
         localLogger.error({ fn: 'signUpNewUser', msg: err.message });
-        return (0, rxjs_1.throwError)(() => err);
-    }));
+        res.status(500).send(err);
+        return rxjs_1.EMPTY;
+    }))
+        .subscribe(data => res.send(data));
 }
 function updateUserData(req, res, next) {
     let newUser = req.body;
@@ -104,8 +107,8 @@ function setResetPasswordToken(req, res, next) {
 function setNewPassword(req, res, next) {
     let data = req.body;
     (0, rxjs_1.from)(mongoClient.isDBConnected())
-        .pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(data.password)), (0, rxjs_1.switchMap)(hashedPassword => mongoClient.resetPassword(data.id, data.token, hashedPassword)), (0, rxjs_1.catchError)(e => {
-        res.send(e);
+        .pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(data.password)), (0, rxjs_1.switchMap)(hashedPassword => mongoClient.resetPassword(data.id, data.token, hashedPassword)), (0, rxjs_1.catchError)(err => {
+        res.status(500).send(err);
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 }
@@ -118,10 +121,18 @@ function confirmEmailAddress(req, res, next) {
 }
 //VALIDATORS
 function checkEmailUnique(req, res, next) {
-    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.checkEmailUnique(req.query.email))).subscribe(data => res.send(data));
+    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.checkEmailUnique(req.query.email)), (0, rxjs_1.catchError)(err => {
+        localLogger.error({ fn: 'checkEmailUnique', msg: err.message, user: req.query.userId });
+        res.status(500).send(err);
+        return rxjs_1.EMPTY;
+    })).subscribe(data => res.send(data));
 }
 function checkUserIdUnique(req, res, next) {
-    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.checkUserIdUnique(req.query.userId))).subscribe(data => res.send(data));
+    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.checkUserIdUnique(req.query.userId)), (0, rxjs_1.catchError)(err => {
+        localLogger.error({ fn: 'checkUserIdUnique', msg: err.message, user: req.query.userId });
+        res.status(500).send(err);
+        return rxjs_1.EMPTY;
+    })).subscribe(data => res.send(data));
 }
 //UTILS
 function mongoClientClose(req, res, next) {

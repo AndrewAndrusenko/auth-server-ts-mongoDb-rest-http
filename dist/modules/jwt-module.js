@@ -1,37 +1,4 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.redisStore = void 0;
 exports.jwtSet = jwtSet;
@@ -47,14 +14,14 @@ const cookie_parser_1 = require("cookie-parser");
 const cookie_1 = require("cookie");
 const redis_module_1 = require("./redis-module");
 const access_roles_model_1 = require("../types/access-roles-model");
-const path = __importStar(require("path"));
+const path_1 = require("path");
 const logger_module_1 = require("./logger-module");
 exports.redisStore = new redis_module_1.redisClientAuth();
 exports.redisStore.init().pipe((0, rxjs_1.catchError)(err => {
     localLogger.error({ fn: 'redisStore.init()', msg: err.code });
     return rxjs_1.EMPTY;
 })).subscribe();
-const localLogger = logger_module_1.loggerPino.child({ ml: path.basename(__filename) });
+const localLogger = logger_module_1.loggerPino.child({ ml: (0, path_1.basename)(__filename) });
 function issueAccessJWT(jwtInfo) {
     return (0, rxjs_1.from)(new Promise((resolve, reject) => {
         try {
@@ -145,7 +112,6 @@ function saveRefreshToStore(jwtInfoToken) {
     }));
 }
 function getAllRefreshToStore(req, res) {
-    console.log('getAllRefreshToStore jwt');
     return exports.redisStore.gelAllRefreshTokens().pipe((0, rxjs_1.catchError)(err => {
         localLogger.error({ fn: 'gelAllRefreshTokens', msg: err.message });
         return (0, rxjs_1.throwError)(() => err);

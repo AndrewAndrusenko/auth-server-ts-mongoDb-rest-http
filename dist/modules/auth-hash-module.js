@@ -43,6 +43,8 @@ const localLogger = logger_module_1.loggerPino.child({ ml: path.basename(__filen
 function hashUserPassword(password) {
     return (0, rxjs_1.from)((0, bcrypt_1.genSalt)()).pipe((0, rxjs_1.switchMap)(salt => (0, bcrypt_1.hash)(password, salt)), (0, rxjs_1.catchError)(err => {
         localLogger.error({ fn: 'hashUserPassword', msg: err.message });
+        err.msg = err.message,
+            err.ml = 'PasswordService';
         return (0, rxjs_1.throwError)(() => err);
     }));
 }

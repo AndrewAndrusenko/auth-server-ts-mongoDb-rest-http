@@ -8,9 +8,8 @@ import { VerifyErrors } from "jsonwebtoken"
 import { serialize } from "cookie"
 import { redisClientAuth } from "./redis-module"
 import { ACCESS_ROUTES_ROLES } from "../types/access-roles-model"
-import * as path from "path"
+import { basename} from 'path'
 import { CustomLogger, loggerPino } from "./logger-module"
-import { rejects } from "assert"
 export const redisStore = new redisClientAuth()
 redisStore.init().pipe(
   catchError(err=>{
@@ -19,7 +18,7 @@ redisStore.init().pipe(
   })
 ).subscribe()
 
-const  localLogger:CustomLogger = loggerPino.child({ml:path.basename(__filename)})
+const  localLogger:CustomLogger = loggerPino.child({ml:basename(__filename)})
 
 function issueAccessJWT (jwtInfo: IJWTInfo):Observable<string> {
   return from (
@@ -122,7 +121,6 @@ export function saveRefreshToStore (jwtInfoToken:IJWTInfoToken ):Observable<IJWT
     )
 }
 export function getAllRefreshToStore (req:Request, res:Response):Observable<{userId:string, data:string}[]>{
-  console.log('getAllRefreshToStore jwt', )
   return redisStore.gelAllRefreshTokens().pipe(
     catchError(err=>{
       localLogger.error({fn:'gelAllRefreshTokens', msg:err.message})

@@ -1,5 +1,5 @@
 import { genSalt,hash,compare } from 'bcrypt'
-import { catchError, from, map, Observable, switchMap, throwError } from 'rxjs'
+import { catchError, from, map, Observable, switchMap, tap, throwError } from 'rxjs'
 import { IUser } from '../types/shared-models'
 import { loggerPino } from './logger-module'
 import * as path from 'path'
@@ -9,6 +9,8 @@ export function hashUserPassword (password:string):Observable<string> {
     switchMap(salt=>hash(password,salt)),
     catchError(err=>{
       localLogger.error({fn:'hashUserPassword',msg:err.message})
+      err.msg = err.message, 
+      err.ml = 'PasswordService'
       return throwError(()=>err)
     })
   )

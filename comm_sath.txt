@@ -21,3 +21,7 @@ Pino logger& Admin
 1. email-module.ts Extended feature of sending emails to users. 
 Sending functions accepts draft code parameter in order to select appropriate message draft from mailDrafts const (mails-drafts.ts)
 As of now there are two drafts. One is for email confirmation and the other is for password reset
+
+28/01/25
+Error handlers refactored
+1. Added error handlers and user proper notification for cases of MongoDB and MailService failures

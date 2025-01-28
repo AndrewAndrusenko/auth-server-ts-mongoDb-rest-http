@@ -53,12 +53,7 @@ exports.router.post('/logout', async function (req, res, next) {
 });
 /* Sigh up new user. */
 exports.router.post('/', async function (req, res, next) {
-    authModule.signUpNewUser(req, res, next)
-        .pipe((0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
-        return rxjs_1.EMPTY;
-    }))
-        .subscribe(data => res.send(data));
+    authModule.signUpNewUser(req, res, next);
 });
 /* Update user data. */
 exports.router.post('/update', async function (req, res, next) {

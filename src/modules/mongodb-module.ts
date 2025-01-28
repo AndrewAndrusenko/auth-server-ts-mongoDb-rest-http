@@ -2,8 +2,10 @@ import { Db, InsertOneResult, MongoClient, ObjectId, UpdateResult, WithId} from 
 import { catchError, EMPTY, from, map, Observable, of, switchMap, tap, throwError } from 'rxjs';
 import { ENVIRONMENT } from '../environment/environment';
 import { IUser } from '../types/shared-models';
+import { CustomLogger, loggerPino } from './logger-module';
+import { basename} from 'path'
 
-
+const localLogger:CustomLogger = loggerPino.child({ml:basename(__filename)})
 export class mongoDBClient extends MongoClient {
   private dbInst = new Db (this,ENVIRONMENT.MONGO_DB_CONFIG.mongdDBName)
   private  _isOpened:boolean = false;
@@ -12,14 +14,17 @@ export class mongoDBClient extends MongoClient {
   }
   constructor() 
   {
-    super(ENVIRONMENT.MONGO_DB_CONFIG.mongoUrl);
+    super(ENVIRONMENT.MONGO_DB_CONFIG.mongoUrl, {
+      connectTimeoutMS: 1000,
+      serverSelectionTimeoutMS: 1000
+    });
     this.on('open',()=>{
-      console.log('db server is connected')
+      localLogger.info({fn:'mongoDBClient.constructor',msg:'MongoDB server is connected'})
       this._isOpened = true
     })
     this.on('close',()=>{
+      localLogger.error({fn:'mongoDBClient.constructor',msg:'MongoDB server is disconnected'})
       this._isOpened = false
-      console.log('db server is disconnected')
     })
   }
   isDBConnected():Observable<boolean> {
@@ -28,8 +33,9 @@ export class mongoDBClient extends MongoClient {
         tap(()=>console.log('db server is connected')),
         map(()=>{return true}),
         catchError(err=>{
-          console.log('\x1b[31merror mongo', err?.message,'\x1b[0m' )
-          return throwError(()=> new Error(err))
+          err.msg = err.message, 
+          err.ml = 'MongoService'
+          return throwError(()=> err)
         })
       )))
   }
@@ -44,6 +50,7 @@ export class mongoDBClient extends MongoClient {
   updateUser (newUser:IUser):Observable<UpdateResult<IUser>> {
     let dataWitoutId = {...newUser};
     delete dataWitoutId._id
+    dataWitoutId.role='user'
     return from(this.dbInst.collection<IUser>('auth-users-data').updateOne ({_id:new  ObjectId(newUser._id)},{$set:{...dataWitoutId}}));
   }
   resetPassword (id:string,token:string, password:string):Observable<WithId<IUser> | null> {

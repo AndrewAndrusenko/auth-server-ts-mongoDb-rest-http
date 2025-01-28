@@ -48,16 +48,18 @@ export function logOutUser (req:Request, res:Response, next:NextFunction):Observ
   res.clearCookie ('A3_AccessToken_Shared', {domain:serializeOptionsShared.domain});
   return deleteRefreshToken(req,res)
 }
-export function signUpNewUser (req:Request, res:Response, next:NextFunction):Observable<InsertOneResult<IUser>> {
+export function signUpNewUser (req:Request, res:Response, next:NextFunction) {
   let newUser = req.body as IUser;
- return from(mongoClient.isDBConnected()).pipe( 
+ return from(mongoClient.isDBConnected())
+ .pipe( 
     switchMap(()=>hashUserPassword(newUser.password)),
     switchMap((hashPassword)=>mongoClient.addUser({...newUser,password:hashPassword})),
     catchError(err=>{
       localLogger.error({fn:'signUpNewUser',msg:err.message});
-      return throwError(()=>err)
-    })
-  )
+      res.status(500).send(err);
+      return EMPTY
+    }))
+  .subscribe(data=>res.send(data))
 }
 export function updateUserData (req:Request, res:Response, next:NextFunction) {
   let newUser = req.body as IUser;
@@ -85,8 +87,8 @@ export function setNewPassword (req:Request, res:Response, next:NextFunction) {
   .pipe( 
     switchMap(()=>hashUserPassword(data.password)),
     switchMap(hashedPassword=>mongoClient.resetPassword(data.id,data.token, hashedPassword)),
-    catchError(e=>{
-      res.send(e);
+    catchError(err=>{
+      res.status(500).send(err);
       return EMPTY
     })
   ).subscribe(data=>res.send(data))
@@ -105,12 +107,22 @@ export function confirmEmailAddress (req:Request, res:Response, next:NextFunctio
 //VALIDATORS
 export function checkEmailUnique (req:Request, res:Response, next:NextFunction) {
   from(mongoClient.isDBConnected()).pipe( 
-    switchMap(()=>mongoClient.checkEmailUnique((req.query as {email:string}).email))
+    switchMap(()=>mongoClient.checkEmailUnique((req.query as {email:string}).email)),
+    catchError(err=>{
+      localLogger.error({fn:'checkEmailUnique',msg:err.message,user:(req.query as {userId:string}).userId});
+      res.status(500).send(err);
+      return EMPTY
+    })
   ).subscribe(data=>res.send(data))
 }
 export function checkUserIdUnique (req:Request, res:Response, next:NextFunction) {
   from(mongoClient.isDBConnected()).pipe( 
-    switchMap(()=>mongoClient.checkUserIdUnique((req.query as {userId:string}).userId))
+    switchMap(()=>mongoClient.checkUserIdUnique((req.query as {userId:string}).userId)),
+    catchError(err=>{
+      localLogger.error({fn:'checkUserIdUnique',msg:err.message,user:(req.query as {userId:string}).userId});
+      res.status(500).send(err);
+      return EMPTY
+    })
   ).subscribe(data=>res.send(data))
 }
 //UTILS

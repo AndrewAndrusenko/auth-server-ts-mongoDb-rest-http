@@ -20,11 +20,7 @@ router.post('/logout', async function(req, res, next) {
 /* Sigh up new user. */
 router.post('/', async function(req, res, next) {
   authModule.signUpNewUser(req,res,next)
-  .pipe(catchError(err=>{
-    res.status(500).send(err);
-    return EMPTY;
-  }))
-  .subscribe(data=>res.send(data))
+
 });
 /* Update user data. */
 router.post('/update', async function(req, res, next) {
