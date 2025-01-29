@@ -24,4 +24,10 @@ As of now there are two drafts. One is for email confirmation and the other is f
 
 28/01/25
 Error handlers refactored
-1. Added error handlers and user proper notification for cases of MongoDB and MailService failures
+1. Added error handlers for cases of MongoDB and MailService failures including sending error details to the client side via API 
+
+29/01/25
+Loggings events & admin user list/delete
+1. Added logging on info level for main events of the server , such as data modify, log in/out users, authentication and etc
+2. admin-routes extended by features of getting full list of the users and deleting an user
+3. Error handler refactored 

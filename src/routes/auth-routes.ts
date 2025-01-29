@@ -11,11 +11,6 @@ router.post('/login', async function(req, res, next) {
 //Log out user by removing tokens from cookies and redis 
 router.post('/logout', async function(req, res, next) {
   authModule.logOutUser(req, res, next)
-  .pipe(catchError(err=>{
-    res.status(500).send(err);
-    return EMPTY;
-  }))
-  .subscribe(data=>res.send({userId:data.userId, logout:data.deleted}))
 })
 /* Sigh up new user. */
 router.post('/', async function(req, res, next) {
@@ -26,6 +21,9 @@ router.post('/', async function(req, res, next) {
 router.post('/update', async function(req, res, next) {
   authModule.updateUserData(req, res, next)
 });
+
+
+
 //PASSWORD RESET
 //Setting token for password reset
 router.post('/set_password_token', async function(req, res, next) {

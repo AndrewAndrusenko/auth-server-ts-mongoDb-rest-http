@@ -9,4 +9,6 @@ export const ACCESS_ROUTES_ROLES:IAccessRole[] = [
   { route:'/admin',  roles:['admin'] },
   { route:'/admin/getAllTokens',  roles:['admin'] },
   { route:'/admin/delToken',  roles:['admin'] },
+  { route:'/admin/all',  roles:['admin'] },
+  { route:'/admin/user-del',  roles:['admin'] },
 ]

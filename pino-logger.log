@@ -1030,3 +1030,201 @@
 {"level":50,"time":1738052395762,"pid":19060,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"adminfds","msg":"MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017","err_name":"Error"}
 {"level":50,"time":1738052496978,"pid":19060,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
 {"level":50,"time":1738052514292,"pid":19060,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738059333881,"pid":5980,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738076315990,"pid":7004,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin","msg":"connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017","err_name":"MongoServerSelectionError"}
+{"level":30,"time":1738076327020,"pid":7004,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738076536963,"pid":18092,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"EzOUaMQIK4CDRMKTyr2P7yXZJ09c_t3FyW_Iixw9ZDo"}
+{"level":30,"time":1738076650775,"pid":18092,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"cX9G7DnOHjw6qU3dLKbqU_f0I5FP2lCIiNSHy6B3xWs"}
+{"level":30,"time":1738076711780,"pid":18092,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"GF_DzKtKBgTvsttIrP_d3UWt1D15uoP8BXfemwTtndk"}
+{"level":30,"time":1738076736792,"pid":18092,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":50,"time":1738076736829,"pid":18092,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"mike","msg":"Incorrect userId","err_name":"Error"}
+{"level":30,"time":1738078584473,"pid":2328,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"n1UBST-ktvsCE4i0kujRYA6a72OetGqlJl7gezbXVfI"}
+{"level":30,"time":1738078589998,"pid":2328,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":""}
+{"level":30,"time":1738078602609,"pid":2328,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738078679650,"pid":10632,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":""}
+{"level":30,"time":1738078747196,"pid":8780,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738078754590,"pid":8780,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":""}
+{"level":30,"time":1738078940914,"pid":5692,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738078941009,"pid":5692,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738078951865,"pid":5692,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":""}
+{"level":30,"time":1738079988506,"pid":7992,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738079988606,"pid":7992,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738079992668,"pid":7992,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":""}
+{"level":30,"time":1738080139864,"pid":7992,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738080143800,"pid":7992,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":""}
+{"level":30,"time":1738080376738,"pid":7992,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738080376803,"pid":7992,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738080388867,"pid":7992,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":30,"time":1738080446492,"pid":20212,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738080446623,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738080516320,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":30,"time":1738080532610,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"mike"}
+{"level":30,"time":1738080557424,"pid":20212,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"kliUmAAuuH_F_Zte-BCOv-P8PhUVv2IlNuD3MLwtFTo"}
+{"level":30,"time":1738080558244,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"mike"}
+{"level":30,"time":1738080592393,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738080611343,"pid":20212,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"pCc7zZUrj5LfkVDPu3G1zH_ousw4LtIiX7ZrZ--mZLg"}
+{"level":50,"time":1738080611346,"pid":20212,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"mike","msg":"refreshToken has not been found"}
+{"level":30,"time":1738080611903,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"mike"}
+{"level":30,"time":1738080616768,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"mike"}
+{"level":30,"time":1738080668230,"pid":20212,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"ZlTFFSrljFl-TQAuWMX7dX9422kQ0sr5ftZR0KKHosk"}
+{"level":30,"time":1738080672443,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":30,"time":1738080692080,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"mike"}
+{"level":30,"time":1738080700741,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"mike"}
+{"level":30,"time":1738080706196,"pid":20212,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"mike"}
+{"level":30,"time":1738080883085,"pid":10468,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738080899399,"pid":10468,"host":"SlowFlow","ml":"auth-module.js","fn":"signUpNewUser","msg":"success","user":"fdsfdsf"}
+{"level":30,"time":1738095418321,"pid":10468,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":50,"time":1738099400514,"pid":23516,"host":"SlowFlow","ml":"redis-module.js","fn":"redisClientAuth.init"}
+{"level":50,"time":1738099400515,"pid":23516,"host":"SlowFlow","ml":"jwt-module.js","fn":"redisStore.init()"}
+{"level":30,"time":1738101372410,"pid":21712,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738101372554,"pid":21712,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738101704111,"pid":21712,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"tqOSlJKfNI0Om4FayBiHcJGcV2mrRUAvvIlyxjkgIlk"}
+{"level":30,"time":1738101704113,"pid":21712,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738101704665,"pid":21712,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"tqOSlJKfNI0Om4FayBiHcJGcV2mrRUAvvIlyxjkgIlk"}
+{"level":50,"time":1738101704672,"pid":21712,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1738101705489,"pid":21712,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":50,"time":1738135309019,"pid":19724,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":30,"time":1738135309078,"pid":19724,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738135538711,"pid":27112,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738135539044,"pid":27112,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738135711165,"pid":25196,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738135867337,"pid":11480,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738136011166,"pid":20752,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738136093354,"pid":10272,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738136158951,"pid":17876,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"fqL8uK3-wFgDBV4qW5-9mBJCTrF-7bFgXpiF72pV3cA"}
+{"level":30,"time":1738136158955,"pid":17876,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738136194313,"pid":17876,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":30,"time":1738136201608,"pid":17876,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738136201749,"pid":17876,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"mike"}
+{"level":30,"time":1738136205398,"pid":17876,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","user":"mike","route":"/admin/getAllTokens","msg":"Access is forbidden"}
+{"level":30,"time":1738136237636,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","user":"mike","route":"/admin/all","msg":"Access is forbidden"}
+{"level":30,"time":1738136245514,"pid":26620,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"mike"}
+{"level":30,"time":1738136251764,"pid":26620,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":50,"time":1738136251779,"pid":26620,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"andrey","msg":"Incorrect userId","err_name":"Error"}
+{"level":30,"time":1738136256804,"pid":26620,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":50,"time":1738136337272,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136345671,"pid":26620,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"mike","msg":"Incorrect password","err_name":"Error"}
+{"level":30,"time":1738136354794,"pid":26620,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"mike"}
+{"level":30,"time":1738136360795,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"7gcyjTxnT1llwt1eNV9c4UNuI3vamcCJygIDpnuu_Hk"}
+{"level":30,"time":1738136360800,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738136704925,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"Boe7jrBpJDflTlfGUUmg-Z3jUsxKtuJbKUjPgYl2fgo"}
+{"level":30,"time":1738136704927,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738136704979,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"Boe7jrBpJDflTlfGUUmg-Z3jUsxKtuJbKUjPgYl2fgo"}
+{"level":50,"time":1738136704985,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1738136706012,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"mVcKLq7xFkJyqls9YBfE9ogRqsmTYxrJ9ESui7rv2Hk"}
+{"level":30,"time":1738136706016,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"mike"}
+{"level":30,"time":1738136706458,"pid":26620,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":50,"time":1738136739599,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136739602,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136777445,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136777494,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":30,"time":1738136778840,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"-GxV8X7zKJVf4uJ3hexwBS5kiSKju5hceB4AVVe2ugo"}
+{"level":30,"time":1738136778842,"pid":26620,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"mike"}
+{"level":50,"time":1738136834530,"pid":24324,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136834571,"pid":24324,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136874808,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136874856,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":30,"time":1738136875434,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"ThbTMTL1vhkqzS72iYviWAZWG45f4Jgb7V9YJrniOHo"}
+{"level":30,"time":1738136875443,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"mike"}
+{"level":50,"time":1738136914476,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136914523,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136928363,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136928385,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136940402,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738136940451,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":30,"time":1738136941329,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"cPlWIaeyF6M7bBKOo6KbNpoCk2vMAfYJnMRd63qDH5k"}
+{"level":30,"time":1738136941331,"pid":21656,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"mike"}
+{"level":30,"time":1738137342770,"pid":8772,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738137342880,"pid":8772,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738137407874,"pid":8772,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"RqF3-rFl5zgBQHOYx-trfnJrA-SwNeZNRRQxOkH_IeA"}
+{"level":30,"time":1738137407881,"pid":8772,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"RqF3-rFl5zgBQHOYx-trfnJrA-SwNeZNRRQxOkH_IeA"}
+{"level":30,"time":1738137407886,"pid":8772,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738137407891,"pid":8772,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738137598568,"pid":24044,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738137598653,"pid":24044,"host":"SlowFlow","ml":"auth-module.js","fn":"setNewPassword","msg":"success"}
+{"level":30,"time":1738137740338,"pid":21476,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738137740422,"pid":21476,"host":"SlowFlow","ml":"auth-module.js","fn":"setNewPassword","msg":"success"}
+{"level":30,"time":1738137916926,"pid":13712,"host":"SlowFlow","ml":"mongodb-module.js","fn":"mongoDBClient.constructor","msg":"MongoDB server is connected"}
+{"level":30,"time":1738137917017,"pid":13712,"host":"SlowFlow","ml":"auth-module.js","fn":"setNewPassword","msg":"faild for token f57f3433-328c-497f-a203-36064315ed31","user":"6793b13bda894222668001ef"}
+{"level":30,"time":1738137980543,"pid":12944,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":30,"time":1738138002637,"pid":12944,"host":"SlowFlow","ml":"auth-module.js","fn":"setResetPasswordToken","user":"aandrusenko@yandex.ru"}
+{"level":30,"time":1738138054019,"pid":12944,"host":"SlowFlow","ml":"auth-module.js","fn":"setNewPassword","msg":"success","user":"6793b13bda894222668001ef"}
+{"level":30,"time":1738138199031,"pid":18528,"host":"SlowFlow","ml":"auth-module.js","fn":"signUpNewUser","msg":"success","user":"adminfdfsd"}
+{"level":30,"time":1738138230869,"pid":18528,"host":"SlowFlow","ml":"auth-module.js","fn":"signUpNewUser","msg":"success","user":"admin2"}
+{"level":50,"time":1738138241153,"pid":18528,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin2","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":50,"time":1738139148686,"pid":21476,"host":"SlowFlow","ml":"mongodb-module.js","fn":"updateUser","msg":"Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"level":30,"time":1738139189842,"pid":13396,"host":"SlowFlow","ml":"auth-module.js","fn":"updateUserData","msg":"{\"_id\":\"6799e2761a957e203570d2ae\",\"userId\":\"admin2\",\"password\":\"$2b$10$nGFpOwmPwBrg7b2up2Dls.ST/6Ll9i.7obF6cC6uvr7T3Lq62kNs.\",\"email\":\"a@rrr\",\"role\":null,\"token\":\"b61d2c13-8a76-4dcb-bbd0-496ce87133b8\"}","user":"admin2"}
+{"level":50,"time":1738139384139,"pid":21600,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"admin2","msg":"Email address has not been confirmed","err_name":"email"}
+{"level":30,"time":1738139390310,"pid":21600,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738139408997,"pid":21600,"host":"SlowFlow","ml":"auth-module.js","fn":"deleteUser","msg":"success","user":"adminfdsfds"}
+{"level":30,"time":1738139513449,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"y24PWrJp4WI7R0bVHyOvRSA68cIIufP_i2IKscPIdDM"}
+{"level":30,"time":1738139513453,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738139519898,"pid":13656,"host":"SlowFlow","ml":"auth-module.js","fn":"deleteUser","msg":"fail","user":"adminfdfsd"}
+{"level":30,"time":1738139739026,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"gJL0DpRhRatDvOFGx2RzEQriflk9eVke-XOkVawiAYE"}
+{"level":30,"time":1738139739030,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738139739168,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"gJL0DpRhRatDvOFGx2RzEQriflk9eVke-XOkVawiAYE"}
+{"level":50,"time":1738139739182,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1738139739592,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"-GkbwSrbXen1s6ziar4q7tYxht2S1saJer1HQRktONQ"}
+{"level":30,"time":1738139739598,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"mike"}
+{"level":30,"time":1738139740800,"pid":13656,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":50,"time":1738139927789,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738139927799,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":30,"time":1738139930284,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"0Uv1Sz3X4tqkznxDIGXjts_cya7QNEu1maSQN5h47sU"}
+{"level":30,"time":1738139930286,"pid":13656,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"mike"}
+{"level":30,"time":1738139931826,"pid":13656,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738139938345,"pid":13656,"host":"SlowFlow","ml":"auth-module.js","fn":"deleteUser","msg":"fail","user":"adminfdfsd"}
+{"level":30,"time":1738140049171,"pid":10200,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"alNJXz72KZgUw9zhw1bUCmuyUh6YRDO4hA08BfC1o5c"}
+{"level":30,"time":1738140049174,"pid":10200,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738140049217,"pid":10200,"host":"SlowFlow","ml":"auth-module.js","fn":"deleteUser","msg":"success","user":"adminfdfsd"}
+{"level":30,"time":1738140276817,"pid":24372,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"csOJE_DzvCHrOqkmTNT_shf5utftDeze57qOCCIJcgM"}
+{"level":30,"time":1738140276838,"pid":24372,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738140276879,"pid":24372,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"csOJE_DzvCHrOqkmTNT_shf5utftDeze57qOCCIJcgM"}
+{"level":50,"time":1738140276886,"pid":24372,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1738140277756,"pid":24372,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":30,"time":1738140277781,"pid":24372,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"RIFThDY14BiQEBrToO1vpQgkD-VhG7a5IWcUSgVXMLI"}
+{"level":30,"time":1738140277785,"pid":24372,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"mike"}
+{"level":50,"time":1738140297000,"pid":24372,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738140297053,"pid":24372,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":30,"time":1738140302785,"pid":24372,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738140969801,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"DEcbPj1ES59ARQ1rlEs4XJ_9f2S0O9YnedBvuZt9mzk"}
+{"level":50,"time":1738140969806,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"mike","msg":"refreshToken has not been found"}
+{"level":30,"time":1738140971026,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"mike","msg":"fail"}
+{"level":30,"time":1738140971026,"pid":7732,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"mike"}
+{"level":50,"time":1738140978386,"pid":7732,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","user":"mike","msg":"Incorrect password","err_name":"Error"}
+{"level":30,"time":1738140989291,"pid":7732,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"mike"}
+{"level":30,"time":1738140992315,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"GZqrJAts6ZFc5mc84-o6PNdlKVHgSkbC8JNUy81_pqM"}
+{"level":30,"time":1738140992320,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738141004324,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"mike","msg":"success"}
+{"level":30,"time":1738141023342,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"admin","msg":"success"}
+{"level":30,"time":1738141023344,"pid":7732,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":30,"time":1738141030659,"pid":7732,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738141050195,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"xrJs89GKIV_1UKK0VYaXgqGWVxDs2TLnkmTNtW103vo"}
+{"level":50,"time":1738141050200,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"mike","msg":"refreshToken has not been found"}
+{"level":30,"time":1738141050680,"pid":7732,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"mike","msg":"fail"}
+{"level":30,"time":1738141050681,"pid":7732,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"mike"}
+{"level":30,"time":1738141076929,"pid":7732,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"mike"}
+{"level":30,"time":1738141111089,"pid":21848,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"2NHfq1Xqhiv5M0diolDcBJl2k0Ee5KI6U7Y7uf9xDNk"}
+{"level":30,"time":1738141111098,"pid":21848,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738141111132,"pid":21848,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"mike","msg":"fail"}
+{"level":30,"time":1738141128466,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"mike","msg":"success"}
+{"level":30,"time":1738141184648,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"HVe_fXB6ra6ZBb4612UZo4s0iz3b0h2WIMqHG36F2KU"}
+{"level":30,"time":1738141184651,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","msg":"New token is issued","user":"admin"}
+{"level":30,"time":1738141184692,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"HVe_fXB6ra6ZBb4612UZo4s0iz3b0h2WIMqHG36F2KU"}
+{"level":50,"time":1738141184695,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1738141184910,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"ks1EE6Jiu_9HGf-dK783C9lBZm8j0TWinRKTACIn_3Q"}
+{"level":50,"time":1738141184913,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"mike","msg":"refreshToken has not been found"}
+{"level":30,"time":1738141185111,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"admin","msg":"success"}
+{"level":30,"time":1738141185112,"pid":27568,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":30,"time":1738141185375,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"mike","msg":"fail"}
+{"level":30,"time":1738141185377,"pid":27568,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"mike"}
+{"level":50,"time":1738141219885,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738141219938,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":50,"time":1738141220733,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}
+{"level":30,"time":1738141224588,"pid":27568,"host":"SlowFlow","ml":"auth-module.js","fn":"logInUser","msg":"success","user":"admin"}
+{"level":30,"time":1738141231474,"pid":27568,"host":"SlowFlow","ml":"auth-module.js","fn":"deleteUser","msg":"success","user":"admin2"}
+{"level":30,"time":1738141261731,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"admin","msg":"success"}
+{"level":30,"time":1738141284890,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","msg":"jwt expired","jwt":"RRqxovQXox08nowAwVA0I3OznVnh53PeN2-YNa5pQs4"}
+{"level":50,"time":1738141284893,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"refreshTokenFunc","user":"admin","msg":"refreshToken has not been found"}
+{"level":30,"time":1738141285267,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"deleteRefreshToken","user":"admin","msg":"fail"}
+{"level":30,"time":1738141285268,"pid":27568,"host":"SlowFlow","ml":"auth-module.js","fn":"logOutUser","msg":"success","user":"admin"}
+{"level":50,"time":1738143362251,"pid":27568,"host":"SlowFlow","ml":"jwt-module.js","fn":"verifyJWT","jwt":"undefined","msg":"JsonWebTokenError : jwt malformed"}

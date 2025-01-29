@@ -35,7 +35,6 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express_1 = require("express");
-const rxjs_1 = require("rxjs");
 const authModule = __importStar(require("../modules/auth-module"));
 exports.router = (0, express_1.Router)();
 /*Authenticate user data*/
@@ -44,12 +43,7 @@ exports.router.post('/login', async function (req, res, next) {
 });
 //Log out user by removing tokens from cookies and redis 
 exports.router.post('/logout', async function (req, res, next) {
-    authModule.logOutUser(req, res, next)
-        .pipe((0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
-        return rxjs_1.EMPTY;
-    }))
-        .subscribe(data => res.send({ userId: data.userId, logout: data.deleted }));
+    authModule.logOutUser(req, res, next);
 });
 /* Sigh up new user. */
 exports.router.post('/', async function (req, res, next) {

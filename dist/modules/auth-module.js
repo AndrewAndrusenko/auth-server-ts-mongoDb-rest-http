@@ -1,42 +1,11 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logInUser = logInUser;
 exports.logOutUser = logOutUser;
 exports.signUpNewUser = signUpNewUser;
 exports.updateUserData = updateUserData;
+exports.findAllUserData = findAllUserData;
+exports.deleteUser = deleteUser;
 exports.setResetPasswordToken = setResetPasswordToken;
 exports.setNewPassword = setNewPassword;
 exports.confirmEmailAddress = confirmEmailAddress;
@@ -50,8 +19,8 @@ const cookie_1 = require("cookie");
 const shared_models_1 = require("../types/shared-models");
 const mongodb_module_1 = require("./mongodb-module");
 const logger_module_1 = require("./logger-module");
-const path = __importStar(require("path"));
-const localLogger = logger_module_1.loggerPino.child({ ml: path.basename(__filename) });
+const path_1 = require("path");
+const localLogger = logger_module_1.loggerPino.child({ ml: (0, path_1.basename)(__filename) });
 const mongoClient = new mongodb_module_1.mongoDBClient();
 function logInUser(req, res, next) {
     localLogger.debug(`mongoClient.isOpened ${mongoClient.isOpened} `);
@@ -72,37 +41,70 @@ function logInUser(req, res, next) {
         const refreshToken = (0, cookie_1.serialize)('A3_RefreshToken', jwtInfoToken.refreshToken, shared_models_1.serializeOptions);
         res.setHeader('Set-Cookie', [accessToken, refreshToken, accessTokenConsumer]);
         res.send(jwtInfoToken);
+        localLogger.info({ fn: 'logInUser', msg: 'success', user: userFromUI.userId });
     });
 }
 function logOutUser(req, res, next) {
     res.clearCookie('A3_AccessToken', { httpOnly: true });
     res.clearCookie('A3_RefreshToken', { httpOnly: true });
     res.clearCookie('A3_AccessToken_Shared', { domain: shared_models_1.serializeOptionsShared.domain });
-    return (0, jwt_module_1.deleteRefreshToken)(req, res);
+    (0, jwt_module_1.deleteRefreshToken)(req, res)
+        .pipe((0, rxjs_1.catchError)(err => {
+        res.status(500).send(err);
+        return rxjs_1.EMPTY;
+    }))
+        .subscribe(data => {
+        res.send({ userId: req.body.userId, logout: data.deleted });
+        localLogger.info({ fn: 'logOutUser', msg: 'success', user: req.body.userId });
+    });
 }
 function signUpNewUser(req, res, next) {
     let newUser = req.body;
     return (0, rxjs_1.from)(mongoClient.isDBConnected())
         .pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(newUser.password)), (0, rxjs_1.switchMap)((hashPassword) => mongoClient.addUser({ ...newUser, password: hashPassword })), (0, rxjs_1.catchError)(err => {
-        localLogger.error({ fn: 'signUpNewUser', msg: err.message });
         res.status(500).send(err);
+        localLogger.error({ fn: 'signUpNewUser', msg: err.message });
         return rxjs_1.EMPTY;
     }))
-        .subscribe(data => res.send(data));
+        .subscribe(data => {
+        res.send(data);
+        localLogger.info({ fn: 'signUpNewUser', msg: 'success', user: newUser.userId });
+    });
 }
 function updateUserData(req, res, next) {
     let newUser = req.body;
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.updateUser(newUser)), (0, rxjs_1.catchError)(e => {
-        res.send(e);
+        res.status(500).send(e);
+        return rxjs_1.EMPTY;
+    })).subscribe(data => {
+        res.send(data);
+        localLogger.info({ fn: 'updateUserData', msg: JSON.stringify(newUser), user: newUser.userId });
+    });
+}
+function findAllUserData(req, res, next) {
+    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.findAllUsers()), (0, rxjs_1.catchError)(e => {
+        res.status(500).send(e);
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 }
+function deleteUser(req, res, next) {
+    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.deleteUser(req.body.userId)), (0, rxjs_1.catchError)(e => {
+        res.status(500).send(e);
+        return rxjs_1.EMPTY;
+    })).subscribe(data => {
+        res.send(data);
+        localLogger.info({ fn: 'deleteUser', msg: data?.deletedCount ? 'success' : 'fail', user: req.body.userId });
+    });
+}
 function setResetPasswordToken(req, res, next) {
     let data = req.body;
-    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.setResetPasswordToken(data.email, data.passwordToken)), (0, rxjs_1.catchError)(e => {
-        res.send(e);
+    (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.setResetPasswordToken(data.email, data.passwordToken)), (0, rxjs_1.catchError)(err => {
+        res.status(500).send(err);
         return rxjs_1.EMPTY;
-    })).subscribe(data => res.send(data));
+    })).subscribe(data => {
+        res.send(data);
+        localLogger.info({ fn: 'setResetPasswordToken', msg: req.body.data?.passwordToken, user: data?.email });
+    });
 }
 function setNewPassword(req, res, next) {
     let data = req.body;
@@ -110,27 +112,33 @@ function setNewPassword(req, res, next) {
         .pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(data.password)), (0, rxjs_1.switchMap)(hashedPassword => mongoClient.resetPassword(data.id, data.token, hashedPassword)), (0, rxjs_1.catchError)(err => {
         res.status(500).send(err);
         return rxjs_1.EMPTY;
-    })).subscribe(data => res.send(data));
+    })).subscribe(data => {
+        res.send(data);
+        localLogger.info({ fn: 'setNewPassword', msg: data ? 'success' : `failed for token ${req.body.token}`, user: req.body.id });
+    });
 }
 function confirmEmailAddress(req, res, next) {
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.confirmEmail(req.body)), (0, rxjs_1.switchMap)(updateResult => (0, rxjs_1.of)(updateResult.modifiedCount !== 0 || updateResult.matchedCount !== 0)), (0, rxjs_1.catchError)(err => {
-        localLogger.error({ fn: 'confirmEmailAddress', user: req.url, msg: err.message });
         res.status(500).send(err);
+        localLogger.error({ fn: 'confirmEmailAddress', user: req.url, msg: err.message });
         return rxjs_1.EMPTY;
-    })).subscribe(data => res.send(data));
+    })).subscribe(data => {
+        res.send(data);
+        localLogger.info({ fn: 'confirmEmailAddress', msg: data ? 'success' : 'fail', user: req.body.data.id });
+    });
 }
 //VALIDATORS
 function checkEmailUnique(req, res, next) {
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.checkEmailUnique(req.query.email)), (0, rxjs_1.catchError)(err => {
-        localLogger.error({ fn: 'checkEmailUnique', msg: err.message, user: req.query.userId });
         res.status(500).send(err);
+        localLogger.error({ fn: 'checkEmailUnique', msg: err.message, user: req.query.userId });
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 }
 function checkUserIdUnique(req, res, next) {
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.checkUserIdUnique(req.query.userId)), (0, rxjs_1.catchError)(err => {
-        localLogger.error({ fn: 'checkUserIdUnique', msg: err.message, user: req.query.userId });
         res.status(500).send(err);
+        localLogger.error({ fn: 'checkUserIdUnique', msg: err.message, user: req.query.userId });
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 }

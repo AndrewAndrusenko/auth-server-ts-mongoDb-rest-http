@@ -96,7 +96,7 @@ function refreshTokenFunc(refreshToken, res) {
             res.status(401).send('JsonWebTokenError : RefreshToken has not been found');
             return rxjs_1.EMPTY;
         }
-    }), (0, rxjs_1.catchError)(e => { return (0, rxjs_1.throwError)(() => e); }))), (0, rxjs_1.tap)(jwtInfo => localLogger.debug('User:', jwtInfo.userId, '| New token is being issued')), (0, rxjs_1.switchMap)(jwtInfo => jwtSet({ _id: jwtInfo._id, userId: jwtInfo.userId, role: jwtInfo.role })), (0, rxjs_1.switchMap)(jwtInfoToken => exports.redisStore.saveRefresh(jwtInfoToken)), (0, rxjs_1.tap)(jwtInfoToken => res.setHeader('Set-Cookie', [
+    }), (0, rxjs_1.catchError)(e => { return (0, rxjs_1.throwError)(() => e); }))), (0, rxjs_1.tap)(jwtInfo => localLogger.info({ fn: 'refreshTokenFunc', msg: 'New token is issued', user: jwtInfo.userId })), (0, rxjs_1.switchMap)(jwtInfo => jwtSet({ _id: jwtInfo._id, userId: jwtInfo.userId, role: jwtInfo.role })), (0, rxjs_1.switchMap)(jwtInfoToken => exports.redisStore.saveRefresh(jwtInfoToken)), (0, rxjs_1.tap)(jwtInfoToken => res.setHeader('Set-Cookie', [
         (0, cookie_1.serialize)('A3_AccessToken', jwtInfoToken.jwt, shared_models_1.serializeOptions),
         (0, cookie_1.serialize)('A3_RefreshToken', jwtInfoToken.refreshToken, shared_models_1.serializeOptions),
         (0, cookie_1.serialize)('A3_AccessToken_Shared', jwtInfoToken.jwt, shared_models_1.serializeOptionsShared)
@@ -119,7 +119,7 @@ function getAllRefreshToStore(req, res) {
 }
 function deleteRefreshToken(req, res) {
     return exports.redisStore.removeRefreshToken(req.body.userId)
-        .pipe((0, rxjs_1.catchError)(err => {
+        .pipe((0, rxjs_1.tap)(deleted => localLogger.info({ fn: 'deleteRefreshToken', user: req.body.userId, msg: deleted.deleted ? 'success' : 'fail' })), (0, rxjs_1.catchError)(err => {
         localLogger.error({ fn: 'deleteRefreshToken', user: req.body.userId, msg: err.message });
         err.module = 'JWT';
         return (0, rxjs_1.throwError)(() => err);

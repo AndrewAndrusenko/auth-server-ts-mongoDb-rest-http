@@ -1,6 +1,7 @@
 import { Router} from 'express'
 import { deleteRefreshToken, getAllRefreshToStore, verifyAccess } from '../modules/jwt-module'
 import { catchError, EMPTY } from 'rxjs'
+import { deleteUser, findAllUserData } from '../modules/auth-module'
 export const router = Router()
 
 router.get('/getAllTokens',verifyAccess, (req, res) => {
@@ -17,5 +18,12 @@ router.post('/delToken',verifyAccess, (req, res) => {
     res.status(500).send({msg:e.message,ml:e.module});
     return EMPTY;
   }))
-  .subscribe(data=>data.deleted? res.send(data): res.status(500).send({msg:'Token has not been deleted', ml:'JWT'}))
+  .subscribe(data=>res.send(data))
+})
+/* Get all user data. */
+router.get('/all', verifyAccess,async function(req, res, next) {
+  findAllUserData(req, res, next)
+});
+router.post('/user-del',verifyAccess, (req, res, next) => {
+  deleteUser(req,res,next)
 })

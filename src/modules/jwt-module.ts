@@ -97,7 +97,7 @@ function refreshTokenFunc (refreshToken:string,res:Response):Observable<{respons
           }}),
         catchError(e=>{return throwError(()=>e)})
       )),
-    tap(jwtInfo=>localLogger.debug('User:',(jwtInfo as IJWTInfo).userId,'| New token is being issued')),   
+    tap(jwtInfo=>localLogger.info({fn:'refreshTokenFunc', msg:'New token is issued', user:(jwtInfo as IJWTInfo).userId})),   
     switchMap(jwtInfo=> jwtSet({_id:(jwtInfo as IJWTInfo)._id, userId:(jwtInfo as IJWTInfo).userId, role:(jwtInfo as IJWTInfo).role})),
     switchMap(jwtInfoToken=>redisStore.saveRefresh(jwtInfoToken)),
     tap(jwtInfoToken=>res.setHeader('Set-Cookie',[
@@ -130,9 +130,12 @@ export function getAllRefreshToStore (req:Request, res:Response):Observable<{use
 }
 export function deleteRefreshToken (req:Request, res:Response):Observable<IRefreshDelete>{
   return redisStore.removeRefreshToken(req.body.userId)
-  .pipe(catchError(err=>{
+  .pipe(
+    tap(deleted=>localLogger.info({fn:'deleteRefreshToken',user:req.body.userId,msg:deleted.deleted? 'success':'fail'})),
+    catchError(err=>{
     localLogger.error({fn:'deleteRefreshToken',user:req.body.userId, msg:err.message})
     err.module = 'JWT'
     return throwError(()=>err) 
   }))
+  
 }

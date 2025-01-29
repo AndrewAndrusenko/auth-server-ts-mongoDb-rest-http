@@ -1,4 +1,4 @@
-import { Db, InsertOneResult, MongoClient, ObjectId, UpdateResult, WithId} from 'mongodb';
+import { Db, DeleteResult, InsertOneResult, MongoClient, ObjectId, UpdateResult, WithId} from 'mongodb';
 import { catchError, EMPTY, from, map, Observable, of, switchMap, tap, throwError } from 'rxjs';
 import { ENVIRONMENT } from '../environment/environment';
 import { IUser } from '../types/shared-models';
@@ -19,7 +19,7 @@ export class mongoDBClient extends MongoClient {
       serverSelectionTimeoutMS: 1000
     });
     this.on('open',()=>{
-      localLogger.info({fn:'mongoDBClient.constructor',msg:'MongoDB server is connected'})
+      // localLogger.info({fn:'mongoDBClient.constructor',msg:'MongoDB server is connected'})
       this._isOpened = true
     })
     this.on('close',()=>{
@@ -30,7 +30,6 @@ export class mongoDBClient extends MongoClient {
   isDBConnected():Observable<boolean> {
     return of(this._isOpened).pipe(
       switchMap(isConnected=>isConnected?  of(isConnected) : from(this.connect()).pipe(
-        tap(()=>console.log('db server is connected')),
         map(()=>{return true}),
         catchError(err=>{
           err.msg = err.message, 
@@ -44,6 +43,16 @@ export class mongoDBClient extends MongoClient {
       switchMap(isConnected=>isConnected? this.dbInst.collection<IUser>('auth-users-data').findOne({userId:user.userId}):EMPTY),
       catchError(err=>{return throwError(()=> new Error(err))}))
   }
+  findAllUsers ():Observable<IUser[]|null> {
+    return this.isDBConnected().pipe(
+      switchMap(isConnected=>isConnected? this.dbInst.collection<IUser>('auth-users-data').find().toArray():EMPTY),
+      catchError(err=>{return throwError(()=> new Error(err))}))
+  }
+  deleteUser (userId:string):Observable<DeleteResult|null> {
+    return this.isDBConnected().pipe(
+      switchMap(isConnected=>isConnected? this.dbInst.collection<DeleteResult>('auth-users-data').deleteOne({userId:userId}):EMPTY),
+      catchError(err=>{return throwError(()=> new Error(err))}))
+  }
   addUser (newUser:IUser):Observable<InsertOneResult<IUser>> {
     return from(this.dbInst.collection<IUser>('auth-users-data').insertOne (newUser));
   }
@@ -51,7 +60,15 @@ export class mongoDBClient extends MongoClient {
     let dataWitoutId = {...newUser};
     delete dataWitoutId._id
     dataWitoutId.role='user'
-    return from(this.dbInst.collection<IUser>('auth-users-data').updateOne ({_id:new  ObjectId(newUser._id)},{$set:{...dataWitoutId}}));
+    return from(this.dbInst.collection<IUser>('auth-users-data').updateOne ({_id:new  ObjectId(newUser._id)},{$set:{...dataWitoutId}}))
+    .pipe(
+      catchError(err=>{
+        localLogger.error({fn:'updateUser',msg:err.message, user:JSON.stringify(dataWitoutId)})
+        err.msg = err.message, 
+        err.ml = 'MongoService'
+        return throwError(()=>err)
+      })
+    );
   }
   resetPassword (id:string,token:string, password:string):Observable<WithId<IUser> | null> {
     return from(this.dbInst.collection<IUser>('auth-users-data').findOneAndUpdate ({_id:new ObjectId(id),passwordToken:token},{$set:{password:password}}));
