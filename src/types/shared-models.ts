@@ -33,7 +33,9 @@ export const serializeOptions:SerializeOptions = {
   secure:true,
   sameSite:'strict',
   maxAge:60*60*24*30,
-  path:'/'
+  path:'/',
+  domain:'euw.devtunnels.ms'
+
 }
 export const serializeOptionsShared:SerializeOptions = {
   // httpOnly:true,

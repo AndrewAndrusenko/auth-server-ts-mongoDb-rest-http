@@ -40,6 +40,7 @@ function logInUser(req, res, next) {
         const accessTokenConsumer = (0, cookie_1.serialize)('A3_AccessToken_Shared', jwtInfoToken.jwt, shared_models_1.serializeOptionsShared);
         const refreshToken = (0, cookie_1.serialize)('A3_RefreshToken', jwtInfoToken.refreshToken, shared_models_1.serializeOptions);
         res.setHeader('Set-Cookie', [accessToken, refreshToken, accessTokenConsumer]);
+        res.setHeader('Authorization', 'Bearer ' + jwtInfoToken.jwt);
         res.send(jwtInfoToken);
         localLogger.info({ fn: 'logInUser', msg: 'success', user: userFromUI.userId });
     });

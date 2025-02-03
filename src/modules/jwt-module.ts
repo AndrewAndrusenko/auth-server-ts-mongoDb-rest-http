@@ -47,6 +47,7 @@ export function jwtSet (jwtInfo: IJWTInfo ):Observable<IJWTInfoToken> {
 }
 
 export function verifyAccess (req:Request, res:Response, next:NextFunction ) {
+  console.log('req.cookies',req )
   verifyJWT(String(JSONCookies(req.cookies)['A3_AccessToken']),String(JSONCookies(req.cookies)['A3_RefreshToken']),res,next,req.originalUrl)
 }
 function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:NextFunction,url:string ) {

@@ -39,6 +39,7 @@ export function logInUser (req:Request, res:Response, next:NextFunction) {
     const accessTokenConsumer = serialize('A3_AccessToken_Shared', jwtInfoToken.jwt,serializeOptionsShared);
     const refreshToken = serialize('A3_RefreshToken', jwtInfoToken.refreshToken,serializeOptions);
     res.setHeader('Set-Cookie',[accessToken,refreshToken,accessTokenConsumer]);
+    res.setHeader('Authorization', 'Bearer '+ jwtInfoToken.jwt)
     res.send(jwtInfoToken);
     localLogger.info({fn:'logInUser',msg:'success',user:userFromUI.userId})
   })

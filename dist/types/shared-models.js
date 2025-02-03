@@ -7,7 +7,8 @@ exports.serializeOptions = {
     secure: true,
     sameSite: 'strict',
     maxAge: 60 * 60 * 24 * 30,
-    path: '/'
+    path: '/',
+    domain: 'euw.devtunnels.ms'
 };
 exports.serializeOptionsShared = {
     // httpOnly:true,
