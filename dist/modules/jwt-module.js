@@ -53,7 +53,6 @@ function jwtSet(jwtInfo) {
     }));
 }
 function verifyAccess(req, res, next) {
-    console.log('req.cookies', req);
     verifyJWT(String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_AccessToken']), String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_RefreshToken']), res, next, req.originalUrl);
 }
 function verifyJWT(accessToken, refreshToken, res, next, url) {
