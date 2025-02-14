@@ -1,11 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.redisStore = void 0;
-exports.jwtSet = jwtSet;
+exports.jwtSetAll = jwtSetAll;
+exports.jwtSetAccessToken = jwtSetAccessToken;
 exports.verifyAccess = verifyAccess;
+exports.refreshTokenFn = refreshTokenFn;
 exports.saveRefreshToStore = saveRefreshToStore;
 exports.getAllRefreshToStore = getAllRefreshToStore;
 exports.deleteRefreshToken = deleteRefreshToken;
+exports.setCookiesJWT_Tokens = setCookiesJWT_Tokens;
+exports.clearCookiesJWTTokens = clearCookiesJWTTokens;
 const environment_1 = require("../environment/environment");
 const jsonwebtoken_1 = require("jsonwebtoken");
 const rxjs_1 = require("rxjs");
@@ -16,6 +20,7 @@ const redis_module_1 = require("./redis-module");
 const access_roles_model_1 = require("../types/access-roles-model");
 const path_1 = require("path");
 const logger_module_1 = require("./logger-module");
+const errors_model_1 = require("../types/errors-model");
 exports.redisStore = new redis_module_1.redisClientAuth();
 exports.redisStore.init().pipe((0, rxjs_1.catchError)(err => {
     localLogger.error({ fn: 'redisStore.init()', msg: err.code });
@@ -42,7 +47,7 @@ function issueRefreshJWT(jwtInfo) {
         }
     }));
 }
-function jwtSet(jwtInfo) {
+function jwtSetAll(jwtInfo) {
     return (0, rxjs_1.forkJoin)({
         jwt: issueAccessJWT(jwtInfo),
         refreshToken: issueRefreshJWT(jwtInfo),
@@ -52,10 +57,19 @@ function jwtSet(jwtInfo) {
         return (0, rxjs_1.of)({ jwt: '', refreshToken: '', jwtInfo: jwtInfo });
     }));
 }
-function verifyAccess(req, res, next) {
-    verifyJWT(String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_AccessToken']), String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_RefreshToken']), res, next, req.originalUrl);
+function jwtSetAccessToken(jwtInfo) {
+    return (0, rxjs_1.forkJoin)({
+        jwt: issueAccessJWT(jwtInfo),
+        jwtInfo: (0, rxjs_1.of)(jwtInfo)
+    }).pipe((0, rxjs_1.catchError)(err => {
+        localLogger.error({ fn: 'jwtSet', user: jwtInfo.userId, msg: err.message });
+        return (0, rxjs_1.of)({ jwt: '', refreshToken: '', jwtInfo: jwtInfo });
+    }));
 }
-function verifyJWT(accessToken, refreshToken, res, next, url) {
+function verifyAccess(req, res, next) {
+    verifyJWT(String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_AccessToken']), res, next, req.originalUrl);
+}
+function verifyJWT(accessToken, res, next, url) {
     const boundJwtVerify = (0, rxjs_1.bindNodeCallback)(jsonwebtoken_1.verify);
     let jwtVerify$ = boundJwtVerify(accessToken, environment_1.ENVIRONMENT.JWT.JWT_SECRET);
     jwtVerify$.pipe((0, rxjs_1.tap)(decoded => {
@@ -69,41 +83,36 @@ function verifyJWT(accessToken, refreshToken, res, next, url) {
         switch (err?.name) {
             case 'TokenExpiredError':
                 localLogger.info({ fn: 'verifyJWT', msg: err.message, jwt: accessToken.split('.')[2] });
-                refreshTokenFunc(refreshToken, res).subscribe(res_jwtInfoToken => {
-                    res_jwtInfoToken = res_jwtInfoToken;
-                    verifyJWT(res_jwtInfoToken.jwtInfoToken.jwt, res_jwtInfoToken.jwtInfoToken.refreshToken, res_jwtInfoToken.response, next, url);
-                });
+                res.headersSent ? null : res.status(errors_model_1.SERVER_ERRORS.get('JWT_EXPIRED').code).send({ ml: 'JWT', msg: 'Access token is expired' });
                 break;
             case 'AccessForbiden':
                 break;
             default:
                 localLogger.error({ fn: 'verifyJWT', jwt: accessToken, msg: `${err?.name} : ${err.message}` });
-                res.headersSent ? null : res.status(401).send(`${err?.name} : ${err.message}`);
+                res.headersSent ? null : res.status(errors_model_1.SERVER_ERRORS.get('AUTHENTICATION_FAILED').code).send(`${err?.name} : ${err.message}`);
                 break;
         }
         return rxjs_1.EMPTY;
     })).subscribe(() => next());
 }
-function refreshTokenFunc(refreshToken, res) {
+function refreshTokenFn(req, res, next) {
+    let refreshToken = String((0, cookie_parser_1.JSONCookies)(req.cookies)['A3_RefreshToken']);
     const boundJwtVerify = (0, rxjs_1.bindNodeCallback)(jsonwebtoken_1.verify);
-    return boundJwtVerify(refreshToken, environment_1.ENVIRONMENT.JWT.JWT_REFRESH_SECRET).pipe((0, rxjs_1.switchMap)(jwtInfo => exports.redisStore.getRefreshToken(jwtInfo.userId)
+    boundJwtVerify(refreshToken, environment_1.ENVIRONMENT.JWT.JWT_REFRESH_SECRET).pipe((0, rxjs_1.switchMap)(jwtInfo => exports.redisStore.getRefreshToken(jwtInfo.userId)
         .pipe((0, rxjs_1.switchMap)(jwtInfoToken => {
         if (jwtInfoToken?.refreshToken === refreshToken) {
             return (0, rxjs_1.of)(jwtInfo);
         }
         else {
-            localLogger.error({ fn: 'refreshTokenFunc', user: jwtInfo.userId, msg: 'refreshToken has not been found', });
-            res.status(401).send('JsonWebTokenError : RefreshToken has not been found');
+            let errMsg = `refreshToken has not been found/not matched. Redis:${jwtInfoToken?.refreshToken} User: ${refreshToken}`;
+            localLogger.error({ fn: 'refreshTokenFunc', user: jwtInfo.userId, msg: errMsg });
+            res.status(errors_model_1.SERVER_ERRORS.get('AUTHENTICATION_FAILED').code).send('JsonWebTokenError : RefreshToken has not been found');
             return rxjs_1.EMPTY;
         }
-    }), (0, rxjs_1.catchError)(e => { return (0, rxjs_1.throwError)(() => e); }))), (0, rxjs_1.tap)(jwtInfo => localLogger.info({ fn: 'refreshTokenFunc', msg: 'New token is issued', user: jwtInfo.userId })), (0, rxjs_1.switchMap)(jwtInfo => jwtSet({ _id: jwtInfo._id, userId: jwtInfo.userId, role: jwtInfo.role })), (0, rxjs_1.switchMap)(jwtInfoToken => exports.redisStore.saveRefresh(jwtInfoToken)), (0, rxjs_1.tap)(jwtInfoToken => res.setHeader('Set-Cookie', [
-        (0, cookie_1.serialize)('A3_AccessToken', jwtInfoToken.jwt, shared_models_1.serializeOptions),
-        (0, cookie_1.serialize)('A3_RefreshToken', jwtInfoToken.refreshToken, shared_models_1.serializeOptions),
-        (0, cookie_1.serialize)('A3_AccessToken_Shared', jwtInfoToken.jwt, shared_models_1.serializeOptionsShared)
-    ])), (0, rxjs_1.switchMap)(jwtInfoToken => (0, rxjs_1.of)({ response: res, jwtInfoToken: jwtInfoToken })), (0, rxjs_1.catchError)(err => {
-        res.status(401).send(`${err?.name} : ${err.message}`);
+    }), (0, rxjs_1.catchError)(e => { return (0, rxjs_1.throwError)(() => e); }))), (0, rxjs_1.tap)(jwtInfo => localLogger.info({ fn: 'refreshTokenFunc', msg: 'New token is issued', user: jwtInfo.userId })), (0, rxjs_1.switchMap)(jwtInfo => jwtSetAccessToken({ _id: jwtInfo._id, userId: jwtInfo.userId, role: jwtInfo.role })), (0, rxjs_1.tap)(jwtInfoToken => res = setCookiesJWT_Tokens(res, jwtInfoToken.jwt)), (0, rxjs_1.switchMap)(jwtInfoToken => (0, rxjs_1.of)({ response: res, jwtInfoToken: jwtInfoToken })), (0, rxjs_1.catchError)(err => {
+        res.status(errors_model_1.SERVER_ERRORS.get('AUTHENTICATION_FAILED').code).send(`${err?.name} : ${err.message}`);
         return rxjs_1.EMPTY;
-    }));
+    })).subscribe(() => next());
 }
 function saveRefreshToStore(jwtInfoToken) {
     return exports.redisStore.saveRefresh(jwtInfoToken).pipe((0, rxjs_1.catchError)(err => {
@@ -124,4 +133,15 @@ function deleteRefreshToken(req, res) {
         err.module = 'JWT';
         return (0, rxjs_1.throwError)(() => err);
     }));
+}
+function setCookiesJWT_Tokens(res, accessToken, refreshToken) {
+    clearCookiesJWTTokens(res, refreshToken != undefined);
+    return res.setHeader('Set-Cookie', refreshToken ?
+        [(0, cookie_1.serialize)('A3_AccessToken', accessToken, shared_models_1.serializeOptions), (0, cookie_1.serialize)('A3_RefreshToken', refreshToken, shared_models_1.serializeOptions)]
+        : [(0, cookie_1.serialize)('A3_AccessToken', accessToken, shared_models_1.serializeOptions)]);
+}
+function clearCookiesJWTTokens(res, refreshClear = true) {
+    res.clearCookie('A3_AccessToken', { httpOnly: true, domain: 'euw.devtunnels.ms' });
+    res.clearCookie('A3_RefreshToken', { httpOnly: true, domain: 'euw.devtunnels.ms' });
+    return res;
 }

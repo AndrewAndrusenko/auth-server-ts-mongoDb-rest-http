@@ -35,13 +35,4 @@ export const serializeOptions:SerializeOptions = {
   maxAge:60*60*24*30,
   path:'/',
   domain:'euw.devtunnels.ms'
-
-}
-export const serializeOptionsShared:SerializeOptions = {
-  // httpOnly:true,
-  secure:true,
-  sameSite:'strict',
-  maxAge:60*60*24*30,
-  path:'/',
-  domain:'euw.devtunnels.ms'
 }

@@ -15,8 +15,7 @@ exports.mongoClientClose = mongoClientClose;
 const rxjs_1 = require("rxjs");
 const auth_hash_module_1 = require("./auth-hash-module");
 const jwt_module_1 = require("./jwt-module");
-const cookie_1 = require("cookie");
-const shared_models_1 = require("../types/shared-models");
+const errors_model_1 = require("../types/errors-model");
 const mongodb_module_1 = require("./mongodb-module");
 const logger_module_1 = require("./logger-module");
 const path_1 = require("path");
@@ -31,27 +30,22 @@ function logInUser(req, res, next) {
             emailErr.stack = JSON.stringify(user);
             emailErr.name = 'email';
             return emailErr;
-        })), (0, rxjs_1.switchMap)(user => (0, auth_hash_module_1.verifyUserPassword)(userFromUI.password, user)), (0, rxjs_1.switchMap)(userPassword => userPassword.passwordConfirmed ? (0, rxjs_1.of)(userPassword.userData) : (0, rxjs_1.throwError)(() => new Error('Incorrect password'))), (0, rxjs_1.switchMap)(user => (0, jwt_module_1.jwtSet)({ _id: user._id, userId: user.userId, role: user.role })), (0, rxjs_1.switchMap)(jwtInfoToken => (0, jwt_module_1.saveRefreshToStore)({ ...jwtInfoToken, timeSaved: new Date().toLocaleString() })), (0, rxjs_1.catchError)(e => {
+        })), (0, rxjs_1.switchMap)(user => (0, auth_hash_module_1.verifyUserPassword)(userFromUI.password, user)), (0, rxjs_1.switchMap)(userPassword => userPassword.passwordConfirmed ? (0, rxjs_1.of)(userPassword.userData) : (0, rxjs_1.throwError)(() => new Error('Incorrect password'))), (0, rxjs_1.switchMap)(user => (0, jwt_module_1.jwtSetAll)({ _id: user._id, userId: user.userId, role: user.role })), (0, rxjs_1.switchMap)(jwtInfoToken => (0, jwt_module_1.saveRefreshToStore)({ ...jwtInfoToken, timeSaved: new Date().toLocaleString() })), (0, rxjs_1.catchError)(e => {
         localLogger.error({ fn: 'logInUser', user: userFromUI.userId, msg: e.message, err_name: e.name });
         res.send({ errorResponse: { message: e.message, name: e.name, stack: e?.stack } });
         return rxjs_1.EMPTY;
     })).subscribe(jwtInfoToken => {
-        const accessToken = (0, cookie_1.serialize)('A3_AccessToken', jwtInfoToken.jwt, shared_models_1.serializeOptions);
-        const accessTokenConsumer = (0, cookie_1.serialize)('A3_AccessToken_Shared', jwtInfoToken.jwt, shared_models_1.serializeOptionsShared);
-        const refreshToken = (0, cookie_1.serialize)('A3_RefreshToken', jwtInfoToken.refreshToken, shared_models_1.serializeOptions);
-        res.setHeader('Set-Cookie', [accessToken, refreshToken, accessTokenConsumer]);
-        res.setHeader('Authorization', 'Bearer ' + jwtInfoToken.jwt);
+        res = (0, jwt_module_1.setCookiesJWT_Tokens)(res, jwtInfoToken.jwt, jwtInfoToken.refreshToken);
+        // res.setHeader('Authorization', 'Bearer '+ jwtInfoToken.jwt)
         res.send(jwtInfoToken);
         localLogger.info({ fn: 'logInUser', msg: 'success', user: userFromUI.userId });
     });
 }
 function logOutUser(req, res, next) {
-    res.clearCookie('A3_AccessToken', { httpOnly: true });
-    res.clearCookie('A3_RefreshToken', { httpOnly: true });
-    res.clearCookie('A3_AccessToken_Shared', { domain: shared_models_1.serializeOptionsShared.domain });
+    res = (0, jwt_module_1.clearCookiesJWTTokens)(res);
     (0, jwt_module_1.deleteRefreshToken)(req, res)
         .pipe((0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(err);
         return rxjs_1.EMPTY;
     }))
         .subscribe(data => {
@@ -63,7 +57,7 @@ function signUpNewUser(req, res, next) {
     let newUser = req.body;
     return (0, rxjs_1.from)(mongoClient.isDBConnected())
         .pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(newUser.password)), (0, rxjs_1.switchMap)((hashPassword) => mongoClient.addUser({ ...newUser, password: hashPassword })), (0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(err);
         localLogger.error({ fn: 'signUpNewUser', msg: err.message });
         return rxjs_1.EMPTY;
     }))
@@ -75,7 +69,7 @@ function signUpNewUser(req, res, next) {
 function updateUserData(req, res, next) {
     let newUser = req.body;
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.updateUser(newUser)), (0, rxjs_1.catchError)(e => {
-        res.status(500).send(e);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(e);
         return rxjs_1.EMPTY;
     })).subscribe(data => {
         res.send(data);
@@ -84,13 +78,13 @@ function updateUserData(req, res, next) {
 }
 function findAllUserData(req, res, next) {
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.findAllUsers()), (0, rxjs_1.catchError)(e => {
-        res.status(500).send(e);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(e);
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 }
 function deleteUser(req, res, next) {
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.deleteUser(req.body.userId)), (0, rxjs_1.catchError)(e => {
-        res.status(500).send(e);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(e);
         return rxjs_1.EMPTY;
     })).subscribe(data => {
         res.send(data);
@@ -100,7 +94,7 @@ function deleteUser(req, res, next) {
 function setResetPasswordToken(req, res, next) {
     let data = req.body;
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.setResetPasswordToken(data.email, data.passwordToken)), (0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(err);
         return rxjs_1.EMPTY;
     })).subscribe(data => {
         res.send(data);
@@ -111,7 +105,7 @@ function setNewPassword(req, res, next) {
     let data = req.body;
     (0, rxjs_1.from)(mongoClient.isDBConnected())
         .pipe((0, rxjs_1.switchMap)(() => (0, auth_hash_module_1.hashUserPassword)(data.password)), (0, rxjs_1.switchMap)(hashedPassword => mongoClient.resetPassword(data.id, data.token, hashedPassword)), (0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(err);
         return rxjs_1.EMPTY;
     })).subscribe(data => {
         res.send(data);
@@ -120,7 +114,7 @@ function setNewPassword(req, res, next) {
 }
 function confirmEmailAddress(req, res, next) {
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.confirmEmail(req.body)), (0, rxjs_1.switchMap)(updateResult => (0, rxjs_1.of)(updateResult.modifiedCount !== 0 || updateResult.matchedCount !== 0)), (0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(err);
         localLogger.error({ fn: 'confirmEmailAddress', user: req.url, msg: err.message });
         return rxjs_1.EMPTY;
     })).subscribe(data => {
@@ -131,14 +125,14 @@ function confirmEmailAddress(req, res, next) {
 //VALIDATORS
 function checkEmailUnique(req, res, next) {
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.checkEmailUnique(req.query.email)), (0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(err);
         localLogger.error({ fn: 'checkEmailUnique', msg: err.message, user: req.query.userId });
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));
 }
 function checkUserIdUnique(req, res, next) {
     (0, rxjs_1.from)(mongoClient.isDBConnected()).pipe((0, rxjs_1.switchMap)(() => mongoClient.checkUserIdUnique(req.query.userId)), (0, rxjs_1.catchError)(err => {
-        res.status(500).send(err);
+        res.status(errors_model_1.SERVER_ERRORS.get('INTERNAL_ERROR').code).send(err);
         localLogger.error({ fn: 'checkUserIdUnique', msg: err.message, user: req.query.userId });
         return rxjs_1.EMPTY;
     })).subscribe(data => res.send(data));

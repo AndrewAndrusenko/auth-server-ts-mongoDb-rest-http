@@ -54,7 +54,7 @@ class redisClientAuth {
                 this.client?.disconnect();
                 localLogger.info({ fn: 'redisClientAuth.init', msg: 'redis client disconneted' });
             })), (0, rxjs_1.switchMap)(() => (0, rxjs_1.of)(true)), (0, rxjs_1.catchError)(err => {
-                localLogger.error({ fn: 'redisClientAuth.init', msg: err.code });
+                localLogger.error({ fn: 'redisClientAuth.init1', msg: err.code });
                 return (0, rxjs_1.throwError)(() => new Error(err.code));
             }));
         }

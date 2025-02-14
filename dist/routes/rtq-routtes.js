@@ -7,6 +7,3 @@ exports.router = (0, express_1.Router)();
 exports.router.get('/', jwt_module_1.verifyAccess, ((req, res) => {
     res.send({ data: 'You will get quotes soon!' });
 }));
-exports.router.post('/new', jwt_module_1.verifyAccess, ((req, res) => {
-    res.send({ data: 'You will get quotes soon!' });
-}));

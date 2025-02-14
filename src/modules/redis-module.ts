@@ -25,7 +25,7 @@ export class redisClientAuth {
         })),
         switchMap(()=>of(true)),
         catchError(err=>{
-          localLogger.error({fn:'redisClientAuth.init',msg:err.code})
+          localLogger.error({fn:'redisClientAuth.init1',msg:err.code})
           return throwError(()=> new Error(err.code))
         }))}
   }

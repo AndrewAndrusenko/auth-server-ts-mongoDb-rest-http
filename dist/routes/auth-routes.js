@@ -36,6 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express_1 = require("express");
 const authModule = __importStar(require("../modules/auth-module"));
+const jwt_module_1 = require("../modules/jwt-module");
 exports.router = (0, express_1.Router)();
 /*Authenticate user data*/
 exports.router.post('/login', async function (req, res, next) {
@@ -48,6 +49,9 @@ exports.router.post('/logout', async function (req, res, next) {
 /* Sigh up new user. */
 exports.router.post('/', async function (req, res, next) {
     authModule.signUpNewUser(req, res, next);
+});
+exports.router.get('/refresh', jwt_module_1.refreshTokenFn, (req, res, next) => {
+    res.send({ msg: 'Token has been refreshed' });
 });
 /* Update user data. */
 exports.router.post('/update', async function (req, res, next) {

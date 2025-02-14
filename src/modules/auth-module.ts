@@ -1,9 +1,10 @@
 import { ObjectId } from "mongodb";
-import { catchError, EMPTY, from, of, switchMap, throwError } from "rxjs";
+import { catchError, EMPTY, from, of, switchMap, tap, throwError } from "rxjs";
 import { hashUserPassword, verifyUserPassword } from "./auth-hash-module";
-import { jwtSet, saveRefreshToStore,deleteRefreshToken } from "./jwt-module";
+import { jwtSetAll, saveRefreshToStore,deleteRefreshToken, clearCookiesJWTTokens, setCookiesJWT_Tokens } from "./jwt-module";
 import { serialize } from "cookie";
-import { IUser, serializeOptions, serializeOptionsShared } from "../types/shared-models";
+import { IUser } from "../types/shared-models";
+import { SERVER_ERRORS } from "../types/errors-model";
 import { mongoDBClient } from "./mongodb-module";
 import { NextFunction, Request, Response } from "express"
 import { loggerPino } from "./logger-module";
@@ -27,7 +28,7 @@ export function logInUser (req:Request, res:Response, next:NextFunction) {
     ),
     switchMap(user=>verifyUserPassword (userFromUI.password,user)),
     switchMap(userPassword=>userPassword.passwordConfirmed? of(userPassword.userData) : throwError(()=>new Error('Incorrect password')) ),
-    switchMap(user=>jwtSet({_id:user._id as ObjectId , userId:user.userId, role:user.role})),
+    switchMap(user=>jwtSetAll({_id:user._id as ObjectId , userId:user.userId, role:user.role})),
     switchMap(jwtInfoToken=>saveRefreshToStore({...jwtInfoToken,timeSaved:new Date().toLocaleString()})),
     catchError(e=>{
       localLogger.error({fn:'logInUser',user:userFromUI.userId,msg:(e as Error).message,err_name:(e as Error).name})
@@ -35,22 +36,17 @@ export function logInUser (req:Request, res:Response, next:NextFunction) {
       return EMPTY;
     })
   ).subscribe(jwtInfoToken=>{
-    const accessToken = serialize('A3_AccessToken', jwtInfoToken.jwt,serializeOptions);
-    const accessTokenConsumer = serialize('A3_AccessToken_Shared', jwtInfoToken.jwt,serializeOptionsShared);
-    const refreshToken = serialize('A3_RefreshToken', jwtInfoToken.refreshToken,serializeOptions);
-    res.setHeader('Set-Cookie',[accessToken,refreshToken,accessTokenConsumer]);
-    res.setHeader('Authorization', 'Bearer '+ jwtInfoToken.jwt)
+    res = setCookiesJWT_Tokens(res, jwtInfoToken.jwt, jwtInfoToken.refreshToken )
+    // res.setHeader('Authorization', 'Bearer '+ jwtInfoToken.jwt)
     res.send(jwtInfoToken);
     localLogger.info({fn:'logInUser',msg:'success',user:userFromUI.userId})
   })
 }
 export function logOutUser (req:Request, res:Response, next:NextFunction) {
-  res.clearCookie('A3_AccessToken', { httpOnly: true });
-  res.clearCookie('A3_RefreshToken', { httpOnly: true });
-  res.clearCookie ('A3_AccessToken_Shared', {domain:serializeOptionsShared.domain});
+  res = clearCookiesJWTTokens(res);
   deleteRefreshToken(req,res)  
   .pipe(catchError(err=>{
-      res.status(500).send(err);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(err);
       return EMPTY;
     }))
   .subscribe(data=>{
@@ -65,7 +61,7 @@ export function signUpNewUser (req:Request, res:Response, next:NextFunction) {
     switchMap(()=>hashUserPassword(newUser.password)),
     switchMap((hashPassword)=>mongoClient.addUser({...newUser,password:hashPassword})),
     catchError(err=>{
-      res.status(500).send(err);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(err);
       localLogger.error({fn:'signUpNewUser',msg:err.message});
       return EMPTY
     }))
@@ -79,7 +75,7 @@ export function updateUserData (req:Request, res:Response, next:NextFunction) {
   from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.updateUser(newUser)),
     catchError(e=>{
-      res.status(500).send(e);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(e);
       return EMPTY
     })
   ).subscribe(data=>{
@@ -91,7 +87,7 @@ export function findAllUserData (req:Request, res:Response, next:NextFunction) {
   from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.findAllUsers()),
     catchError(e=>{
-      res.status(500).send(e);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(e);
       return EMPTY
     })
   ).subscribe(data=>res.send(data))
@@ -100,7 +96,7 @@ export function deleteUser (req:Request, res:Response, next:NextFunction) {
   from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.deleteUser(req.body.userId)),
     catchError(e=>{
-      res.status(500).send(e);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(e);
       return EMPTY
     })
   ).subscribe(data=>{
@@ -114,7 +110,7 @@ export function setResetPasswordToken (req:Request, res:Response, next:NextFunct
   from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.setResetPasswordToken(data.email,data.passwordToken)),
     catchError(err=>{
-      res.status(500).send(err);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(err);
       return EMPTY
     })
   ).subscribe(data=>{
@@ -129,7 +125,7 @@ export function setNewPassword (req:Request, res:Response, next:NextFunction) {
     switchMap(()=>hashUserPassword(data.password)),
     switchMap(hashedPassword=>mongoClient.resetPassword(data.id,data.token, hashedPassword)),
     catchError(err=>{
-      res.status(500).send(err);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(err);
       return EMPTY
     })
   ).subscribe(data=>{
@@ -142,7 +138,7 @@ export function confirmEmailAddress (req:Request, res:Response, next:NextFunctio
     switchMap(()=>mongoClient.confirmEmail(req.body)),
     switchMap(updateResult=>of(updateResult.modifiedCount!==0||updateResult.matchedCount!==0)),
     catchError(err=>{
-      res.status(500).send(err);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(err);
       localLogger.error({fn:'confirmEmailAddress',user:req.url,msg:err.message})
       return EMPTY;
     })
@@ -156,7 +152,7 @@ export function checkEmailUnique (req:Request, res:Response, next:NextFunction) 
   from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.checkEmailUnique((req.query as {email:string}).email)),
     catchError(err=>{
-      res.status(500).send(err);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(err);
       localLogger.error({fn:'checkEmailUnique',msg:err.message,user:(req.query as {userId:string}).userId});
       return EMPTY
     })
@@ -166,7 +162,7 @@ export function checkUserIdUnique (req:Request, res:Response, next:NextFunction)
   from(mongoClient.isDBConnected()).pipe( 
     switchMap(()=>mongoClient.checkUserIdUnique((req.query as {userId:string}).userId)),
     catchError(err=>{
-      res.status(500).send(err);
+      res.status(SERVER_ERRORS.get('INTERNAL_ERROR')!.code).send(err);
       localLogger.error({fn:'checkUserIdUnique',msg:err.message,user:(req.query as {userId:string}).userId});
       return EMPTY
     })

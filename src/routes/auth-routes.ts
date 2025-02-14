@@ -1,6 +1,6 @@
 import { Router} from "express";
-import { from, catchError, EMPTY } from 'rxjs';
 import * as authModule from "../modules/auth-module";
+import {refreshTokenFn} from "../modules/jwt-module";
 
 export const router = Router();
 
@@ -17,12 +17,13 @@ router.post('/', async function(req, res, next) {
   authModule.signUpNewUser(req,res,next)
 
 });
+router.get('/refresh',refreshTokenFn, (req, res, next) => {
+    res.send({msg:'Token has been refreshed'})  
+});
 /* Update user data. */
 router.post('/update', async function(req, res, next) {
   authModule.updateUserData(req, res, next)
 });
-
-
 
 //PASSWORD RESET
 //Setting token for password reset

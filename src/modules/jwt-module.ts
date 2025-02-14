@@ -1,15 +1,15 @@
 import { ENVIRONMENT } from "../environment/environment"
 import { sign, verify} from 'jsonwebtoken'
 import { bindNodeCallback, catchError, EMPTY, forkJoin, from, Observable, of,switchMap, tap, throwError } from "rxjs"
-import { IJWTInfo, IJWTPayload, IJWTInfoToken, serializeOptions, serializeOptionsShared, IRefreshDelete } from "../types/shared-models"
+import { IJWTInfo, IJWTPayload, IJWTInfoToken, serializeOptions, IRefreshDelete } from "../types/shared-models"
 import { NextFunction, Request, Response } from "express"
 import { JSONCookies} from 'cookie-parser'
-import { VerifyErrors } from "jsonwebtoken"
 import { serialize } from "cookie"
 import { redisClientAuth } from "./redis-module"
 import { ACCESS_ROUTES_ROLES } from "../types/access-roles-model"
 import { basename} from 'path'
 import { CustomLogger, loggerPino } from "./logger-module"
+import { SERVER_ERRORS } from "../types/errors-model"
 export const redisStore = new redisClientAuth()
 redisStore.init().pipe(
   catchError(err=>{
@@ -34,7 +34,7 @@ function issueRefreshJWT (jwtInfo: IJWTInfo):Observable<string> {
         catch (error) {reject((error))}
       }));
 }
-export function jwtSet (jwtInfo: IJWTInfo ):Observable<IJWTInfoToken> {
+export function jwtSetAll (jwtInfo: IJWTInfo ):Observable<IJWTInfoToken> {
   return forkJoin ({
     jwt: issueAccessJWT(jwtInfo),
     refreshToken:issueRefreshJWT(jwtInfo),
@@ -45,11 +45,21 @@ export function jwtSet (jwtInfo: IJWTInfo ):Observable<IJWTInfoToken> {
       return of(  {jwt:'', refreshToken:'',  jwtInfo:jwtInfo  });
   }));
 }
+export function jwtSetAccessToken (jwtInfo: IJWTInfo ):Observable<Omit<IJWTInfoToken,'refreshToken'>> {
+  return forkJoin ({
+    jwt: issueAccessJWT(jwtInfo),
+    jwtInfo:of(jwtInfo)
+  }).pipe(
+    catchError(err=>{
+      localLogger.error({fn:'jwtSet',user:jwtInfo.userId,msg:err.message})
+      return of(  {jwt:'', refreshToken:'',  jwtInfo:jwtInfo  });
+  }));
+}
 
 export function verifyAccess (req:Request, res:Response, next:NextFunction ) {
-  verifyJWT(String(JSONCookies(req.cookies)['A3_AccessToken']),String(JSONCookies(req.cookies)['A3_RefreshToken']),res,next,req.originalUrl)
+  verifyJWT(String(JSONCookies(req.cookies)['A3_AccessToken']),res,next,req.originalUrl)
 }
-function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:NextFunction,url:string ) {
+function verifyJWT (accessToken:string, res:Response,next:NextFunction,url:string ) {
   const boundJwtVerify = bindNodeCallback (verify)
   let jwtVerify$ = boundJwtVerify(accessToken,ENVIRONMENT.JWT.JWT_SECRET)
   jwtVerify$.pipe(
@@ -65,16 +75,13 @@ function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:N
       switch (err?.name) {
         case 'TokenExpiredError':
           localLogger.info({fn:'verifyJWT', msg:err.message,jwt:accessToken.split('.')[2]})
-          refreshTokenFunc(refreshToken,res).subscribe(res_jwtInfoToken=>{
-            res_jwtInfoToken =  res_jwtInfoToken as { response: Response, jwtInfoToken: IJWTInfoToken}
-            verifyJWT(res_jwtInfoToken.jwtInfoToken.jwt,res_jwtInfoToken.jwtInfoToken.refreshToken,res_jwtInfoToken.response,next,url)
-          })
+          res.headersSent? null: res.status(SERVER_ERRORS.get('JWT_EXPIRED')!.code).send({ml:'JWT',msg:'Access token is expired'})
         break;
         case 'AccessForbiden':
         break;
         default:
           localLogger.error({fn:'verifyJWT',jwt:accessToken,msg:`${err?.name} : ${err.message}`})
-          res.headersSent? null: res.status(401).send(`${err?.name} : ${err.message}`)
+          res.headersSent? null: res.status(SERVER_ERRORS.get('AUTHENTICATION_FAILED')!.code).send(`${err?.name} : ${err.message}`)
         break;
       }
       return EMPTY;
@@ -82,35 +89,32 @@ function verifyJWT (accessToken:string, refreshToken:string, res:Response,next:N
   ).subscribe(()=>next())
 }
 
-function refreshTokenFunc (refreshToken:string,res:Response):Observable<{response:Response,jwtInfoToken:IJWTInfoToken}|VerifyErrors> {
+export function refreshTokenFn (req:Request, res:Response, next:NextFunction ) {
+  let refreshToken = String(JSONCookies(req.cookies)['A3_RefreshToken'])
   const boundJwtVerify = bindNodeCallback (verify)
-  return boundJwtVerify(refreshToken,ENVIRONMENT.JWT.JWT_REFRESH_SECRET).pipe( 
+  boundJwtVerify(refreshToken,ENVIRONMENT.JWT.JWT_REFRESH_SECRET).pipe( 
     switchMap(jwtInfo=>redisStore.getRefreshToken((jwtInfo as IJWTInfo).userId)
       .pipe(
         switchMap(jwtInfoToken=>{
           if (jwtInfoToken?.refreshToken === refreshToken) {
             return of(jwtInfo)
           } else{
-            localLogger.error({fn:'refreshTokenFunc', user:(jwtInfo as IJWTInfo).userId, msg:'refreshToken has not been found',})
-            res.status(401).send('JsonWebTokenError : RefreshToken has not been found')
+            let errMsg = `refreshToken has not been found/not matched. Redis:${jwtInfoToken?.refreshToken} User: ${refreshToken}`
+            localLogger.error({fn:'refreshTokenFunc', user:(jwtInfo as IJWTInfo).userId, msg:errMsg})
+            res.status(SERVER_ERRORS.get('AUTHENTICATION_FAILED')!.code).send('JsonWebTokenError : RefreshToken has not been found')
             return EMPTY
           }}),
         catchError(e=>{return throwError(()=>e)})
       )),
     tap(jwtInfo=>localLogger.info({fn:'refreshTokenFunc', msg:'New token is issued', user:(jwtInfo as IJWTInfo).userId})),   
-    switchMap(jwtInfo=> jwtSet({_id:(jwtInfo as IJWTInfo)._id, userId:(jwtInfo as IJWTInfo).userId, role:(jwtInfo as IJWTInfo).role})),
-    switchMap(jwtInfoToken=>redisStore.saveRefresh(jwtInfoToken)),
-    tap(jwtInfoToken=>res.setHeader('Set-Cookie',[
-      serialize('A3_AccessToken', jwtInfoToken.jwt,serializeOptions),
-      serialize('A3_RefreshToken', jwtInfoToken.refreshToken,serializeOptions),
-      serialize('A3_AccessToken_Shared', jwtInfoToken.jwt,serializeOptionsShared)
-    ])),
+    switchMap(jwtInfo=> jwtSetAccessToken({_id:(jwtInfo as IJWTInfo)._id, userId:(jwtInfo as IJWTInfo).userId, role:(jwtInfo as IJWTInfo).role})),
+    tap(jwtInfoToken=>res = setCookiesJWT_Tokens(res,jwtInfoToken.jwt)),
     switchMap(jwtInfoToken=>of({response:res, jwtInfoToken:jwtInfoToken})),
     catchError(err=>{
-      res.status(401).send(`${err?.name} : ${err.message}`)
+      res.status(SERVER_ERRORS.get('AUTHENTICATION_FAILED')!.code).send(`${err?.name} : ${err.message}`)
       return EMPTY;
     })
-  )
+  ).subscribe (()=>next())
 }
 export function saveRefreshToStore (jwtInfoToken:IJWTInfoToken ):Observable<IJWTInfoToken> {
     return redisStore.saveRefresh(jwtInfoToken).pipe (
@@ -137,5 +141,16 @@ export function deleteRefreshToken (req:Request, res:Response):Observable<IRefre
     err.module = 'JWT'
     return throwError(()=>err) 
   }))
-  
+}
+export function setCookiesJWT_Tokens(res:Response,accessToken:string, refreshToken?:string):Response {
+  clearCookiesJWTTokens(res,refreshToken!=undefined)
+  return res.setHeader('Set-Cookie', 
+    refreshToken? 
+      [serialize('A3_AccessToken', accessToken,serializeOptions),serialize('A3_RefreshToken', refreshToken,serializeOptions)] 
+      :[serialize('A3_AccessToken', accessToken,serializeOptions)]);
+}
+export function clearCookiesJWTTokens(res:Response,refreshClear:boolean = true):Response {
+  res.clearCookie('A3_AccessToken', { httpOnly: true, domain:'euw.devtunnels.ms' });
+  res.clearCookie('A3_RefreshToken', { httpOnly: true, domain:'euw.devtunnels.ms' });
+  return res
 }

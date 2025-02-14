@@ -31,3 +31,14 @@ Loggings events & admin user list/delete
 1. Added logging on info level for main events of the server , such as data modify, log in/out users, authentication and etc
 2. admin-routes extended by features of getting full list of the users and deleting an user
 3. Error handler refactored 
+
+14/02/25
+ Refactored JWT refresh and errors map
+1. Refactored JWT refreshing process. 
+  Removed unnecessary issuing new refresh token
+  Clients are notified by send 511 error code indicating that access token is expired and must be renewed
+2. Refactored process of setting new cookies with tokens and clearing them. Clearing and setting have been moved to the separate functions
+  Functions set or remove either only access token or boths
+3. Internal UI is treated as external resource server and refresh access token by hitting api endpoint
+4. Changed API endpoint which handles access token refreshment
+5. Refactored error codes map by implementing map with named constant keys and making code base easier to read
