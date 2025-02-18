@@ -59,7 +59,6 @@ export class mongoDBClient extends MongoClient {
   updateUser (newUser:IUser):Observable<UpdateResult<IUser>> {
     let dataWitoutId = {...newUser};
     delete dataWitoutId._id
-    dataWitoutId.role='user'
     return from(this.dbInst.collection<IUser>('auth-users-data').updateOne ({_id:new  ObjectId(newUser._id)},{$set:{...dataWitoutId}}))
     .pipe(
       catchError(err=>{

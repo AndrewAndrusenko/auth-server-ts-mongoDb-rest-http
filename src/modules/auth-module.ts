@@ -144,7 +144,7 @@ export function confirmEmailAddress (req:Request, res:Response, next:NextFunctio
     })
   ).subscribe(data=>{
     res.send(data)
-    localLogger.info({fn:'confirmEmailAddress',msg:data? 'success':'fail',user:req.body.data.id})
+    localLogger.info({fn:'confirmEmailAddress',msg:data? 'success':'fail',user:req.body.id||'0'})
   })
 }
 //VALIDATORS

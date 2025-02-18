@@ -119,7 +119,7 @@ function confirmEmailAddress(req, res, next) {
         return rxjs_1.EMPTY;
     })).subscribe(data => {
         res.send(data);
-        localLogger.info({ fn: 'confirmEmailAddress', msg: data ? 'success' : 'fail', user: req.body.data.id });
+        localLogger.info({ fn: 'confirmEmailAddress', msg: data ? 'success' : 'fail', user: req.body.id || '0' });
     });
 }
 //VALIDATORS

@@ -49,7 +49,6 @@ class mongoDBClient extends mongodb_1.MongoClient {
     updateUser(newUser) {
         let dataWitoutId = { ...newUser };
         delete dataWitoutId._id;
-        dataWitoutId.role = 'user';
         return (0, rxjs_1.from)(this.dbInst.collection('auth-users-data').updateOne({ _id: new mongodb_1.ObjectId(newUser._id) }, { $set: { ...dataWitoutId } }))
             .pipe((0, rxjs_1.catchError)(err => {
             localLogger.error({ fn: 'updateUser', msg: err.message, user: JSON.stringify(dataWitoutId) });

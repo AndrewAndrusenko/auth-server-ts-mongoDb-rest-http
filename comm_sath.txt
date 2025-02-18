@@ -42,3 +42,7 @@ Loggings events & admin user list/delete
 3. Internal UI is treated as external resource server and refresh access token by hitting api endpoint
 4. Changed API endpoint which handles access token refreshment
 5. Refactored error codes map by implementing map with named constant keys and making code base easier to read
+
+18/02/25
+- auth-module - fixed email confirmation logging (incorrect path for id property)
+- mongodb-module.ts - fixed user profile update
